@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="text-[17px] sm:text-[18px]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>輕鬆用日語玩日本 - 國立空中大學互動數位教材</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Noto Sans TC & Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sakura: {
+              50: '#fff5f6',
+              100: '#ffe4e8',
+              200: '#fecdd6',
+              500: '#e11d48',
+              600: '#be123c',
+            },
+            matcha: {
+              50: '#f4f8f3',
+              100: '#e3eee1',
+              600: '#3a7d44',
+              700: '#2d6235',
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans TC"', '"Noto Sans JP"', 'sans-serif'],
+            jp: ['"Zen Maru Gothic"', '"Noto Sans JP"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ruby {
+      ruby-align: center;
+    }
+    rt {
+      font-size: 0.68em;
+      color: #be123c;
+      font-weight: 700;
+      user-select: none;
+      line-height: 1.1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 9999px;
+    }
+    /* Mobile Touch optimization */
+    .touch-btn {
+      min-height: 44px;
+      touch-action: manipulation;
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans min-h-screen flex flex-col antialiased selection:bg-rose-100 selection:text-rose-700 leading-relaxed overflow-x-hidden">
+
+  <!-- Sticky Header optimized for mobile & desktop -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
+        <button id="mobile-menu-btn" class="lg:hidden touch-btn p-2.5 rounded-2xl text-stone-700 hover:bg-stone-100 active:bg-stone-200 focus:outline-none shrink-0" aria-label="打開章節清單">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-rose-500 to-amber-400 flex items-center justify-center text-white shadow-md shrink-0">
+          <i class="fa-solid fa-torii-gate text-xl sm:text-2xl"></i>
+        </div>
+        <div class="min-w-0">
+          <h1 class="text-lg sm:text-2xl font-bold text-stone-900 tracking-wide truncate flex items-center gap-1.5">
+            輕鬆用日語玩日本 <span class="hidden md:inline text-xs font-normal bg-rose-100 text-rose-700 px-2.5 py-0.5 rounded-full">空中大學</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-stone-500 font-jp truncate">國立空中大學通識博雅課程 ・ 廖紋淑 著</p>
+        </div>
+      </div>
+
+      <!-- Controls: Global Speech Rate & Help -->
+      <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+        <div class="flex items-center bg-stone-100 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl border border-stone-200 text-xs sm:text-sm text-stone-700 space-x-1 sm:space-x-2">
+          <i class="fa-solid fa-gauge-high text-rose-500 text-sm sm:text-base"></i>
+          <span class="hidden sm:inline font-medium">語速：</span>
+          <select id="tts-rate" class="bg-transparent font-bold text-stone-800 focus:outline-none cursor-pointer text-xs sm:text-sm">
+            <option value="0.75">0.75x 慢速</option>
+            <option value="0.9" selected>0.9x 標準</option>
+            <option value="1.0">1.0x 自然</option>
+          </select>
+        </div>
+
+        <button onclick="toggleAudioHelp()" class="touch-btn p-2 sm:p-2.5 rounded-2xl text-stone-500 hover:text-rose-600 hover:bg-rose-50 transition" title="發音提示">
+          <i class="fa-solid fa-circle-question text-xl sm:text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex-1 flex w-full py-4 sm:py-6 gap-6 sm:gap-8">
+    
+    <!-- Sidebar / Drawer -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-72 sm:w-80 bg-white border-r border-stone-200 transform -translate-x-full transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-[calc(100vh-7rem)] lg:w-84 lg:shrink-0 lg:rounded-3xl lg:border lg:shadow-sm overflow-hidden flex flex-col">
+      <div class="p-4 border-b border-stone-100 bg-stone-50 flex items-center justify-between">
+        <h2 class="font-bold text-stone-800 text-sm sm:text-base flex items-center gap-2">
+          <i class="fa-solid fa-list-ol text-rose-500"></i> 課程章節快速索引
+        </h2>
+        <button id="close-sidebar-btn" class="lg:hidden text-stone-400 hover:text-stone-700 p-2 touch-btn">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Quick Filter -->
+      <div class="p-3 border-b border-stone-100">
+        <div class="relative">
+          <input id="chapter-search" type="text" placeholder="搜尋章節、句型、單字..." class="w-full text-sm pl-9 pr-3 py-2.5 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-rose-400 focus:bg-white outline-none transition">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-3.5 text-stone-400 text-sm"></i>
+        </div>
+      </div>
+
+      <!-- Nav Items List -->
+      <nav id="chapter-list" class="flex-1 overflow-y-auto p-2 space-y-1.5 custom-scrollbar text-sm text-stone-700 font-medium">
+        <!-- Javascript will inject chapter navigation items -->
+      </nav>
+
+      <div class="p-3 bg-stone-50 border-t border-stone-100 text-center">
+        <button onclick="scrollToSection('homework-section')" class="w-full touch-btn py-2.5 px-3 text-xs sm:text-sm bg-rose-500 hover:bg-rose-600 active:bg-rose-700 text-white font-bold rounded-2xl transition shadow-sm flex items-center justify-center gap-2">
+          <i class="fa-solid fa-file-pen"></i> 第一次課堂線上自我檢測
+        </button>
+      </div>
+    </aside>
+
+    <!-- Backdrop for mobile drawer -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-30 hidden lg:hidden"></div>
+
+    <main class="flex-1 min-w-0 space-y-6 sm:space-y-8">
+      
+      <!-- Banner -->
+      <div class="bg-gradient-to-br from-rose-500 via-rose-600 to-amber-500 rounded-3xl p-5 sm:p-8 text-white shadow-lg relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-8 opacity-15 text-8xl sm:text-9xl font-jp pointer-events-none">桜</div>
+        <div class="relative z-10 max-w-3xl">
+          <span class="inline-block text-xs font-bold tracking-wider uppercase bg-white/20 px-3 py-1 rounded-full mb-2.5 backdrop-blur">
+            手機 / 電腦 雙模自動適配版
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-2 sm:mb-3">
+            輕鬆用日語玩日本
+          </h2>
+          <p class="text-rose-100 text-sm sm:text-base leading-relaxed mb-4">
+            全課程完整收錄：機場報到、電車問路、飯店入住與問題反應、淺草與上野、雜貨試穿、道地壽司、大阪地標、京都古寺與和服、和菓子與抹茶、中部鰻魚飯與早安文化、天婦羅與牛丼。每課皆附<strong>完整單字庫（含漢字讀音）與第 6 節實用短句</strong>！
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs sm:text-sm">
+            <span class="bg-black/25 backdrop-blur px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+              <i class="fa-solid fa-volume-high text-amber-300"></i> 全文可點擊真實發音
+            </span>
+            <span class="bg-black/25 backdrop-blur px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+              <i class="fa-solid fa-font text-sky-300"></i> 漢字假名 (振假名) + 羅馬拼音
+            </span>
+            <span class="bg-black/25 backdrop-blur px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+              <i class="fa-solid fa-mobile-screen-button text-emerald-300"></i> 手機字級大、排版自動換行
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter Dynamic Container -->
+      <div id="chapters-container" class="space-y-8 sm:space-y-12">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Homework section -->
+      <section id="homework-section" class="bg-white rounded-3xl p-5 sm:p-8 border border-rose-200 shadow-md">
+        <div class="flex items-center gap-3.5 border-b border-stone-200 pb-4 mb-6">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xl shrink-0">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h3 class="text-lg sm:text-2xl font-bold text-stone-900">115學年度上學期「輕鬆用日語玩日本」第一次作業自我檢測</h3>
+            <p class="text-xs sm:text-sm text-stone-500 mt-0.5">範疇：第 1～8 講核心內容，含平假名讀音、行李口袋清單、會話選擇題與生存應答</p>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-base">
+          <!-- Part 1 -->
+          <div>
+            <h4 class="font-bold text-stone-800 text-base sm:text-lg mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">一</span>
+              日本實境旅遊地標大搜尋（日語漢字的平假名讀音）
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">1. 空港</span>
+                <span class="text-rose-600 font-bold font-jp">くうこう (kūkō)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">2. 往復</span>
+                <span class="text-rose-600 font-bold font-jp">おうふく (ōfuku)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">3. 片道</span>
+                <span class="text-rose-600 font-bold font-jp">かたみち (katamichi)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">4. 禁煙</span>
+                <span class="text-rose-600 font-bold font-jp">きんえん (kin'en)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">5. 案内</span>
+                <span class="text-rose-600 font-bold font-jp">あんない (annai)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">6. 苦情</span>
+                <span class="text-rose-600 font-bold font-jp">くじょう (kujō)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">7. 賽銭</span>
+                <span class="text-rose-600 font-bold font-jp">さいせん (saisen)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">8. 無料</span>
+                <span class="text-rose-600 font-bold font-jp">むりょう (muryō)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">9. 乗り換え</span>
+                <span class="text-rose-600 font-bold font-jp">のりかえ (norikae)</span>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <span class="font-bold text-stone-800">10. 精算機</span>
+                <span class="text-rose-600 font-bold font-jp">せいさんき (seisanki)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Part 2 -->
+          <div>
+            <h4 class="font-bold text-stone-800 text-base sm:text-lg mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">二</span>
+              行前打包與美食口袋清單（中翻日，漢字標註假名與羅馬拼音）
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 font-jp">
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">1. 護照</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg">パスポート <span class="text-xs text-stone-500 font-mono">(pasupōto)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">2. 盥洗用品</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg">アメニティ <span class="text-xs text-stone-500 font-mono">(ameniti)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">3. 拖鞋</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg">スリッパ <span class="text-xs text-stone-500 font-mono">(surippa)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">4. 護身符</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg"><ruby>御守<rt>おまも</rt></ruby>り <span class="text-xs text-stone-500 font-mono">(omamori)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">5. 拉麵</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg">ラーメン <span class="text-xs text-stone-500 font-mono">(rāmen)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">6. 章魚燒</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg">たこ<ruby>焼<rt>や</rt></ruby>き <span class="text-xs text-stone-500 font-mono">(takoyaki)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">7. 味噌湯</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg"><ruby>味噌汁<rt>みそしる</rt></ruby> <span class="text-xs text-stone-500 font-mono">(misoshiru)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">8. 賞花</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg">お<ruby>花見<rt>はなみ</rt></ruby> <span class="text-xs text-stone-500 font-mono">(ohanami)</span></div>
+              </div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
+                <div class="text-xs text-stone-500 mb-0.5">9. 款待（款客之道）</div>
+                <div class="text-stone-900 font-bold text-base sm:text-lg">おもてなし <span class="text-xs text-stone-500 font-mono">(omotenashi)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-stone-900/90 backdrop-blur text-white text-xs sm:text-sm px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2.5">
+    <i class="fa-solid fa-volume-high text-emerald-400 text-sm sm:text-base"></i>
+    <span id="toast-text">發音中...</span>
+  </div>
+
+  <!-- Audio Help Modal -->
+  <div id="help-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white max-w-lg w-full rounded-3xl p-6 sm:p-7 shadow-2xl space-y-4 border border-stone-200">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-stone-900 text-base sm:text-lg flex items-center gap-2">
+          <i class="fa-solid fa-circle-info text-rose-500"></i> 手機發音與操作提示
+        </h3>
+        <button onclick="toggleAudioHelp()" class="text-stone-400 hover:text-stone-700 p-1">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+        本互動教材支援手機與電腦瀏覽器內建 <strong>Web Speech API</strong> 日語真人合成引擎（`ja-JP`）。點選每一句對話、句型、練習與常用單字旁的喇叭圖示，即可發音跟讀！
+      </p>
+      <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 text-xs sm:text-sm text-stone-600 space-y-2">
+        <div>📱 <strong>手機操作要點：</strong> iPhone（iOS）若點擊無聲，請確認手機側邊的「靜音開關」已關閉，並將音量調大。</div>
+        <div>⚡ <strong>語速調整：</strong> 於上方隨時切換 0.75x（慢速精聽）或 0.9x（標準學習）。</div>
+        <div>🔍 <strong>快速檢索：</strong> 利用章節選單搜尋單字（如「税関」）可即時過濾。</div>
+      </div>
+      <button onclick="toggleAudioHelp()" class="w-full touch-btn py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl font-bold text-sm transition">
+        開始學習
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const courseChapters = [
+      {
+        id: "ch-1-1",
+        code: "1.1",
+        title: "空港（機場篇）",
+        subtitle: "日本之旅的啟程門戶・報到與搭乘",
+        badge: "交通攻略",
+        dialogue: {
+          scene: "機場報到櫃檯（チェックイン）",
+          lines: [
+            {
+              speaker: "旅行者",
+              romaji: "Konnichiwa, chekkuin o onegai shimasu.",
+              japanese: "こんにちは、チェックインをお願いします。",
+              ruby: "こんにちは、チェックインをお<ruby>願<rt>ねが</rt></ruby>いします。",
+              chinese: "您好，麻煩請幫我辦理登機報到。"
+            },
+            {
+              speaker: "地勤人員",
+              romaji: "Hai, pasupōto o onegai shimasu.",
+              japanese: "はい、パスポートをお願いします。",
+              ruby: "はい、パスポートをお<ruby>願<rt>ねが</rt></ruby>いします。",
+              chinese: "好的，請出示您的護照。"
+            },
+            {
+              speaker: "旅行者",
+              romaji: "Dōzo.",
+              japanese: "どうぞ。",
+              ruby: "どうぞ。",
+              chinese: "請（遞上護照）。"
+            },
+            {
+              speaker: "地勤人員",
+              romaji: "Arigatō gozaimasu.",
+              japanese: "ありがとうございます。",
+              ruby: "ありがとうございます。",
+              chinese: "非常感謝您。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + をお願いします (o onegai shimasu)",
+          explanation: "提出正式且禮貌的服務委託或索取物品。口語中常省略助詞「を」，直接說「名詞 + お願いします」更加道地。",
+          examples: [
+            {
+              jp: "搭乗券をお願いします。",
+              ruby: "<ruby>搭乗券<rt>とうじょうけん</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。",
+              romaji: "Tōjōken o onegai shimasu.",
+              zh: "麻煩請給我登機證。"
+            },
+            {
+              jp: "毛布をお願いします。",
+              ruby: "<ruby>毛布<rt>もうふ</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。",
+              romaji: "Mōfu o onegai shimasu.",
+              zh: "請給我毛毯。"
+            },
+            {
+              jp: "コーヒーをお願いします。",
+              ruby: "コーヒーをお<ruby>願<rt>ねが</rt></ruby>いします。",
+              romaji: "Kōhī o onegai shimasu.",
+              zh: "請給我咖啡。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "チケット", pattern: "チケットをお願いします", romaji: "Chiketto o onegai shimasu.", zh: "麻煩請給我票券。" },
+          { item: "スーツケース", pattern: "スーツケースをお願いします", romaji: "Sūtsukēsu o onegai shimasu.", zh: "麻煩請幫我處理行李箱。" },
+          { item: "荷物", pattern: "荷物をお願いします", romaji: "Nimotsu o onegai shimasu.", zh: "麻煩請幫我處理行李。" },
+          { item: "これ", pattern: "これをお願いします", romaji: "Kore o onegai shimasu.", zh: "麻煩請給我這個。" }
+        ],
+        vocab: [
+          { jp: "空港", kana: "くうこう", romaji: "kūkō", zh: "機場" },
+          { jp: "税関申告書", kana: "ぜいかんしんこくしょ", romaji: "zeikan shinkokusho", zh: "海關申報單" },
+          { jp: "スーツケース", kana: "スーツケース", romaji: "sūtsukēsu", zh: "行李箱" },
+          { jp: "搭乗券", kana: "とうじょうけん", romaji: "tōjōken", zh: "登機證" },
+          { jp: "チェックイン", kana: "チェックイン", romaji: "chekkuin", zh: "報到" },
+          { jp: "荷物", kana: "にもつ", romaji: "nimotsu", zh: "行李" },
+          { jp: "出発", kana: "しゅっぱつ", romaji: "shuppatsu", zh: "出發" },
+          { jp: "到着", kana: "とうちゃく", romaji: "tōchaku", zh: "抵達" },
+          { jp: "パスポート", kana: "パスポート", romaji: "pasupōto", zh: "護照" }
+        ],
+        phrases: [
+          { scene: "早安招呼", jp: "おはようございます", ruby: "おはようございます", romaji: "Ohayō gozaimasu", zh: "早安" },
+          { scene: "午安 / 你好", jp: "こんにちは", ruby: "こんにちは", romaji: "Konnichiwa", zh: "你好 / 午安" },
+          { scene: "晚安", jp: "こんばんは", ruby: "こんばんは", romaji: "Konbanwa", zh: "晚安" },
+          { scene: "道別", jp: "さよなら", ruby: "さよなら", romaji: "Sayonara", zh: "再見" },
+          { scene: "不好意思 / 借過", jp: "すみません", ruby: "すみません", romaji: "Sumimasen", zh: "不好意思 / 對不起" },
+          { scene: "致謝", jp: "ありがとうございます", ruby: "ありがとうございます", romaji: "Arigatō gozaimasu", zh: "非常感謝您" },
+          { scene: "不要緊 / 沒關係", jp: "大丈夫です", ruby: "<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です", romaji: "Daijōbu desu", zh: "沒關係 / 不要緊" }
+        ],
+        trivia: {
+          title: "網上預辦登機與高空觀賞富士山技巧",
+          content: "去程飛往日本選左側靠窗（A席），回程飛回台灣選右側靠窗（K席），天氣晴朗時有極高機率在高空鳥瞰富士山！"
+        }
+      },
+      {
+        id: "ch-1-2",
+        code: "1.2",
+        title: "電車（交通篇）",
+        subtitle: "日本鐵道動線・車站設施問路",
+        badge: "交通攻略",
+        dialogue: {
+          scene: "車站尋找售票處與月台",
+          lines: [
+            {
+              speaker: "旅行者",
+              romaji: "Sumimasen, kippu uriba wa doko desu ka.",
+              japanese: "すみません、きっぷ売り場はどこですか。",
+              ruby: "すみません、きっぷ<ruby>売<rt>う</rt></ruby>り<ruby>場<rt>ば</rt></ruby>はどこですか。",
+              chinese: "不好意思，請問售票處在哪裡？"
+            },
+            {
+              speaker: "站務員",
+              romaji: "Asoko desu.",
+              japanese: "あそこです。",
+              ruby: "あそこです。",
+              chinese: "在那裡。"
+            },
+            {
+              speaker: "旅行者",
+              romaji: "Arigatō gozaimasu.",
+              japanese: "ありがとうございます。",
+              ruby: "ありがとうございます。",
+              chinese: "謝謝您。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + はどこですか (wa doko desu ka)",
+          explanation: "空間定位與公共設施方位詢問，問路必備神句。",
+          examples: [
+            {
+              jp: "トイレはどこですか。",
+              ruby: "トイレはどこですか。",
+              romaji: "Toire wa doko desu ka.",
+              zh: "請問洗手間在哪裡？"
+            },
+            {
+              jp: "喫煙所はどこですか。",
+              ruby: "<ruby>喫煙所<rt>きつえんじょ</rt></ruby>はどこですか。",
+              romaji: "Kitsuenjo wa doko desu ka.",
+              zh: "請問吸菸區在哪裡？"
+            }
+          ]
+        },
+        replacements: [
+          { item: "東京駅", pattern: "東京駅はどこですか", romaji: "Tōkyō eki wa doko desu ka.", zh: "請問東京車站在哪裡？" },
+          { item: "ホテル", pattern: "ホテルはどこですか", romaji: "Hoteru wa doko desu ka.", zh: "請問飯店在哪裡？" },
+          { item: "居酒屋", pattern: "居酒屋はどこですか", romaji: "Izakaya wa doko desu ka.", zh: "請問居酒屋在哪裡？" },
+          { item: "レストラン", pattern: "レストランはどこですか", romaji: "Resutoran wa doko desu ka.", zh: "請問餐廳在哪裡？" }
+        ],
+        vocab: [
+          { jp: "駅", kana: "えき", romaji: "eki", zh: "車站" },
+          { jp: "左・右", kana: "ひだり・みぎ", romaji: "hidari / migi", zh: "左邊・右邊" },
+          { jp: "電車", kana: "でんしゃ", romaji: "densha", zh: "電車" },
+          { jp: "タクシー", kana: "タクシー", romaji: "takushī", zh: "計程車" },
+          { jp: "片道・往復", kana: "かたみち・おうふく", romaji: "katamichi / ōfuku", zh: "單程・來回" },
+          { jp: "ホーム", kana: "ホーム", romaji: "hōmu", zh: "月台" },
+          { jp: "乗り換え", kana: "のりかえ", romaji: "norikae", zh: "轉乘" },
+          { jp: "切符", kana: "きっぷ", romaji: "kippu", zh: "車票" },
+          { jp: "精算機", kana: "せいさんき", romaji: "seisanki", zh: "補票機" }
+        ],
+        phrases: [
+          { scene: "詢問轉乘", jp: "どこで乗り換えますか。", ruby: "どこで<ruby>乗<rt>の</rt></ruby>り<ruby>換<rt>か</rt></ruby>えますか。", romaji: "Doko de norikaemasu ka.", zh: "請問在哪裡轉乘？" },
+          { scene: "距離確認", jp: "ここから遠いですか、近いですか。", ruby: "ここから<ruby>遠<rt>とお</rt></ruby>いですか、<ruby>近<rt>ちか</rt></ruby>いですか。", romaji: "Koko kara tōi desu ka, chikai desu ka.", zh: "從這裡去很遠還是很近？" },
+          { scene: "月台確認", jp: "何番ホームですか。", ruby: "<ruby>何番<rt>なんばん</rt></ruby>ホームですか。", romaji: "Nan-ban hōmu desu ka.", zh: "請問在幾號月台？" }
+        ],
+        trivia: {
+          title: "精算機操作與 JR Pass 活用攻略",
+          content: "搭電車卡片餘額不足亮紅燈時，找改札口內的黃色「精算機」補差額即可出站。地區版周遊券性價比通常比全國版更高！"
+        }
+      },
+      {
+        id: "ch-2-1",
+        code: "2.1",
+        title: "ホテル（飯店住宿篇 - 入住與請求）",
+        subtitle: "辦理入住、行李寄存與禮貌委託",
+        badge: "飯店住宿",
+        dialogue: {
+          scene: "飯店櫃檯辦理入住與行李暫存",
+          lines: [
+            {
+              speaker: "顧客",
+              romaji: "Sumimasen, chekkuin o onegai dekimasu ka.",
+              japanese: "すみません、チェックインをお願いできますか。",
+              ruby: "すみません、チェックインをお<ruby>願<rt>ねが</rt></ruby>いできますか。",
+              chinese: "不好意思，可以請您幫我辦理入住手續嗎？"
+            },
+            {
+              speaker: "員工",
+              romaji: "Hai, dōzo.",
+              japanese: "はい、どうぞ。",
+              ruby: "はい、どうぞ。",
+              chinese: "好的，這邊請。"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Nimotsu o hakonde itadakemasu ka.",
+              japanese: "荷物を運んでいただけますか。",
+              ruby: "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>んでいただけますか。",
+              chinese: "可以幫我搬運行李嗎？"
+            },
+            {
+              speaker: "員工",
+              romaji: "Hai, wakarimashita.",
+              japanese: "はい、わかりました。",
+              ruby: "はい、わかりました。",
+              chinese: "好的，我知道了。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[動詞て形] + いただけますか (itadakemasu ka)",
+          explanation: "意為「能否請您...」，屬於高度禮貌的請求句型，非常適合向服務人員提出委託。",
+          examples: [
+            {
+              jp: "Wi-Fi のパスワードを教えていただけますか。",
+              ruby: "Wi-Fiのパスワードを<ruby>教<rt>おし</rt></ruby>えていただけますか。",
+              romaji: "Wi-Fi no pasuwādo o oshiete itadakemasu ka.",
+              zh: "可以請您告訴我 Wi-Fi 密碼嗎？"
+            },
+            {
+              jp: "荷物を預かっていただけますか。",
+              ruby: "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>預<rt>あず</rt></ruby>かっていただけますか。",
+              romaji: "Nimotsu o azukatte itadakemasu ka.",
+              zh: "可以請您保管行李嗎？"
+            }
+          ]
+        },
+        replacements: [
+          { item: "持ちます", pattern: "持っていただけますか", romaji: "Motte itadakemasu ka.", zh: "可以請您拿嗎？" },
+          { item: "見ます", pattern: "見ていただけますか", romaji: "Mite itadakemasu ka.", zh: "可以請您看嗎？" },
+          { item: "掃除します", pattern: "掃除していただけますか", romaji: "Sōji shite itadakemasu ka.", zh: "可以請您打掃嗎？" },
+          { item: "案内します", pattern: "案内していただけますか", romaji: "Annai shite itadakemasu ka.", zh: "可以請您導覽介紹嗎？" }
+        ],
+        vocab: [
+          { jp: "フロント", kana: "フロント", romaji: "furonto", zh: "前台 / 櫃台" },
+          { jp: "アメニティ", kana: "アメニティ", romaji: "ameniti", zh: "盥洗用品" },
+          { jp: "チェックアウト", kana: "チェックアウト", romaji: "chekkuauto", zh: "退房" },
+          { jp: "ツイン・ダブル", kana: "ツイン・ダブル", romaji: "tsuin / daburu", zh: "雙人房（雙床 / 單大床）" },
+          { jp: "ランドリー", kana: "ランドリー", romaji: "randorī", zh: "洗衣間" },
+          { jp: "禁煙・喫煙", kana: "きんえん・きつえん", romaji: "kin'en / kitsuen", zh: "禁菸 / 吸菸" },
+          { jp: "朝食付き", kana: "ちょうしょくつき", romaji: "chōshokutsuki", zh: "附早餐" },
+          { jp: "素泊まり", kana: "すどまり", romaji: "sudomari", zh: "純住宿不附餐" }
+        ],
+        phrases: [
+          { scene: "告知預約", jp: "ネットで予約しました。", ruby: "ネットで<ruby>予約<rt>よやく</rt></ruby>しました。", romaji: "Netto de yoyaku shimashita.", zh: "我在網路上完成預約了。" },
+          { scene: "退房時間", jp: "チェックアウトは何時ですか。", ruby: "チェックアウトは<ruby>何時<rt>なんじ</rt></ruby>ですか。", romaji: "Chekkuauto wa nan-ji desu ka.", zh: "請問何時辦理退房？" },
+          { scene: "推薦店家", jp: "近くにおすすめの店はありますか。", ruby: "<ruby>近<rt>ちか</rt></ruby>くにおすすめの<ruby>店<rt>みせ</rt></ruby>はありますか。", romaji: "Chikaku ni osusume no mise wa arimasu ka.", zh: "附近有推薦的店家嗎？" },
+          { scene: "寄送行李", jp: "荷物を台湾へ送ることができますか。", ruby: "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>台湾<rt>たいわん</rt></ruby>へ<ruby>送<rt>おく</rt></ruby>ることができますか。", romaji: "Nimotsu o Taiwan e okuru koto ga dekimasu ka.", zh: "可以將行李寄送回台灣嗎？" }
+        ],
+        trivia: {
+          title: "日本飯店住宿禮儀與房內規範",
+          content: "外國旅客辦理入住時須出示護照影印備查。日本服務業無小費習慣。沐浴時請將浴簾拉進浴缸內側，避免洗澡水濺濕地毯。"
+        }
+      },
+      {
+        id: "ch-2-2",
+        code: "2.2",
+        title: "苦情（飯店住宿篇 - 問題反應與要求）",
+        subtitle: "客房設備問題反應・要求換房或調整",
+        badge: "飯店住宿",
+        dialogue: {
+          scene: "反應空調太冷與及時處理",
+          lines: [
+            {
+              speaker: "員工",
+              romaji: "Dō shimashita ka.",
+              japanese: "どうしましたか。",
+              ruby: "どうしましたか。",
+              chinese: "怎麼了嗎？"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Reibō ga tsuyosugimasu. Samui desu.",
+              japanese: "冷房が強すぎます。寒いです。",
+              ruby: "<ruby>冷房<rt>れいぼう</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>すぎます。<ruby>寒<rt>さむ</rt></ruby>いです。",
+              chinese: "冷氣太強了。很冷。"
+            },
+            {
+              speaker: "員工",
+              romaji: "Mōshiwake arimasen. Sugu ni chōsei shimasu.",
+              japanese: "申し訳ありません。すぐに調整します。",
+              ruby: "<ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ありません。すぐに<ruby>調整<rt>ちょうせい</rt></ruby>します。",
+              chinese: "很抱歉。我們馬上調整。"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Onegai shimasu.",
+              japanese: "お願いします。",
+              ruby: "お<ruby>願<rt>ねが</rt></ruby>いします。",
+              chinese: "麻煩你了。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[形容詞/動詞] + すぎます (sugimasu)",
+          explanation: "意為「太...」或「過於...」，表達狀態或行為超越了適當限度。",
+          examples: [
+            {
+              jp: "値段が高すぎます。",
+              ruby: "<ruby>値段<rt>ねだん</rt></ruby>が<ruby>高<rt>たか</rt></ruby>すぎます。",
+              romaji: "Nedan ga takasugimasu.",
+              zh: "價格太貴了。"
+            },
+            {
+              jp: "食べすぎます。",
+              ruby: "<ruby>食<rt>た</rt></ruby>べすぎます。",
+              romaji: "Tabesugimasu.",
+              zh: "吃太多了。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "い形容詞：大きい", pattern: "大きすぎます", romaji: "Ōkisugimasu.", zh: "太大了。" },
+          { item: "な形容詞：便利", pattern: "便利すぎます", romaji: "Benrisugimasu.", zh: "太方便了。" },
+          { item: "動詞：飲みます", pattern: "飲みすぎます", romaji: "Nomisugimasu.", zh: "喝太多了。" }
+        ],
+        vocab: [
+          { jp: "タオル・スリッパ", kana: "タオル・スリッパ", romaji: "taoru / surippa", zh: "毛巾 / 拖鞋" },
+          { jp: "ベッド・枕", kana: "ベッド・まくら", romaji: "beddo / makura", zh: "床 / 枕頭" },
+          { jp: "冷蔵庫", kana: "れいぞうこ", romaji: "reizōko", zh: "冰箱" },
+          { jp: "布団", kana: "ふとん", romaji: "futon", zh: "棉被" },
+          { jp: "ルームサービス", kana: "ルームサービス", romaji: "rūmusābisu", zh: "客房服務" },
+          { jp: "伝言", kana: "でんごん", romaji: "dengon", zh: "留言" },
+          { jp: "栓抜き", kana: "せんぬき", romaji: "sennuki", zh: "開瓶器" },
+          { jp: "苦情", kana: "くじょう", romaji: "kujō", zh: "抱怨 / 客訴" }
+        ],
+        phrases: [
+          { scene: "請求換房", jp: "別の部屋に替えていただけますか。", ruby: "<ruby>別<rt>べつ</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>に<ruby>替<rt>か</rt></ruby>えていただけますか。", romaji: "Betsu no heya ni kaete itadakemasu ka.", zh: "可以換別間房間嗎？" },
+          { scene: "反應異味", jp: "部屋がタバコ臭いです。", ruby: "<ruby>部屋<rt>へや</rt></ruby>がタバコ<ruby>臭<rt>くさ</rt></ruby>いです。", romaji: "Heya ga tabakokusai desu.", zh: "房間有煙臭味。" },
+          { scene: "寄放行李", jp: "スーツケースを預かっていただけますか。", ruby: "スーツケースを<ruby>預<rt>あず</rt></ruby>かっていただけますか。", romaji: "Sūtsukēsu o azukatte itadakemasu ka.", zh: "可以寄放行李嗎？" },
+          { scene: "特殊飲食", jp: "ベジタリアン料理はありますか。", ruby: "ベジタリアン<ruby>料理<rt>りょうり</rt></ruby>はありますか。", romaji: "Bejitarian ryōri wa arimasu ka.", zh: "有素食料理嗎？" }
+        ],
+        trivia: {
+          title: "玄關脫鞋文化與「土足禁止」",
+          content: "日式旅館門口玄關多有台階並標註「土足禁止」，請務必脫下戶外鞋換穿室內拖鞋，且嚴禁踩踏榻榻米。"
+        }
+      },
+      {
+        id: "ch-3-1",
+        code: "3.1",
+        title: "浅草（關東地區篇 - 觀光與參拜）",
+        subtitle: "淺草寺風情・邊走邊享受",
+        badge: "關東地區",
+        dialogue: {
+          scene: "淺草仲見世通商店街漫步",
+          lines: [
+            {
+              speaker: "導遊",
+              romaji: "Arukinagara, Asakusa no machi o mimashō.",
+              japanese: "歩きながら、浅草の町を見ましょう。",
+              ruby: "<ruby>歩<rt>ある</rt></ruby>きながら、<ruby>浅草<rt>あさくさ</rt></ruby>の<ruby>町<rt>まち</rt></ruby>を<ruby>見<rt>み</rt></ruby>ましょう。",
+              chinese: "一邊散步，一邊欣賞淺草的街景吧。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Ningyōyaki o tabenagara, arukitemo ii desu ka.",
+              japanese: "人形焼きを食べながら、歩いてもいいですか。",
+              ruby: "<ruby>人形焼<rt>にんぎょうや</rt></ruby>きを<ruby>食<rt>た</rt></ruby>べながら、<ruby>歩<rt>ある</rt></ruby>いてもいいですか。",
+              chinese: "可以一邊吃人形燒一邊走嗎？"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Mise no mae de tabete kudasai ne.",
+              japanese: "お店の前で食べてくださいね。",
+              ruby: "お<ruby>店<rt>みせ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>で<ruby>食<rt>た</rt></ruby>べてくださいね。",
+              chinese: "請在店家門口吃完再走喔。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[動詞ます形] + ながら、〜 (nagara)",
+          explanation: "表示同一主體同時進行兩項動作，後項為主動作。「邊...邊...」。",
+          examples: [
+            {
+              jp: "歩きながら、話します。",
+              ruby: "<ruby>歩<rt>ある</rt></ruby>きながら、<ruby>話<rt>はな</rt></ruby>します。",
+              romaji: "Arukinagara, hanashimasu.",
+              zh: "一邊走路一邊說話。"
+            },
+            {
+              jp: "音楽を聴きながら、歩きます。",
+              ruby: "<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聴<rt>き</rt></ruby>きながら、<ruby>歩<rt>ある</rt></ruby>きます。",
+              romaji: "Ongaku o kikinagara, arukimasu.",
+              zh: "一邊聽音樂一邊走路。"
+            },
+            {
+              jp: "テレビを見ながら、ご飯を食べます。",
+              ruby: "テレビを<ruby>見<rt>み</rt></ruby>ながら、ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。",
+              romaji: "Terebi o minagara, gohan o tabemasu.",
+              zh: "一邊看電視一邊吃飯。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "食べます", pattern: "食べながら、考えます", romaji: "Tabenagara, kangaemasu.", zh: "一邊吃一邊想。" },
+          { item: "掃除します", pattern: "掃除しながら、聞きます", romaji: "Sōji shinagara, kikimasu.", zh: "一邊掃地一邊聽。" },
+          { item: "買います", pattern: "買いながら、歩きます", romaji: "Kainagara, arukimasu.", zh: "一邊買一邊走。" },
+          { item: "話します", pattern: "話しながら、飲みます", romaji: "Hanashinagara, nomimasu.", zh: "一邊聊一邊喝。" }
+        ],
+        vocab: [
+          { jp: "お守り", kana: "おまもり", romaji: "omamori", zh: "護身符" },
+          { jp: "神社・お寺", kana: "じんじゃ・おてら", romaji: "jinja / otera", zh: "神社 / 寺廟" },
+          { jp: "おみくじ", kana: "おみくじ", romaji: "omikuji", zh: "御神籤" },
+          { jp: "手水舎", kana: "てみずや", romaji: "temizuya", zh: "淨手池" },
+          { jp: "お賽銭", kana: "おさいせん", romaji: "osaisen", zh: "香油錢" },
+          { jp: "絵馬", kana: "えま", romaji: "ema", zh: "繪馬" },
+          { jp: "厄除け", kana: "やくよけ", romaji: "yakuyoke", zh: "除惡避邪" },
+          { jp: "鳥居", kana: "とりい", romaji: "torii", zh: "鳥居" }
+        ],
+        phrases: [
+          { scene: "詢問行程", jp: "日帰りツアーはありますか。", ruby: "<ruby>日帰<rt>ひがえ</rt></ruby>りツアーはありますか。", romaji: "Higaeri tsuā wa arimasu ka.", zh: "有一日遊行程嗎？" },
+          { scene: "確認地點", jp: "集合場所／解散場所はどこですか。", ruby: "<ruby>集合場所<rt>しゅうごうばしょ</rt></ruby>／<ruby>解散場所<rt>かいさんばしょ</rt></ruby>はどこですか。", romaji: "Shūgō basho / Kaisan basho wa doko desu ka.", zh: "集合地點／解散地點在哪裡？" },
+          { scene: "確認費用", jp: "有料ですか、無料ですか。", ruby: "<ruby>有料<rt>ゆうりょう</rt></ruby>ですか、<ruby>無料<rt>むりょう</rt></ruby>ですか。", romaji: "Yūryō desu ka, muryō desu ka.", zh: "要付費還是免費的？" },
+          { scene: "詢問拍照", jp: "写真撮影ができますか。", ruby: "<ruby>写真撮影<rt>しゃしんさつえい</rt></ruby>ができますか。", romaji: "Shashin satsuei ga dekimasu ka.", zh: "可以照相拍照嗎？" },
+          { scene: "詢問門票", jp: "入場料はいくらですか。", ruby: "<ruby>入場料<rt>にゅうじょうりょう</rt></ruby>はいくらですか。", romaji: "Nyūjōryō wa ikura desu ka.", zh: "入場費是多少錢？" }
+        ],
+        trivia: {
+          title: "神社寺廟參拜禮節與淺草寺籤詩",
+          content: "神社參拜為「二禮二拍手一禮」；寺院雙手合十靜默祈禱切勿拍手。抽到凶籤可繫於指定結籤架上祈求消災解難。"
+        }
+      },
+      {
+        id: "ch-4-2",
+        code: "4.2",
+        title: "買い物（關東地區篇 - 購物與試穿）",
+        subtitle: "藥妝店與服飾店・徵詢許可「～てもいいですか」",
+        badge: "購物與退稅",
+        dialogue: {
+          scene: "鞋履服飾店試穿徵詢",
+          lines: [
+            {
+              speaker: "顧客",
+              romaji: "Sumimasen, kore o haitemo ii desu ka.",
+              japanese: "すみません、これを履いてもいいですか。",
+              ruby: "すみません、これを<ruby>履<rt>は</rt></ruby>いてもいいですか。",
+              chinese: "不好意思，我可以試穿這雙鞋嗎？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Hai, saizu wa oikutsu desu ka.",
+              japanese: "はい、サイズはおいくつですか。",
+              ruby: "はい、サイズはおいくつですか。",
+              chinese: "好的，請問您的鞋碼是多少？"
+            },
+            {
+              speaker: "顧客",
+              romaji: "San jū hachi desu.",
+              japanese: "３８です。",
+              ruby: "３８（さんじゅうはち）です。",
+              chinese: "38 號。"
+            },
+            {
+              speaker: "店員",
+              romaji: "Shōshō omachi kudasai.",
+              japanese: "少々お待ちください。",
+              ruby: "<ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちください。",
+              chinese: "請稍等片刻。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[動詞て形] + もいいですか (te mo ii desu ka)",
+          explanation: "意為「...可以嗎？」，用於向對方徵求許可。",
+          examples: [
+            {
+              jp: "入ってもいいですか。",
+              ruby: "<ruby>入<rt>はい</rt></ruby>ってもいいですか。",
+              romaji: "Haittemo ii desu ka.",
+              zh: "可以進去嗎？"
+            },
+            {
+              jp: "写真を撮ってもいいですか。",
+              ruby: "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってもいいですか。",
+              romaji: "Shashin o tottemo ii desu ka.",
+              zh: "可以拍照嗎？"
+            }
+          ]
+        },
+        replacements: [
+          { item: "座ります", pattern: "座ってもいいですか", romaji: "Suwattemo ii desu ka.", zh: "可以坐嗎？" },
+          { item: "使います", pattern: "使ってもいいですか", romaji: "Tsukattemo ii desu ka.", zh: "可以使用嗎？" },
+          { item: "撮ります", pattern: "撮ってもいいですか", romaji: "Tottemo ii desu ka.", zh: "可以拍照嗎？" }
+        ],
+        vocab: [
+          { jp: "化粧品・化粧水", kana: "けしょうひん・けしょうすい", romaji: "keshōhin / keshōsui", zh: "化妝品・化妝水" },
+          { jp: "スニーカー", kana: "スニーカー", romaji: "sunīkā", zh: "運動鞋" },
+          { jp: "マスク", kana: "マスク", romaji: "masuku", zh: "面膜 / 口罩" },
+          { jp: "サイズ", kana: "サイズ", romaji: "saizu", zh: "尺寸" },
+          { jp: "日焼け止め", kana: "ひやけどめ", romaji: "hiyakedome", zh: "防曬油" },
+          { jp: "サンダル", kana: "サンダル", romaji: "sandaru", zh: "涼鞋" },
+          { jp: "スキンケア", kana: "スキンケア", romaji: "sukinkea", zh: "護膚用品" },
+          { jp: "メイク落とし", kana: "メイクおとし", romaji: "meiku otoshi", zh: "卸妝油" }
+        ],
+        phrases: [
+          { scene: "詢問試用品", jp: "このサンプルはありますか。", ruby: "このサンプルはありますか。", romaji: "Kono sanpuru wa arimasu ka.", zh: "有這個試用品嗎？" },
+          { scene: "說明膚質", jp: "乾燥肌／オイリー肌です。", ruby: "<ruby>乾燥肌<rt>かんそうはだ</rt></ruby>／オイリー<ruby>肌<rt>はだ</rt></ruby>です。", romaji: "Kansōhada / Oirīhada desu.", zh: "我是乾性／油性皮膚。" },
+          { scene: "反應尺寸", jp: "これはちょっと大きいです／小さいです。", ruby: "これはちょっと<ruby>大<rt>おお</rt></ruby>きいです／<ruby>小<rt>ちい</rt></ruby>さいです。", romaji: "Kore wa chotto ōkii desu / chīsai desu.", zh: "這個有點太大／太小了。" },
+          { scene: "禮品包裝", jp: "プレゼント用に包装してもらえますか。", ruby: "プレゼント<ruby>用<rt>よう</rt></ruby>に<ruby>包装<rt>ほうそう</rt></ruby>してもらえますか。", romaji: "Purezento-yō ni hōsō shite moraemasu ka.", zh: "可以幫我包裝成送禮用的嗎？" }
+        ],
+        trivia: {
+          title: "日本免稅手續（Tax-Free）與密封袋規範",
+          content: "外國旅客當日未稅滿 5,000 日圓可退稅。消耗品封入專用透明袋後，出境前嚴禁拆封使用。"
+        }
+      },
+      {
+        id: "ch-5-2",
+        code: "5.2",
+        title: "寿司（日本庶民美食篇 - 壽司文化）",
+        subtitle: "壽司吧台點餐・食材與要求「～をください」",
+        badge: "庶民美食",
+        dialogue: {
+          scene: "壽司店入座與點餐",
+          lines: [
+            {
+              speaker: "店員",
+              romaji: "Irasshaimase. Nan-mei sama desu ka.",
+              japanese: "いらっしゃいませ。何名様ですか。",
+              ruby: "いらっしゃいませ。<ruby>何名様<rt>なんめいさま</rt></ruby>ですか。",
+              chinese: "歡迎光臨。幾位呢？"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Futari desu. Yoyaku shite imasen ga, daijōbu desu ka.",
+              japanese: "二人です。予約していませんが、大丈夫ですか。",
+              ruby: "<ruby>二<rt>ふた</rt></ruby>りです。<ruby>予約<rt>よやく</rt></ruby>していませんが、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>ですか。",
+              chinese: "兩位。沒有預約，可以嗎？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Daijōbu desu yo. Kochira e dōzo. O-sushi wa nani ni shimasu ka.",
+              japanese: "大丈夫ですよ。こちらへどうぞ。お寿司は何にしますか。",
+              ruby: "<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>ですよ。こちらへどうぞ。お<ruby>寿司<rt>すし</rt></ruby>は<ruby>何<rt>なに</rt></ruby>にしますか。",
+              chinese: "沒問題的。請這邊走。您要點什麼壽司呢？"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Maguro to sāmon ni shimasu.",
+              japanese: "マグロとサーモンにします。",
+              ruby: "マグロとサーモンにします。",
+              chinese: "我要鮪魚和鮭魚。"
+            },
+            {
+              speaker: "店員",
+              romaji: "O-nomimono wa.",
+              japanese: "お飲み物は。",
+              ruby: "お<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>は。",
+              chinese: "要喝點什麼呢？"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Nihonshu o kudasai.",
+              japanese: "日本酒をください。",
+              ruby: "<ruby>日本酒<rt>にほんしゅ</rt></ruby>をください。",
+              chinese: "請給我日本酒。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + をください (o kudasai)",
+          explanation: "意為「請給我...」，用於向店家請求某物品或提出要求，口語直接明瞭。",
+          examples: [
+            {
+              jp: "水をください。",
+              ruby: "<ruby>水<rt>みず</rt></ruby>をください。",
+              romaji: "Mizu o kudasai.",
+              zh: "請給我水。"
+            },
+            {
+              jp: "コーヒーをください。",
+              ruby: "コーヒーをください。",
+              romaji: "Kōhī o kudasai.",
+              zh: "請給我咖啡。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "ペン", pattern: "ペンをください", romaji: "Pen o kudasai.", zh: "請給我筆。" },
+          { item: "抹茶アイス", pattern: "抹茶アイスをください", romaji: "Matcha aisu o kudasai.", zh: "請給我抹茶冰淇淋。" },
+          { item: "これ", pattern: "これをください", romaji: "Kore o kudasai.", zh: "請給我這個。" }
+        ],
+        vocab: [
+          { jp: "刺身", kana: "さしみ", romaji: "sashimi", zh: "生魚片" },
+          { jp: "わさび", kana: "わさび", romaji: "wasabi", zh: "芥末" },
+          { jp: "軍艦", kana: "ぐんかん", romaji: "gunkan", zh: "軍艦壽司" },
+          { jp: "ウニ", kana: "ウニ", romaji: "uni", zh: "海膽" },
+          { jp: "だし巻き玉子", kana: "だしまきたまご", romaji: "dashimaki tamago", zh: "玉子燒" },
+          { jp: "いなり寿司", kana: "いなりずし", romaji: "inarizushi", zh: "豆皮 / 稻荷壽司" },
+          { jp: "しゃり・酢飯", kana: "しゃり・すめし", romaji: "shari / sumeshi", zh: "醋飯" },
+          { jp: "おしぼり", kana: "おしぼり", romaji: "oshibori", zh: "濕毛巾" }
+        ],
+        phrases: [
+          { scene: "去芥末", jp: "わさび抜きでお願いします。", ruby: "わさび<ruby>抜<rt>ぬ</rt></ruby>きでお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Wasabinuki de onegai shimasu.", zh: "麻煩請去掉芥末。" },
+          { scene: "營業確認", jp: "営業中ですか。", ruby: "<ruby>営業中<rt>えいぎょうちゅう</rt></ruby>ですか。", romaji: "Eigyōchū desu ka.", zh: "請問營業中嗎？" },
+          { scene: "座位選擇", jp: "テーブル席・カウンター席ですか。", ruby: "テーブル<ruby>席<rt>せき</rt></ruby>・カウンター<ruby>席<rt>せき</rt></ruby>ですか。", romaji: "Tēburu-seki / Kauntā-seki desu ka.", zh: "請問是桌位還是吧檯位？" },
+          { scene: "詢問附餐", jp: "サイドメニューは何がありますか。", ruby: "サイドメニューは<ruby>何<rt>なに</rt></ruby>がありますか。", romaji: "Saido menyū wa nani ga arimasu ka.", zh: "有什麼附餐或配菜呢？" }
+        ],
+        trivia: {
+          title: "壽司品嚐禮儀",
+          content: "沾醬油時應以生魚片食材面輕沾，避免醋飯吸入過多醬油而散落。"
+        }
+      },
+      {
+        id: "ch-6-1",
+        code: "6.1",
+        title: "大阪（關西地區篇 - 交通與地標）",
+        subtitle: "關西風情・問路抵達「～までどうやって行きますか」",
+        badge: "關西地區",
+        dialogue: {
+          scene: "詢問抵達難波與道頓堀交通",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Nanba made dōyatte ikimasu ka.",
+              japanese: "なんばまでどうやって行きますか。",
+              ruby: "なんばまでどうやって<ruby>行<rt>い</rt></ruby>きますか。",
+              chinese: "前往難波應如何走？"
+            },
+            {
+              speaker: "案內所人員",
+              romaji: "Chikatetsu de go-fun desu.",
+              japanese: "地下鉄で５分です。",
+              ruby: "<ruby>地下鉄<rt>ちかてつ</rt></ruby>で５<ruby>分<rt>ふん</rt></ruby>です。",
+              chinese: "搭乘地鐵約需5分鐘。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[目的地名詞] + までどうやって行きますか (dōyatte ikimasu ka)",
+          explanation: "詢問前往指定目的地之交通方式或途徑。",
+          examples: [
+            {
+              jp: "大阪駅までどうやって行きますか。",
+              ruby: "<ruby>大阪駅<rt>おおさかえき</rt></ruby>までどうやって<ruby>行<rt>い</rt></ruby>きますか。",
+              romaji: "Ōsaka eki made dōyatte ikimasu ka.",
+              zh: "到大阪車站怎麼走？"
+            },
+            {
+              jp: "ホテルまでどうやって行きますか。",
+              ruby: "ホテルまでどうやって<ruby>行<rt>い</rt></ruby>きますか。",
+              romaji: "Hoteru made dōyatte ikimasu ka.",
+              zh: "到飯店怎麼走？"
+            }
+          ]
+        },
+        replacements: [
+          { item: "梅田", pattern: "梅田までどうやって行きますか", romaji: "Umeda made dōyatte ikimasu ka.", zh: "到梅田怎麼走？" },
+          { item: "なんば", pattern: "なんばまでどうやって行きますか", romaji: "Nanba made dōyatte ikimasu ka.", zh: "到難波怎麼走？" },
+          { item: "USJ", pattern: "USJまでどうやって行きますか", romaji: "Yū-esu-jē made dōyatte ikimasu ka.", zh: "到日本環球影城怎麼走？" },
+          { item: "道頓堀", pattern: "道頓堀までどうやって行きますか", romaji: "Dōtonbori made dōyatte ikimasu ka.", zh: "到道頓堀怎麼走？" }
+        ],
+        vocab: [
+          { jp: "薬局", kana: "やっきょく", romaji: "yakkyoku", zh: "藥局" },
+          { jp: "大阪城", kana: "おおさかじょう", romaji: "ōsakajō", zh: "大阪城" },
+          { jp: "たこ焼き", kana: "たこやき", romaji: "takoyaki", zh: "章魚燒" },
+          { jp: "観光スポット", kana: "かんこうスポット", romaji: "kankō supotto", zh: "觀光景點" },
+          { jp: "お好み焼き", kana: "おこのみやき", romaji: "okonomiyaki", zh: "大阪燒" },
+          { jp: "串カツ", kana: "くしカツ", romaji: "kushikatsu", zh: "炸串燒" },
+          { jp: "地下鉄", kana: "ちかてつ", romaji: "chikatetsu", zh: "地鐵" },
+          { jp: "グリコ看板", kana: "グリコかんばん", romaji: "guriko kanban", zh: "固力果看板" }
+        ],
+        phrases: [
+          { scene: "現炸要求", jp: "揚げたてをお願いします。", ruby: "<ruby>揚<rt>あ</rt></ruby>げたてをお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Agetate o onegai shimasu.", zh: "請給我現炸的。" },
+          { scene: "食材過敏確認", jp: "食物アレルギーはお持ちですか。", ruby: "<ruby>食物<rt>しょくもつ</rt></ruby>アレルギーはお<ruby>持<rt>も</rt></ruby>ちですか。", romaji: "Shokumotsu arerugī wa omochi desu ka.", zh: "您有過敏的食材嗎？" },
+          { scene: "致歉見諒", jp: "ご勘弁ください。", ruby: "ご<ruby>勘弁<rt>かんべん</rt></ruby>ください。", romaji: "Go-kanben kudasai.", zh: "請多包涵見諒。" },
+          { scene: "索取餐具", jp: "小皿、お願いします。", ruby: "<ruby>小皿<rt>こざら</rt></ruby>、お<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Kozara, onegai shimasu.", zh: "請給我小盤子。" }
+        ],
+        trivia: {
+          title: "道頓堀跑跑人地標與大阪方言",
+          content: "道頓堀固力果看板於1935年設立。關西必備腔調：めっちゃ（非常）、なんでやねん（搞什麼鬼啊）、おおきに（謝謝）。"
+        }
+      },
+      {
+        id: "ch-7-1",
+        code: "7.1",
+        title: "金閣寺（關西地區篇 - 歷史古都巡禮）",
+        subtitle: "金閣寺導覽・第一人稱願望「～たいです」",
+        badge: "京都巡禮",
+        dialogue: {
+          scene: "金閣寺名勝導覽",
+          lines: [
+            {
+              speaker: "導遊",
+              romaji: "Minasan, kore ga Kinkakuji desu. Kin'iro de totemo utsukushii otera desu.",
+              japanese: "みなさん、これが金閣寺です。金色でとても美しいお寺です。",
+              ruby: "みなさん、これが<ruby>金閣寺<rt>きんかくじ</rt></ruby>です。<ruby>金色<rt>きんいろ</rt></ruby>でとても<ruby>美<rt>うつく</rt></ruby>しいお<ruby>寺<rt>てら</rt></ruby>です。",
+              chinese: "各位，這就是金閣寺。是一座金色且非常美麗的寺廟。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Wa~, sugoi desu ne. Shashin o ippai toritai desu.",
+              japanese: "わあ、すごいですね。写真をいっぱい撮りたいです。",
+              ruby: "わあ、すごいですね。<ruby>写真<rt>しゃしん</rt></ruby>をいっぱい<ruby>撮<rt>と</rt></ruby>りたいです。",
+              chinese: "哇，太棒了。我想拍很多照片。"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Ii desu ne. Dōzo omoikkiri tanoshinde kudasai.",
+              japanese: "いいですね。どうぞ思いっきり楽しんでください。",
+              ruby: "いいですね。どうぞ<ruby>思<rt>おも</rt></ruby>いっきり<ruby>楽<rt>たの</rt></ruby>しんでください。",
+              chinese: "很好呀，請盡情享受吧。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[動詞ます形] + たいです (tai desu)",
+          explanation: "意為「想要做...」，表達說話者第一人稱主觀之願望。",
+          examples: [
+            {
+              jp: "ケーキを食べたいです。",
+              ruby: "ケーキを<ruby>食<rt>た</rt></ruby>べたいです。",
+              romaji: "Kēki o tabetai desu.",
+              zh: "想吃蛋糕。"
+            },
+            {
+              jp: "お土産を買いたいです。",
+              ruby: "お<ruby>土産<rt>みやげ</rt></ruby>を<ruby>買<rt>か</rt></ruby>いたいです。",
+              romaji: "Omiyage o kaitai desu.",
+              zh: "想買土產。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "買います", pattern: "買いたいです", romaji: "Kaitai desu.", zh: "想買。" },
+          { item: "見ます", pattern: "見たいです", romaji: "Mitai desu.", zh: "想看。" }
+        ],
+        vocab: [
+          { jp: "おこしやす・おいでやす", kana: "おこしやす・おいでやす", romaji: "okoshiyasu / oideyasu", zh: "歡迎光臨（京都方言）" },
+          { jp: "抹茶", kana: "まっちゃ", romaji: "matcha", zh: "抹茶" },
+          { jp: "漬物", kana: "つけもの", romaji: "tsukemono", zh: "醬菜 / 醃漬物" },
+          { jp: "芸妓・舞妓", kana: "げいぎ・まいこ", romaji: "geigi / maiko", zh: "藝妓・舞妓" },
+          { jp: "料亭・旅館", kana: "りょうてい・りょかん", romaji: "ryōtei / ryokan", zh: "料亭・旅館" },
+          { jp: "京野菜", kana: "きょうやさい", romaji: "kyōyasai", zh: "京都產蔬菜" },
+          { jp: "お花見", kana: "おはなみ", romaji: "ohanami", zh: "賞花" },
+          { jp: "お祭り", kana: "おまつり", romaji: "omatsuri", zh: "祭典" }
+        ],
+        phrases: [
+          { scene: "購買車票", jp: "一日乗車券を一枚ください。", ruby: "<ruby>一日乗車券<rt>いちにちじょうしゃけん</rt></ruby>を<ruby>一枚<rt>いちまい</rt></ruby>ください。", romaji: "Ichinichi jōshaken o ichimai kudasai.", zh: "請給我一張一日券。" },
+          { scene: "詢問路線", jp: "このバスは金閣寺へ行きますか。", ruby: "このバスは<ruby>金閣寺<rt>きんかくじ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きますか。", romaji: "Kono basu wa Kinkakuji e ikimasu ka.", zh: "這班公車會去金閣寺嗎？" },
+          { scene: "體驗時間", jp: "体験は何分かかりますか。", ruby: "<ruby>体験<rt>たいけん</rt></ruby>は<ruby>何分<rt>なんぷん</rt></ruby>かかりますか。", romaji: "Taiken wa nanpun kakarimasu ka.", zh: "體驗大約需要花幾分鐘？" }
+        ],
+        trivia: {
+          title: "京都「謝絕生客（一見さんお断り）」哲學",
+          content: "京都部分傳統料亭保留熟客引薦制，代表對信任與極致服務品質的崇高堅持。"
+        }
+      },
+      {
+        id: "ch-7-2",
+        code: "7.2",
+        title: "清水寺（關西地區篇 - 古寺參拜與和服體驗）",
+        subtitle: "清水舞台・典雅勸請敬語「お／ご～ください」",
+        badge: "京都巡禮",
+        dialogue: {
+          scene: "清水寺參拜與居民互動",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Kiyomizudera de osusume no basho wa doko desu ka.",
+              japanese: "清水寺でおすすめの場所はどこですか。",
+              ruby: "<ruby>清水寺<rt>きよみずでら</rt></ruby>でおすすめの<ruby>場所<rt>ばしょ</rt></ruby>はどこですか。",
+              chinese: "清水寺有什麼推薦的地方嗎？"
+            },
+            {
+              speaker: "當地居民",
+              romaji: "Butai kara no keshiki ga subarashii desu. Kimono o rentaru shite sansaku suru no mo tanoshii desu yo.",
+              japanese: "舞台からの景色が素晴らしいです。着物をレンタルして散策するのも楽しいですよ。",
+              ruby: "<ruby>舞台<rt>ぶたい</rt></ruby>からの<ruby>景色<rt>けしき</rt></ruby>が<ruby>素晴<rt>すば</rt></ruby>らしいです。<ruby>着物<rt>きもの</rt></ruby>をレンタルして<ruby>散策<rt>さんさく</rt></ruby>するのも<ruby>楽<rt>たの</rt></ruby>しいですよ。",
+              chinese: "從清水舞台眺望的景色非常壯麗。租借和服漫步也很有趣喔！"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Shashin o tottemo ii desu ka.",
+              japanese: "写真を撮ってもいいですか。",
+              ruby: "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってもいいですか。",
+              chinese: "可以拍照嗎？"
+            },
+            {
+              speaker: "當地居民",
+              romaji: "Hai, daijōbu desu. Demo, shizuka ni o-mairi kudasai ne.",
+              japanese: "はい、大丈夫です。でも、静かにお参りくださいね。",
+              ruby: "はい、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。でも、<ruby>静<rt>しず</rt></ruby>かにお<ruby>参<rt>まい</rt></ruby>りくださいね。",
+              chinese: "可以的，但請安靜地參拜喔。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "お / ご + [動詞ます形/動作名詞] + ください (kudasai)",
+          explanation: "典雅優美地引導或指示對方。和語用「お＋ます形＋ください」；漢語用「ご＋名詞＋ください」。",
+          examples: [
+            {
+              jp: "お楽しみください。",
+              ruby: "お<ruby>楽<rt>たの</rt></ruby>しみください。",
+              romaji: "Otanoshimi kudasai.",
+              zh: "請盡情享受 / 敬請期待。"
+            },
+            {
+              jp: "写真撮影はご遠慮ください。",
+              ruby: "<ruby>写真撮影<rt>しゃしんさつえい</rt></ruby>はご<ruby>遠慮<rt>えんりょ</rt></ruby>ください。",
+              romaji: "Shashin satsuei wa go-enryo kudasai.",
+              zh: "請避免拍照 / 請勿拍照。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "和語：待ちます", pattern: "お待ちください", romaji: "Omachi kudasai.", zh: "請稍等。" },
+          { item: "和語：座ります", pattern: "お座りください", romaji: "Osuwari kudasai.", zh: "請坐。" },
+          { item: "漢語：注意します", pattern: "ご注意ください", romaji: "Go-chūi kudasai.", zh: "請注意留意。" },
+          { item: "漢語：理解します", pattern: "ご理解ください", romaji: "Go-rikai kudasai.", zh: "請理解見諒。" }
+        ],
+        vocab: [
+          { jp: "予約", kana: "よやく", romaji: "yoyaku", zh: "預約" },
+          { jp: "試着", kana: "しちゃく", romaji: "shichaku", zh: "試穿" },
+          { jp: "帯", kana: "おび", romaji: "obi", zh: "和服腰帶" },
+          { jp: "下駄", kana: "げた", romaji: "geta", zh: "木屐" },
+          { jp: "返却", kana: "へんきゃく", romaji: "henkyaku", zh: "歸還" },
+          { jp: "着付け", kana: "きつけ", romaji: "kitsuke", zh: "穿著和服服務" },
+          { jp: "レンタル", kana: "レンタル", romaji: "rentaru", zh: "出租 / 租借" },
+          { jp: "着物・浴衣", kana: "きもの・ゆかた", romaji: "kimono / yukata", zh: "和服・浴衣" }
+        ],
+        phrases: [
+          { scene: "歸還時間確認", jp: "何時までに返却すればいいですか。", ruby: "<ruby>何時<rt>なんじ</rt></ruby>までに<ruby>返却<rt>へんきゃく</rt></ruby>すればいいですか。", romaji: "Nanji made ni henkyaku sureba ii desu ka.", zh: "請問最晚幾點前要歸還呢？" },
+          { scene: "挑選腰帶", jp: "どの帯が似合いますか。", ruby: "どの<ruby>帯<rt>おび</rt></ruby>が<ruby>似合<rt>にあ</rt></ruby>いますか。", romaji: "Dono obi ga niaimasu ka.", zh: "哪一條腰帶比較適合我呢？" },
+          { scene: "髮型設計", jp: "ヘアセットも含まれていますか。", ruby: "ヘアセットも<ruby>含<rt>ふく</rt></ruby>まれていますか。", romaji: "Heasetto mo fukumarete imasu ka.", zh: "費用有包含髮型整理嗎？" }
+        ],
+        trivia: {
+          title: "京都街道景觀條例與藝舞妓文化",
+          content: "京都對戶外招牌規定嚴格，連超商與速食招牌皆需降彩度。遇藝舞妓請勿圍堵觸碰。"
+        }
+      },
+      {
+        id: "ch-8-1",
+        code: "8.1",
+        title: "和菓子（人氣甜點篇 - 傳統四季風雅）",
+        subtitle: "伴手禮品茶・柔性提議「～でも、〜」",
+        badge: "日本甜品",
+        dialogue: {
+          scene: "伴手禮與品茶建議",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Nani ka osusume no wagashi ga arimasu ka.",
+              japanese: "何かおすすめの和菓子がありますか。",
+              ruby: "<ruby>何<rt>なに</rt></ruby>かおすすめの<ruby>和菓子<rt>わがし</rt></ruby>がありますか。",
+              chinese: "有什麼推薦的和菓子嗎？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Sakuramochi demo ikaga desu ka. Haru no kisetsu ni pittari desu.",
+              japanese: "桜餅でもいかがですか。春の季節にぴったりです。",
+              ruby: "<ruby>桜餅<rt>さくらもち</rt></ruby>でもいかがですか。<ruby>春<rt>はる</rt></ruby>の<ruby>季節<rt>きせつ</rt></ruby>にぴったりです。",
+              chinese: "要不要試試櫻餅？這很適合春天的季節。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Ii desu ne. Ocha demo issho ni tanoshimemasu ka.",
+              japanese: "いいですね。お茶でも一緒に楽しめますか。",
+              ruby: "いいですね。お<ruby>茶<rt>ちゃ</rt></ruby>でも<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>楽<rt>たの</rt></ruby>しめますか。",
+              chinese: "不錯呢！可以一起搭配茶享用嗎？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Hai, ocha to issho ni taberu to motto oishii desu yo.",
+              japanese: "はい、お茶と一緒に食べるともっとおいしいですよ。",
+              ruby: "はい、お<ruby>茶<rt>ちゃ</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>食<rt>た</rt></ruby>べるともっとおいしいですよ。",
+              chinese: "可以的，和茶一起吃會更加美味哦。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + でも、〜 (demo)",
+          explanation: "意為「...之類的（如何？）」，提出軟性提議或舉出代表性例子。",
+          examples: [
+            {
+              jp: "コーヒーでもどうですか。",
+              ruby: "コーヒーでもどうですか。",
+              romaji: "Kōhī demo dō desu ka.",
+              zh: "要不要喝點咖啡之類的？"
+            },
+            {
+              jp: "映画でも見に行きませんか。",
+              ruby: "<ruby>映画<rt>えいが</rt></ruby>でも<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>きませんか。",
+              romaji: "Eiga demo mi ni ikimasen ka.",
+              zh: "要不要去看場電影之類的呢？"
+            }
+          ]
+        },
+        replacements: [
+          { item: "ラーメン", pattern: "ラーメンでも、どうですか", romaji: "Rāmen demo, dō desu ka.", zh: "要不要吃拉麵呢？" },
+          { item: "休憩", pattern: "休憩でも、どうですか", romaji: "Kyūkei demo, dō desu ka.", zh: "要不要休息一下呢？" },
+          { item: "アイスクリーム", pattern: "アイスクリームでも、どうですか", romaji: "Aisukurīmu demo, dō desu ka.", zh: "要不要來點冰淇淋呢？" }
+        ],
+        vocab: [
+          { jp: "桜餅", kana: "さくらもち", romaji: "sakuramochi", zh: "櫻餅" },
+          { jp: "わらび餅", kana: "わらびもち", romaji: "warabimochi", zh: "蕨餅" },
+          { jp: "茶道", kana: "さどう", romaji: "sadō", zh: "茶道" },
+          { jp: "行事", kana: "ぎょうじ", romaji: "gyōji", zh: "行事 / 節慶活動" },
+          { jp: "手作り", kana: "てづくり", romaji: "tezukuri", zh: "手工製作" },
+          { jp: "職人", kana: "しょくにん", romaji: "shokunin", zh: "職人 / 傳統工匠" },
+          { jp: "おもてなし", kana: "おもてなし", romaji: "omotenashi", zh: "款待 / 賓至如歸之道" },
+          { jp: "季節感", kana: "きせつかん", romaji: "kisetsukan", zh: "季節感" }
+        ],
+        phrases: [
+          { scene: "詢問推薦", jp: "おすすめの和菓子はありますか。", ruby: "おすすめの<ruby>和菓子<rt>わがし</rt></ruby>はありますか。", romaji: "Osusume no wagashi wa arimasu ka.", zh: "您有推薦的和菓子嗎？" },
+          { scene: "禮盒打包", jp: "お土産に詰めてください。", ruby: "お<ruby>土産<rt>みやげ</rt></ruby>に<ruby>詰<rt>つ</rt></ruby>めてください。", romaji: "Omiyage ni tsumete kudasai.", zh: "請幫我打包裝入伴手禮盒。" },
+          { scene: "請教吃法", jp: "和菓子の食べ方や順序を教えてください。", ruby: "<ruby>和菓子<rt>わがし</rt></ruby>の<ruby>食<rt>た</rt></ruby>べ<ruby>方<rt>かた</rt></ruby>や<ruby>順序<rt>じゅんじょ</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。", romaji: "Wagashi no tabekata ya junjo o oshiete kudasai.", zh: "請教我和菓子的吃法與順序。" },
+          { scene: "搭配抹茶", jp: "抹茶に合う和菓子をお願いします。", ruby: "<ruby>抹茶<rt>まっちゃ</rt></ruby>に<ruby>合<rt>あ</rt></ruby>う<ruby>和菓子<rt>わがし</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Matcha ni au wagashi o onegai shimasu.", zh: "請給我適合搭配抹茶的和菓子。" }
+        ],
+        trivia: {
+          title: "茶道作法與品茗禮儀",
+          content: "先吃甜點再喝茶。接過茶碗放左掌心，順時針輕轉兩次（約90度）避開茶碗正面圖樣飲用。"
+        }
+      },
+      {
+        id: "ch-8-2",
+        code: "8.2",
+        title: "抹茶スイーツ（人氣甜點篇 - 抹茶甜品）",
+        subtitle: "外觀推測評價「～そうです」",
+        badge: "日本甜品",
+        dialogue: {
+          scene: "抹茶聖代點餐",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Matcha suītsu o tameshite mitai desu.",
+              japanese: "抹茶スイーツを試してみたいです。",
+              ruby: "<ruby>抹茶<rt>まっちゃ</rt></ruby>スイーツを<ruby>試<rt>ため</rt></ruby>してみたいです。",
+              chinese: "我想嘗試看看抹茶甜點。"
+            },
+            {
+              speaker: "店員",
+              romaji: "Matcha pafe wa dō desu ka.",
+              japanese: "抹茶パフェはどうですか。",
+              ruby: "<ruby>抹茶<rt>まっちゃ</rt></ruby>パフェはどうですか。",
+              chinese: "抹茶聖代如何呢？"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Wa~, oishisō desu ne!",
+              japanese: "わ〜、おいしそうですね！",
+              ruby: "わ〜、おいしそうですね！",
+              chinese: "哇～看起來很美味呢！"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[形容詞詞幹/動詞連用形] + そうです (sō desu)",
+          explanation: "基於視覺直觀對事物特質做出的推測評價。「看起來好像...」。",
+          examples: [
+            {
+              jp: "日本のお祭りは楽しそうです。",
+              ruby: "<ruby>日本<rt>にほん</rt></ruby>のお<ruby>祭<rt>まつ</rt></ruby>りは<ruby>楽<rt>たの</rt></ruby>しそうです。",
+              romaji: "Nihon no omatsuri wa tanoshisō desu.",
+              zh: "日本的祭典看起來好像很有趣。"
+            },
+            {
+              jp: "雨が降りそうです。",
+              ruby: "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>りそうです。",
+              romaji: "Ame ga furisō desu.",
+              zh: "看起來好像快下雨了。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "い形容詞：嬉しい", pattern: "嬉しそうです", romaji: "Ureshisō desu.", zh: "看起來很開心。" },
+          { item: "な形容詞：暇", pattern: "暇そうです", romaji: "Himasō desu.", zh: "看起來很閒。" },
+          { item: "動詞：雨が降ります", pattern: "雨が降りそうです", romaji: "Ame ga furisō desu.", zh: "看起來快要下雨了。" }
+        ],
+        vocab: [
+          { jp: "スイーツ", kana: "スイーツ", romaji: "suītsu", zh: "甜點 / 洋菓子" },
+          { jp: "いちご大福", kana: "いちごだいふく", romaji: "ichigo daifuku", zh: "草莓大福" },
+          { jp: "どら焼き", kana: "どらやき", romaji: "dorayaki", zh: "銅鑼燒" },
+          { jp: "鯛焼き", kana: "たいやき", romaji: "taiyaki", zh: "鯛魚燒" },
+          { jp: "ケーキ", kana: "ケーキ", romaji: "kēki", zh: "蛋糕" },
+          { jp: "シュークリーム", kana: "シュークリーム", romaji: "shūkurīmu", zh: "泡芙" },
+          { jp: "みたらし団子", kana: "みたらしだんご", romaji: "mitarashi dango", zh: "醬油糰子 / 烤丸子" },
+          { jp: "チョコレート", kana: "チョコレート", romaji: "chokorēto", zh: "巧克力" }
+        ],
+        phrases: [
+          { scene: "詢問人氣", jp: "一番人気の商品は何ですか。", ruby: "<ruby>一番人気<rt>いちばんにんき</rt></ruby>の<ruby>商品<rt>しょうひん</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。", romaji: "Ichiban ninki no shōhin wa nan desu ka.", zh: "最受歡迎的商品是什麼？" },
+          { scene: "店員確認", jp: "ご注文はお決まりですか。", ruby: "ご<ruby>注文<rt>ちゅうもん</rt></ruby>はお<ruby>決<rt>き</rt></ruby>まりですか。", romaji: "Go-chūmon wa okimari desu ka.", zh: "您準備好點餐了嗎？" },
+          { scene: "確認內用", jp: "店内で召し上がりますか。", ruby: "<ruby>店内<rt>てんない</rt></ruby>で<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりますか。", romaji: "Tennai de meshiagarimasu ka.", zh: "您要內用嗎？" },
+          { scene: "確認期限", jp: "賞味期限はいつまでですか。", ruby: "<ruby>賞味期限<rt>しょうみきげん</rt></ruby>はいつまでですか。", romaji: "Shōmi kigen wa itsu made desu ka.", zh: "最佳食用期限到什麼時候？" }
+        ],
+        trivia: {
+          title: "下午三點點心（3 時のおやつ）",
+          content: "起源於古代「八刻（下午2~4點）」的休憩輕食習慣，老店文明堂的電視廣告更使之深植人心。"
+        }
+      },
+      {
+        id: "ch-11-1",
+        code: "11.1",
+        title: "ひつまぶし（中部地區篇 - 鰻魚飯三吃）",
+        subtitle: "最高級表現「～で一番～」",
+        badge: "中部地區",
+        dialogue: {
+          scene: "名古屋鰻魚飯三吃介紹",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Nagoya de ichiban yūmeina ryōri wa nan desu ka.",
+              japanese: "名古屋で一番有名な料理は何ですか。",
+              ruby: "<ruby>名古屋<rt>なごや</rt></ruby>で<ruby>一番有名<rt>いちばんゆうめい</rt></ruby>な<ruby>料理<rt>りょうり</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。",
+              chinese: "名古屋最有名料理是什麼？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Hitsumabushi desu. Unagi o gohan ni nosete tabemasu.",
+              japanese: "ひつまぶしです。うなぎをご飯にのせて食べます。",
+              ruby: "ひつまぶしです。うなぎをご<ruby>飯<rt>はん</rt></ruby>にのせて<ruby>食<rt>た</rt></ruby>べます。",
+              chinese: "是鰻魚飯。把烤鰻魚放在飯上食用。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[範圍名詞] + で一番 + [形容詞] (de ichiban)",
+          explanation: "在特定範圍內指出最具備極致特徵的人事物。「在...之中最...」。",
+          examples: [
+            {
+              jp: "東京は日本で一番人口が多いです。",
+              ruby: "<ruby>東京<rt>とうきょう</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>で<ruby>一番人口<rt>いちばんじんこう</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いです。",
+              romaji: "Tōkyō wa Nihon de ichiban jinkō ga ōi desu.",
+              zh: "東京是日本人口最多的地方。"
+            },
+            {
+              jp: "彼はクラスの中で一番背が高いです。",
+              ruby: "<ruby>彼<rt>かれ</rt></ruby>はクラスの<ruby>中<rt>なか</rt></ruby>で<ruby>一番背<rt>いちばんせ</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+              romaji: "Kare wa kurasu no naka de ichiban se ga takai desu.",
+              zh: "他是班上身高最高的。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "町 / おいしい", pattern: "町で一番おいしいです", romaji: "Machi de ichiban oishii desu.", zh: "城鎮裡最好吃的。" },
+          { item: "日本 / 高い", pattern: "日本で一番高いです", romaji: "Nihon de ichiban takai desu.", zh: "在日本最高的。" },
+          { item: "友達の中 / きれい", pattern: "友達の中で一番きれいです", romaji: "Tomodachi no naka de ichiban kirei desu.", zh: "在朋友之中最漂亮的。" }
+        ],
+        vocab: [
+          { jp: "赤味噌", kana: "あかみそ", romaji: "akamiso", zh: "紅味噌" },
+          { jp: "甘辛い", kana: "あまからい", romaji: "amakarai", zh: "鹹甜的" },
+          { jp: "ソース", kana: "ソース", romaji: "sōsu", zh: "西式調味醬汁" },
+          { jp: "出汁", kana: "だし", romaji: "dashi", zh: "高湯 (高湯湯汁)" },
+          { jp: "味噌カツ", kana: "みそカツ", romaji: "misokatsu", zh: "味噌炸豬排" },
+          { jp: "手羽先", kana: "てばさき", romaji: "tebasaki", zh: "炸雞翅" },
+          { jp: "お茶漬け", kana: "おちゃづけ", romaji: "ochazuke", zh: "茶泡飯" },
+          { jp: "薬味", kana: "やくみ", romaji: "yakumi", zh: "芥末、蔥花、海苔等辛香料" }
+        ],
+        phrases: [
+          { scene: "想嚐豬排", jp: "味噌カツを食べてみたいです。", ruby: "<ruby>味噌カツ<rt>みそカツ</rt></ruby>を<ruby>食<rt>た</rt></ruby>べてみたいです。", romaji: "Misokatsu o tabete mitai desu.", zh: "想吃味噌炸豬排。" },
+          { scene: "請教吃法", jp: "きしめんの食べ方を教えていただけますか。", ruby: "きしめんの<ruby>食<rt>た</rt></ruby>べ<ruby>方<rt>かた</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えていただけますか。", romaji: "Kishimen no tabekata o oshiete itadakemasu ka.", zh: "可以教我棊子麵（平打烏龍麵）怎麼吃嗎？" },
+          { scene: "打聽拉麵", jp: "ご当地ラーメン店を教えてください。", ruby: "ご<ruby>当地<rt>とうち</rt></ruby>ラーメン<ruby>店<rt>てん</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。", romaji: "Gotōchi rāmen-ten o oshiete kudasai.", zh: "請告訴我當地有名的拉麵店。" },
+          { scene: "想試雞翅", jp: "名物の手羽先を試してみたいです。", ruby: "<ruby>名物<rt>めいぶつ</rt></ruby>の<ruby>手羽先<rt>てばさき</rt></ruby>を<ruby>試<rt>ため</rt></ruby>してみたいです。", romaji: "Meibutsu no tebasaki o tameshite mitai desu.", zh: "想試試名產炸雞翅。" }
+        ],
+        trivia: {
+          title: "鰻魚飯三吃與台灣拉麵",
+          content: "三吃順序：原味、加入蔥花與芥末、淋上出汁高湯變茶泡飯。名古屋特色的「台灣拉麵」實為當地台灣廚師研發的獨創香辣肉燥拉麵。"
+        }
+      },
+      {
+        id: "ch-11-2",
+        code: "11.2",
+        title: "モーニング（中部地區篇 - 早餐文化）",
+        subtitle: "點咖啡送厚片吐司水煮蛋・引用說明「～という～」",
+        badge: "中部地區",
+        dialogue: {
+          scene: "特色早安服務體驗",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Nagoya no asa gohan wa dō desu ka.",
+              japanese: "名古屋の朝ご飯はどうですか。",
+              ruby: "<ruby>名古屋<rt>なごや</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>はどうですか。",
+              chinese: "名古屋的早餐怎麼樣？"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Nagoya ni wa 'mōningu' to iu bunka ga arimasu yo.",
+              japanese: "名古屋には「モーニング」という文化がありますよ。",
+              ruby: "<ruby>名古屋<rt>なごや</rt></ruby>には「モーニング」という<ruby>文化<rt>ぶんか</rt></ruby>がありますよ。",
+              chinese: "名古屋有一種叫「早餐服務」的文化哦。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "'Mōningu' tte nan desu ka.",
+              japanese: "「モーニング」って何ですか。",
+              ruby: "「モーニング」って<ruby>何<rt>なん</rt></ruby>ですか。",
+              chinese: "「早餐服務」是什麼？"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Kōhī o tanomu to, pan ya yudetamago ga muryō de tsuite kimasu.",
+              japanese: "コーヒーを頼むと、パンやゆで卵が無料でついてきます。",
+              ruby: "コーヒーを<ruby>頼<rt>たの</rt></ruby>むと、パンやゆで<ruby>卵<rt>たまご</rt></ruby>が<ruby>無料<rt>むりょう</rt></ruby>でついてきます。",
+              chinese: "點一杯咖啡，就會免費附送麵包和水煮蛋。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + という + [名詞] (to iu)",
+          explanation: "意為「叫做...的...」，用於引用名稱或向他人解釋專有名詞概念。",
+          examples: [
+            {
+              jp: "「富士山」という山は日本で一番高いです。",
+              ruby: "「<ruby>富士山<rt>ふじさん</rt></ruby>」という<ruby>山<rt>やま</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>で<ruby>一番高<rt>いちばんたか</rt></ruby>いです。",
+              romaji: "'Fujisan' to iu yama wa Nihon de ichiban takai desu.",
+              zh: "一座叫做「富士山」的山是日本最高的山。"
+            },
+            {
+              jp: "「桜」という花は春に咲きます。",
+              ruby: "「<ruby>桜<rt>さくら</rt></ruby>」という<ruby>花<rt>はな</rt></ruby>は<ruby>春<rt>はる</rt></ruby>に<ruby>咲<rt>さ</rt></ruby>きます。",
+              romaji: "'Sakura' to iu hana wa haru ni sakimasu.",
+              zh: "叫做「櫻花」的花在春天開。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "空中大学 / 大学", pattern: "空中大学という大学で勉強しています", romaji: "Kūchū daigaku to iu daigaku de benkyō shite imasu.", zh: "我在一所叫做空中大學的學校念書。" },
+          { item: "ドラえもん / アニメ", pattern: "ドラえもんというアニメがあります", romaji: "Doraemon to iu anime ga arimasu.", zh: "有一部叫做「哆啦A夢」的動畫。" },
+          { item: "トヨタ / 会社", pattern: "愛知県はトヨタという会社があります", romaji: "Aichi-ken wa Toyota to iu kaisha ga arimasu.", zh: "愛知縣有一間叫做豐田的公司。" }
+        ],
+        vocab: [
+          { jp: "トースト", kana: "トースト", romaji: "tōsuto", zh: "吐司" },
+          { jp: "ゆで卵", kana: "ゆでたまご", romaji: "yudetamago", zh: "水煮蛋" },
+          { jp: "サラダ", kana: "サラダ", romaji: "sarada", zh: "生菜沙拉" },
+          { jp: "サンドイッチ", kana: "サンドイッチ", romaji: "sandoitchi", zh: "三明治" },
+          { jp: "味噌汁", kana: "みそしる", romaji: "misoshiru", zh: "味噌湯" },
+          { jp: "焼き魚", kana: "やきざかな", romaji: "yakizakana", zh: "烤魚 / 煎魚" },
+          { jp: "納豆", kana: "なっとう", romaji: "nattō", zh: "納豆" },
+          { jp: "お漬物", kana: "おつけもの", romaji: "otsukemono", zh: "醬菜" }
+        ],
+        phrases: [
+          { scene: "詢問素食", jp: "ベジタリアンメニューがありますか。", ruby: "ベジタリアンメニューがありますか。", romaji: "Bejitarian menyū ga arimasu ka.", zh: "有素食菜單嗎？" },
+          { scene: "自助說明", jp: "お飲み物はセルフサービスです。", ruby: "お<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>はセルフサービスです。", romaji: "O-nomimono wa serufu sābisu desu.", zh: "飲料請自取。" },
+          { scene: "自由入座", jp: "お席はご自由にどうぞ。", ruby: "お<ruby>席<rt>せき</rt></ruby>はご<ruby>自由<rt>じゆう</rt></ruby>にどうぞ。", romaji: "O-seki wa go-jiyū ni dōzo.", zh: "請隨意找位子。" },
+          { scene: "飲食忌口", jp: "苦手なものがありませんか。", ruby: "<ruby>苦手<rt>にがて</rt></ruby>なものがありませんか。", romaji: "Nigate na mono ga arimasen ka.", zh: "有沒有不敢吃的東西嗎？" }
+        ],
+        trivia: {
+          title: "名古屋買咖啡送早餐與 HARBS 發祥地",
+          content: "1950年代紡織商商談習慣約在喫茶店，店家熱情贈送烤吐司水煮蛋答謝熟客。深受喜愛的千層蛋糕 HARBS 也發源自名古屋榮！"
+        }
+      },
+      {
+        id: "ch-12-1",
+        code: "12.1",
+        title: "天ぷら（日本庶民美食篇 - 傳統炸物）",
+        subtitle: "形容詞並列連綴「[形容詞て形] + [形容詞]」",
+        badge: "庶民美食",
+        dialogue: {
+          scene: "天婦羅課文導讀",
+          lines: [
+            {
+              speaker: "導讀",
+              romaji: "Tenpura wa, Nihon no dentō ryōri desu. Sakana ya yasai o karitto ageta mono desu.",
+              japanese: "天ぷらは、日本の伝統料理です。魚や野菜をカリッと揚げたものです。",
+              ruby: "<ruby>天ぷら<rt>てんぷら</rt></ruby>は、<ruby>日本<rt>にほん</rt></ruby>の<ruby>伝統料理<rt>でんとうりょうり</rt></ruby>です。<ruby>魚<rt>さかな</rt></ruby>や<ruby>野菜<rt>やさい</rt></ruby>をカリッと<ruby>揚<rt>あ</rt></ruby>げたものです。",
+              chinese: "天婦羅是日本傳統料理。是將魚或蔬菜酥脆油炸而成的。"
+            },
+            {
+              speaker: "導讀",
+              romaji: "Koromo wa sakusaku, naka wa jūshī de oishii desu.",
+              japanese: "衣はサクサク、中はジューシーでおいしいです。",
+              ruby: "<ruby>衣<rt>ころも</rt></ruby>はサクサク、<ruby>中<rt>なか</rt></ruby>はジューシーでおいしいです。",
+              chinese: "外皮酥脆，內裡多汁美味。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[形容詞て形] + [形容詞] (既...且...)",
+          explanation: "用於並列連綴兩個狀態或特質。い形容詞去い加くて；な形容詞直接加で。",
+          examples: [
+            {
+              jp: "この部屋は広くて、明るいです。",
+              ruby: "この<ruby>部屋<rt>へや</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>くて、<ruby>明<rt>あか</rt></ruby>るいです。",
+              romaji: "Kono heya wa hirokute, akarui desu.",
+              zh: "這個房間既寬敞且明亮。"
+            },
+            {
+              jp: "彼女はきれいで、かわいいです。",
+              ruby: "<ruby>彼女<rt>かのじょ</rt></ruby>はきれいで、かわいいです。",
+              romaji: "Kanojo wa kirei de, kawaii desu.",
+              zh: "她既漂亮且可愛。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "い形容詞：優しい", pattern: "優しくて、親切です", romaji: "Yasashikute, shinsetsu desu.", zh: "既溫柔又親切。" },
+          { item: "な形容詞：にぎやか", pattern: "にぎやかで、楽しいです", romaji: "Nigiyaka de, tanoshii desu.", zh: "既熱鬧又好玩。" },
+          { item: "例外：頭がいい", pattern: "頭がよくて、おもしろいです", romaji: "Atama ga yokute, omoshiroi desu.", zh: "既聰明又有趣。" }
+        ],
+        vocab: [
+          { jp: "揚げ物", kana: "あげもの", romaji: "agemono", zh: "炸物" },
+          { jp: "つゆ", kana: "つゆ", romaji: "tsuyu", zh: "混合醬油調味料 (天婦羅醬汁)" },
+          { jp: "海鮮", kana: "かいせん", romaji: "kaisen", zh: "海鮮" },
+          { jp: "白身魚", kana: "しろみざかな", romaji: "shiromizakana", zh: "白肉魚" },
+          { jp: "衣", kana: "ころも", romaji: "koromo", zh: "麵衣" },
+          { jp: "食材", kana: "しょくざい", romaji: "shokuzai", zh: "食材" },
+          { jp: "野菜", kana: "やさい", romaji: "yasai", zh: "蔬菜" },
+          { jp: "サクサク / ジューシー", kana: "サクサク / ジューシー", romaji: "sakusaku / jūshī", zh: "酥脆的 / 多汁的" }
+        ],
+        phrases: [
+          { scene: "現炸要求", jp: "揚げたての天ぷらを食べたいです。", ruby: "<ruby>揚<rt>あ</rt></ruby>げたての<ruby>天ぷら<rt>てんぷら</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたいです。", romaji: "Agetate no tenpura o tabetai desu.", zh: "我想吃剛炸好的天婦羅。" },
+          { scene: "點選套餐", jp: "コース料理をお願いします。", ruby: "コース<ruby>料理<rt>りょうり</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Kōsu ryōri o onegai shimasu.", zh: "我點套餐。" },
+          { scene: "詢問當季", jp: "旬の食材は何ですか。", ruby: "<ruby>旬<rt>しゅん</rt></ruby>の<ruby>食材<rt>しょくざい</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。", romaji: "Shun no shokuzai wa nan desu ka.", zh: "當季的食材是什麼？" },
+          { scene: "座位需求", jp: "カウンター席がありますか。", ruby: "カウンター<ruby>席<rt>せき</rt></ruby>がありますか。", romaji: "Kauntā-seki ga arimasu ka.", zh: "有吧檯座位嗎？" }
+        ],
+        trivia: {
+          title: "天婦羅源流考：從葡萄牙船來物到江戶三味",
+          content: "16世紀由葡萄牙傳教士引進油炸概念（南蠻貿易），江戶中後期路邊攤流行以竹籤串炸剛出爐的海鮮與蔬菜，與壽司、蕎麥麵並列為江戶三味。"
+        }
+      },
+      {
+        id: "ch-12-2",
+        code: "12.2",
+        title: "牛丼（日本庶民美食篇 - 人氣蓋飯）",
+        subtitle: "國民蓋飯・動作順序「[動詞て形] + から」",
+        badge: "庶民美食",
+        dialogue: {
+          scene: "牛丼課文導讀與點餐",
+          lines: [
+            {
+              speaker: "導讀",
+              romaji: "Gyūdon wa, gyūniku to tamanegi o gohan ni noseta ryōri desu.",
+              japanese: "牛丼は、牛肉と玉ねぎをご飯にのせた料理です。",
+              ruby: "<ruby>牛丼<rt>ぎゅうどん</rt></ruby>は、<ruby>牛肉<rt>ぎゅうにく</rt></ruby>と<ruby>玉<rt>たま</rt></ruby>ねぎをご<ruby>飯<rt>はん</rt></ruby>にのせた<ruby>料理<rt>りょうり</rt></ruby>です。",
+              chinese: "牛丼是一道將牛肉和洋蔥放在白飯上的料理。"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Namimori no sarada setto o hitotsu kudasai.",
+              japanese: "並盛のサラダセットを一つください。",
+              ruby: "<ruby>並盛<rt>なみもり</rt></ruby>のサラダセットを<ruby>一<rt>ひと</rt></ruby>つください。",
+              chinese: "給我一個中碗的生菜沙拉套餐。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[動詞て形] + から、〜 (te kara)",
+          explanation: "意為「在...之後」，表示某動作先完成，接著進行後續動作。",
+          examples: [
+            {
+              jp: "散歩してから、食事をします。",
+              ruby: "<ruby>散歩<rt>さんぽ</rt></ruby>してから、<ruby>食事<rt>しょくじ</rt></ruby>をします。",
+              romaji: "Sanpo shite kara, shokuji o shimasu.",
+              zh: "散步後吃飯。"
+            },
+            {
+              jp: "新聞を読んでから、コーヒーを飲みます。",
+              ruby: "<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んでから、コーヒーを<ruby>飲<rt>の</rt></ruby>みます。",
+              romaji: "Shinbun o yonde kara, kōhī o nomimasu.",
+              zh: "看報紙後喝咖啡。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "読みます / 寝ます", pattern: "読んでから、寝ます", romaji: "Yonde kara, nemasu.", zh: "看完之後睡覺。" },
+          { item: "食べます / 行きます", pattern: "食べてから、行きます", romaji: "Tabete kara, ikimasu.", zh: "吃完之後去。" },
+          { item: "買い物します / 帰ります", pattern: "買い物してから、帰ります", romaji: "Kaimono shite kara, kaerimasu.", zh: "買完東西之後回去。" }
+        ],
+        vocab: [
+          { jp: "並盛", kana: "なみもり", romaji: "namimori", zh: "中碗" },
+          { jp: "テイクアウト", kana: "テイクアウト", romaji: "teikuauto", zh: "外帶" },
+          { jp: "豚汁", kana: "とんじる", romaji: "tonjiru", zh: "豬肉蔬菜味噌湯" },
+          { jp: "生卵", kana: "なまたまご", romaji: "namatamago", zh: "生雞蛋" },
+          { jp: "紅生姜", kana: "べにしょうが", romaji: "benishōga", zh: "紅薑" },
+          { jp: "お子様向け", kana: "おこさまむけ", romaji: "okosamamuke", zh: "適合兒童" },
+          { jp: "サイドメニュー", kana: "サイドメニュー", romaji: "saido menyū", zh: "配菜 / 小菜" },
+          { jp: "期間限定", kana: "きかんげんてい", romaji: "kikan gentei", zh: "期間限定" }
+        ],
+        phrases: [
+          { scene: "點選套餐", jp: "並盛のサラダセットを一つください。", ruby: "<ruby>並盛<rt>なみもり</rt></ruby>のサラダセットを<ruby>一<rt>ひと</rt></ruby>つください。", romaji: "Namimori no sarada setto o hitotsu kudasai.", zh: "給我一個中碗的生菜沙拉套餐。" },
+          { scene: "詢問附餐", jp: "サイドメニューは何がありますか。", ruby: "サイドメニューは<ruby>何<rt>なに</rt></ruby>がありますか。", romaji: "Saido menyū wa nani ga arimasu ka.", zh: "有配菜菜單嗎？" },
+          { scene: "加點配料", jp: "卵を追加してください。", ruby: "<ruby>卵<rt>たまご</rt></ruby>を<ruby>追加<rt>ついか</rt></ruby>してください。", romaji: "Tamago o tsuika shite kudasai.", zh: "加點一個蛋。" },
+          { scene: "尺寸選擇", jp: "レギュラーサイズでお願いします。", ruby: "レギュラーサイズでお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Regyurā saizu de onegai shimasu.", zh: "請給我一般大小的。" }
+        ],
+        trivia: {
+          title: "蓋飯料理（丼もの）與牛肉飯的演進史",
+          content: "起源於室町時代的「芳飯」；明治維新推行「文明開化」吃牛肉，吉野家於 1899 年在東京日本橋魚市場創立，開啟美味又快速的牛丼傳奇。"
+        }
+      },
+      {
+        id: "ch-13-1",
+        code: "13.1",
+        title: "赤福（日本人氣甜點篇 - 傳統和菓子）",
+        subtitle: "伊勢名物・詢問地點「～で買えますか」",
+        badge: "日本甜品",
+        dialogue: {
+          scene: "赤福伴手禮詢問",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Akafuku tte nan desu ka.",
+              japanese: "赤福って何ですか。",
+              ruby: "<ruby>赤福<rt>あかふく</rt></ruby>って<ruby>何<rt>なん</rt></ruby>ですか。",
+              chinese: "赤福是什麼？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Akafuku wa Ise no meibutsu de, namae ni wa 'magokoro' to 'shiawase' no imi ga arimasu.",
+              japanese: "赤福は伊勢の名物で、名前には「真心」と「幸せ」の意味があります。",
+              ruby: "<ruby>赤福<rt>あかふく</rt></ruby>は<ruby>伊勢<rt>いせ</rt></ruby>の<ruby>名物<rt>めいぶつ</rt></ruby>で、<ruby>名前<rt>なまえ</rt></ruby>には「<ruby>真心<rt>まごころ</rt></ruby>」と「<ruby>幸<rt>しあわ</rt></ruby>せ」の<ruby>意味<rt>いみ</rt></ruby>があります。",
+              chinese: "赤福是伊勢的名產，名字中包含「真心」和「幸福」的意義。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Doko de kaemasu ka.",
+              japanese: "どこで買えますか。",
+              ruby: "どこで<ruby>買<rt>か</rt></ruby>えますか。",
+              chinese: "在哪裡可以買到？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Koko de kaemasu yo. Omiyage ni mo pittari desu.",
+              japanese: "ここで買えますよ。お土産にもぴったりです。",
+              ruby: "ここで<ruby>買<rt>か</rt></ruby>えますよ。お<ruby>土産<rt>みやげ</rt></ruby>にもぴったりです。",
+              chinese: "您可以在這裡買到。也適合做為伴手禮。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞/地點] + で買えますか (de kaemasu ka)",
+          explanation: "意為「可以在...買到嗎？」，用於詢問在某地是否能購買特定物品。",
+          examples: [
+            {
+              jp: "コンビニで買えますか。",
+              ruby: "コンビニで<ruby>買<rt>か</rt></ruby>えますか。",
+              romaji: "Konbini de kaemasu ka.",
+              zh: "可以在便利商店買到嗎？"
+            },
+            {
+              jp: "スーパーで惣菜が買えますか。",
+              ruby: "スーパーで<ruby>惣菜<rt>そうざい</rt></ruby>が<ruby>買<rt>か</rt></ruby>えますか。",
+              romaji: "Sūpā de sōzai ga kaemasu ka.",
+              zh: "可以在超市買到熟食嗎？"
+            }
+          ]
+        },
+        replacements: [
+          { item: "デパート", pattern: "デパートで買えますか", romaji: "Depāto de kaemasu ka.", zh: "在百貨公司買得到嗎？" },
+          { item: "空港", pattern: "空港で買えますか", romaji: "Kūkō de kaemasu ka.", zh: "在機場買得到嗎？" },
+          { item: "コンビニ", pattern: "コンビニで買えますか", romaji: "Konbini de kaemasu ka.", zh: "在便利商店買得到嗎？" }
+        ],
+        vocab: [
+          { jp: "お餅", kana: "おもち", romaji: "omochi", zh: "年糕、麻糬" },
+          { jp: "伊勢神宮", kana: "いせじんぐう", romaji: "ise jingū", zh: "伊勢神宮" },
+          { jp: "こし餡", kana: "こしあん", romaji: "koshian", zh: "細紅豆沙" },
+          { jp: "真心", kana: "まごころ", romaji: "magokoro", zh: "真心、誠意" },
+          { jp: "ぴったり", kana: "ぴったり", romaji: "pittari", zh: "恰好、正合適" },
+          { jp: "コンビニ", kana: "コンビニ", romaji: "konbini", zh: "便利商店" },
+          { jp: "赤心慶福", kana: "せきしんけいふく", romaji: "sekishin keifuku", zh: "以赤子之心為幸福高興" },
+          { jp: "定番", kana: "ていばん", romaji: "teiban", zh: "招牌 / 經典" }
+        ],
+        phrases: [
+          { scene: "確認內用", jp: "店内で召し上がりますか。", ruby: "<ruby>店内<rt>てんない</rt></ruby>で<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりますか。", romaji: "Tennai de meshiagarimasu ka.", zh: "要在店內食用嗎？" },
+          { scene: "經典組合", jp: "定番味セットを一つください。", ruby: "<ruby>定番味<rt>ていばんあじ</rt></ruby>セットを<ruby>一<rt>ひと</rt></ruby>つください。", romaji: "Teiban-aji setto o hitotsu kudasai.", zh: "請給我一份經典口味組合。" },
+          { scene: "保存期限", jp: "日持ちが短いです。", ruby: "<ruby>日持<rt>ひも</rt></ruby>ちが<ruby>短<rt>みじか</rt></ruby>いです。", romaji: "Himochi ga mijikai desu.", zh: "保存期限很短。" }
+        ],
+        trivia: {
+          title: "赤福與伊勢神宮式年遷宮",
+          content: "以紅豆泥波浪象徵五十鈴川清流。伊勢神宮每20年舉行一次「式年遷宮」完全重建神殿，下一次遷宮為2033年。"
+        }
+      },
+      {
+        id: "ch-13-2",
+        code: "13.2",
+        title: "ショートケーキ（人氣甜點篇 - 草莓蛋糕）",
+        subtitle: "日式鮮奶油草莓蛋糕・「どんな + 名詞」種類詢問",
+        badge: "日本甜品",
+        dialogue: {
+          scene: "蛋糕店人氣商品詢問",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "Ichiban ninki no kēki wa donna kēki desu ka.",
+              japanese: "一番人気のケーキはどんなケーキですか。",
+              ruby: "<ruby>一番人気<rt>いちばんにんき</rt></ruby>のケーキはどんなケーキですか。",
+              chinese: "最受歡迎的蛋糕是什麼樣的蛋糕？"
+            },
+            {
+              speaker: "店員",
+              romaji: "Shōtokēki ga ichiban ninki desu.",
+              japanese: "ショートケーキが一番人気です。",
+              ruby: "ショートケーキが<ruby>一番人気<rt>いちばんにんき</rt></ruby>です。",
+              chinese: "草莓蛋糕最受歡迎。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Oishisō desu ne.",
+              japanese: "おいしそうですね。",
+              ruby: "おいしそうですね。",
+              chinese: "看起來很好吃！"
+            },
+            {
+              speaker: "店員",
+              romaji: "Fuwafuwa no suponji to amai nama kurīmu ga tokuchō desu. Ichigo mo haitte imasu.",
+              japanese: "ふわふわのスポンジと甘い生クリームが特徴です。苺も入っています。",
+              ruby: "ふわふわのスポンジと<ruby>甘<rt>あま</rt></ruby>い<ruby>生<rt>なま</rt></ruby>クリームが<ruby>特徴<rt>とくちょう</rt></ruby>です。苺も入っています。",
+              chinese: "蓬鬆的海綿蛋糕和甜甜的鮮奶油是特色。裡面還有草莓。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Ii desu ne. Jā, shōtokēki o onegai shimasu.",
+              japanese: "いいですね。じゃあ、ショートケーキをお願いします。",
+              ruby: "いいですね。じゃあ、ショートケーキをお<ruby>願<rt>ねが</rt></ruby>いします。",
+              chinese: "太好了。那麼，我要一個草莓蛋糕。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "どんな + [名詞] (donna)",
+          explanation: "意為「怎麼樣的... / 什麼樣的...」，用於詢問性質、狀態、口味或喜好。",
+          examples: [
+            {
+              jp: "どんな食べ物が好きですか。",
+              ruby: "どんな<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>が<ruby>好<rt>す</rt></ruby>きですか。",
+              romaji: "Donna tabemono ga suki desu ka.",
+              zh: "你喜歡怎樣的食物？"
+            },
+            {
+              jp: "この料理はどんな味ですか。",
+              ruby: "この<ruby>料理<rt>りょうり</rt></ruby>はどんな<ruby>味<rt>あじ</rt></ruby>ですか。",
+              romaji: "Kono ryōri wa donna aji desu ka.",
+              zh: "這道料理是怎樣的味道？"
+            }
+          ]
+        },
+        replacements: [
+          { item: "名所", pattern: "どんな名所がありますか", romaji: "Donna meisho ga arimasu ka.", zh: "有什麼名勝景點？" },
+          { item: "ケーキ", pattern: "どんなケーキが好きですか", romaji: "Donna kēki ga suki desu ka.", zh: "你喜歡什麼樣的蛋糕？" }
+        ],
+        vocab: [
+          { jp: "チーズタルト", kana: "チーズタルト", romaji: "chīzutāto", zh: "起司塔" },
+          { jp: "カスタード", kana: "カスタード", romaji: "kasutādo", zh: "卡士達醬" },
+          { jp: "バニラ", kana: "バニラ", romaji: "banira", zh: "香草" },
+          { jp: "ロールケーキ", kana: "ロールケーキ", romaji: "rōrukēki", zh: "蛋糕捲" },
+          { jp: "プリン", kana: "プリン", romaji: "purin", zh: "布丁" },
+          { jp: "マカロン", kana: "マカロン", romaji: "makaron", zh: "馬卡龍" },
+          { jp: "モンブラン", kana: "モンブラン", romaji: "monburan", zh: "蒙布朗 / 栗子蛋糕" },
+          { jp: "ミルフィーユ", kana: "ミルフィーユ", romaji: "mirufīyu", zh: "千層酥" }
+        ],
+        phrases: [
+          { scene: "季節限定", jp: "季節限定のケーキはありますか。", ruby: "<ruby>季節限定<rt>きせつげんてい</rt></ruby>のケーキはありますか。", romaji: "Kisetsu gentei no kēki wa arimasu ka.", zh: "有季節限定的蛋糕嗎？" },
+          { scene: "點套餐", jp: "ケーキセットを二つお願いします。", ruby: "ケーキセットを<ruby>二<rt>ふた</rt></ruby>つお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Kēki setto o futatsu onegai shimasu.", zh: "請給我兩份蛋糕套餐。" },
+          { scene: "拍照詢問", jp: "ケーキの写真を撮ってもいいですか。", ruby: "ケーキの<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってもいいですか。", romaji: "Kēki no shashin o tottemo ii desu ka.", zh: "可以拍蛋糕的照片嗎？" },
+          { scene: "提袋收費", jp: "紙袋や手提げ袋は有料です。", ruby: "<ruby>紙袋<rt>かみぶくろ</rt></ruby>や<ruby>手提<rt>てさ</rt></ruby>げ<ruby>袋<rt>ぶくろ</rt></ruby>は<ruby>有料<rt>ゆうりょう</rt></ruby>です。", romaji: "Kamibukuro ya tesagebukuro wa yūryō desu.", zh: "紙袋或提袋是需付費的。" }
+        ],
+        trivia: {
+          title: "不二家與聖誕節草莓蛋糕文化",
+          content: "1922年老牌洋菓子不二家推出紅白喜慶草莓蛋糕，促成日本在聖誕夜全家享用草莓蛋糕的國民風俗。"
+        }
+      }
+    ];
+
+    const speechRateSelect = document.getElementById('tts-rate');
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        showToast('您的裝置不支援語音合成功能');
+        return;
+      }
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ja-JP';
+      utterance.rate = parseFloat(speechRateSelect.value) || 0.9;
+      utterance.pitch = 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      const jpVoice = voices.find(v => v.lang.startsWith('ja') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Kyoko') || v.name.includes('Otoya') || v.name.includes('Siri')));
+      if (jpVoice) {
+        utterance.voice = jpVoice;
+      }
+
+      utterance.onstart = () => {
+        showToast(`正在播放: "${text.substring(0, 16)}..."`);
+      };
+
+      utterance.onerror = () => {
+        showToast('語音播放遇到狀況，請確認手機未開靜音');
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = text;
+      toast.classList.remove('opacity-0', 'translate-y-20');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-20');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2000);
+    }
+
+    function toggleAudioHelp() {
+      const modal = document.getElementById('help-modal');
+      modal.classList.toggle('hidden');
+    }
+
+    function renderApp() {
+      const container = document.getElementById('chapters-container');
+      const sidebarNav = document.getElementById('chapter-list');
+      container.innerHTML = '';
+      sidebarNav.innerHTML = '';
+
+      courseChapters.forEach(chapter => {
+        // Sidebar item
+        const navItem = document.createElement('a');
+        navItem.href = `#${chapter.id}`;
+        navItem.className = "chapter-link flex items-center justify-between p-3 rounded-2xl hover:bg-stone-100 active:bg-rose-50 transition group";
+        navItem.innerHTML = `
+          <div class="truncate">
+            <span class="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-lg mr-1.5 group-hover:bg-rose-100">${chapter.code}</span>
+            <span class="text-stone-800 font-medium">${chapter.title}</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-stone-300 text-xs group-hover:translate-x-0.5 transition"></i>
+        `;
+        navItem.addEventListener('click', (e) => {
+          e.preventDefault();
+          scrollToSection(chapter.id);
+          document.getElementById('sidebar').classList.add('-translate-x-full');
+          document.getElementById('sidebar-backdrop').classList.add('hidden');
+        });
+        sidebarNav.appendChild(navItem);
+
+        // Section card
+        const chapterSection = document.createElement('article');
+        chapterSection.id = chapter.id;
+        chapterSection.className = "bg-white rounded-3xl p-4 sm:p-7 lg:p-9 border border-stone-200 shadow-sm scroll-mt-20 space-y-6 sm:space-y-7";
+
+        chapterSection.innerHTML = `
+          <!-- Header -->
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-stone-100 pb-4 sm:pb-5">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2.5 py-0.5 text-xs sm:text-sm font-bold rounded-full bg-rose-50 text-rose-600 border border-rose-100">${chapter.badge}</span>
+                <span class="text-xs sm:text-sm text-stone-400 font-mono">第 ${chapter.code} 單元</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900">${chapter.title}</h3>
+              <p class="text-xs sm:text-sm text-stone-500 mt-0.5">${chapter.subtitle}</p>
+            </div>
+            <button onclick="speakText('${chapter.dialogue.lines.map(l => l.japanese).join(' ')}')" class="touch-btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-2xl bg-stone-100 hover:bg-rose-50 active:bg-rose-100 text-stone-700 hover:text-rose-600 text-xs sm:text-sm font-bold transition shadow-sm border border-stone-200 self-start sm:self-auto">
+              <i class="fa-solid fa-play text-rose-500"></i> 朗讀整段會話
+            </button>
+          </div>
+
+          <!-- 1. Dialogue Box -->
+          <div class="bg-stone-50/90 rounded-3xl p-4 sm:p-6 border border-stone-200 space-y-3 sm:space-y-4">
+            <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-stone-700">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-comments text-rose-500 text-sm sm:text-base"></i> 1. 情境會話：${chapter.dialogue.scene}
+              </span>
+              <span class="text-[11px] text-stone-400 font-normal">點右側喇叭單句跟讀</span>
+            </div>
+            <div class="space-y-3 pt-1">
+              ${chapter.dialogue.lines.map(line => `
+                <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-stone-200/90 flex items-start justify-between gap-3 hover:border-rose-300 transition shadow-sm">
+                  <div class="space-y-1 sm:space-y-1.5 min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-lg bg-stone-100 text-stone-700">${line.speaker}</span>
+                    </div>
+                    <div class="text-base sm:text-xl font-jp text-stone-900 leading-loose">${line.ruby}</div>
+                    <div class="text-xs sm:text-sm text-rose-600 font-mono break-all">${line.romaji}</div>
+                    <div class="text-xs sm:text-sm text-stone-600">${line.chinese}</div>
+                  </div>
+                  <button onclick="speakText('${line.japanese}')" class="touch-btn shrink-0 p-2.5 sm:p-3 rounded-2xl bg-stone-50 hover:bg-rose-50 text-stone-500 hover:text-rose-600 active:bg-rose-100 transition" title="單句發音">
+                    <i class="fa-solid fa-volume-high text-base sm:text-lg"></i>
+                  </button>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- 2. Grammar Focus & 4. Replacement Drill -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+            <div class="bg-rose-50/50 rounded-3xl p-4 sm:p-6 border border-rose-100 flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-rose-600 uppercase tracking-wider block mb-1">
+                  <i class="fa-solid fa-star text-rose-500"></i> 2. 核心句型
+                </span>
+                <div class="text-lg sm:text-xl font-bold text-stone-900 font-jp mb-2">${chapter.grammar.pattern}</div>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${chapter.grammar.explanation}</p>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-rose-200/60 space-y-2">
+                <div class="text-xs font-bold text-stone-700 uppercase">3. 句型例句與應用</div>
+                ${chapter.grammar.examples.map(ex => `
+                  <div class="flex items-center justify-between gap-2 bg-white/90 p-3 rounded-2xl border border-rose-100 text-xs sm:text-sm shadow-sm">
+                    <div class="min-w-0">
+                      <div class="font-jp font-bold text-stone-900 text-sm sm:text-base">${ex.ruby}</div>
+                      <div class="text-rose-600 font-mono text-[11px] sm:text-xs break-all">${ex.romaji}</div>
+                      <div class="text-stone-500 text-xs mt-0.5">${ex.zh}</div>
+                    </div>
+                    <button onclick="speakText('${ex.jp}')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 active:bg-rose-200 rounded-xl transition shrink-0">
+                      <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                    </button>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- 4. Replacements Drill -->
+            <div class="bg-amber-50/40 rounded-3xl p-4 sm:p-6 border border-amber-200/60 flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-amber-700 uppercase tracking-wider block mb-1.5">
+                  <i class="fa-solid fa-repeat text-amber-600"></i> 4. 開口練習：替換訓練
+                </span>
+                <div class="space-y-2.5">
+                  ${chapter.replacements.map(rep => `
+                    <div class="bg-white p-3 rounded-2xl border border-amber-100 flex items-center justify-between gap-2 text-xs sm:text-sm shadow-sm">
+                      <div class="min-w-0">
+                        <div class="font-bold text-stone-800 font-jp text-sm sm:text-base truncate">${rep.pattern}</div>
+                        <div class="text-rose-600 font-mono text-[11px] truncate">${rep.romaji}</div>
+                        <div class="text-stone-500 text-xs">${rep.zh}</div>
+                      </div>
+                      <button onclick="speakText('${rep.pattern}')" class="touch-btn p-2 text-amber-700 hover:bg-amber-100 active:bg-amber-200 rounded-xl transition shrink-0">
+                        <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                      </button>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Vocabulary Word Bank -->
+          <div>
+            <h4 class="text-xs sm:text-sm font-bold text-stone-700 mb-3 flex items-center gap-1.5">
+              <i class="fa-solid fa-book-bookmark text-rose-500 text-sm sm:text-base"></i> 5. 本單元常用單字（完整收錄）
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3">
+              ${chapter.vocab.map(v => `
+                <div class="bg-stone-50 hover:bg-white p-3 rounded-2xl border border-stone-200 flex flex-col justify-between transition group shadow-sm hover:border-rose-300">
+                  <div class="min-w-0">
+                    <div class="text-[11px] text-rose-600 font-jp font-bold truncate">${v.kana}</div>
+                    <div class="font-bold text-stone-900 font-jp text-base sm:text-lg group-hover:text-rose-600 leading-snug truncate">${v.jp}</div>
+                    <div class="text-[11px] text-stone-400 font-mono truncate">${v.romaji}</div>
+                    <div class="text-xs sm:text-sm text-stone-600 mt-1 font-medium">${v.zh}</div>
+                  </div>
+                  <button onclick="speakText('${v.jp}')" class="touch-btn mt-2.5 w-full py-1.5 bg-white hover:bg-rose-50 text-rose-600 border border-stone-200 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm active:bg-rose-100">
+                    <i class="fa-solid fa-volume-high text-xs"></i> 發音
+                  </button>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- 6. Section 6 Practical Phrases -->
+          <div class="bg-sky-50/40 rounded-3xl p-4 sm:p-6 border border-sky-200/70 space-y-3 sm:space-y-4">
+            <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-sky-900">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-bolt text-sky-600 text-sm sm:text-base"></i> 6. 實用情境短句庫
+              </span>
+              <span class="text-[11px] text-sky-700 font-normal">實務現場應對即學即用</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
+              ${chapter.phrases.map(p => `
+                <div class="bg-white p-3 rounded-2xl border border-sky-100 flex items-center justify-between gap-2.5 hover:border-sky-300 transition shadow-sm">
+                  <div class="min-w-0">
+                    <span class="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md bg-sky-100 text-sky-800">${p.scene}</span>
+                    <div class="font-bold text-stone-900 font-jp text-sm sm:text-base mt-1 leading-snug">${p.ruby}</div>
+                    <div class="text-rose-600 font-mono text-[11px] break-all">${p.romaji}</div>
+                    <div class="text-xs text-stone-600 mt-0.5">${p.zh}</div>
+                  </div>
+                  <button onclick="speakText('${p.jp}')" class="touch-btn shrink-0 p-2 sm:p-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 active:bg-sky-200 text-sky-700 transition" title="短句發音">
+                    <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                  </button>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- 7. Travel Trivia -->
+          <div class="bg-gradient-to-br from-stone-50 to-rose-50/30 rounded-3xl p-4 sm:p-6 border border-stone-200 text-xs sm:text-sm text-stone-700">
+            <div class="flex items-center gap-2 font-bold text-stone-900 mb-1.5 text-sm sm:text-base">
+              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-400/20 text-amber-600 flex items-center justify-center text-xs shrink-0">
+                <i class="fa-solid fa-lightbulb"></i>
+              </span>
+              <span>7. 旅遊豆知識：${chapter.trivia.title}</span>
+            </div>
+            <p class="leading-relaxed text-stone-600 pl-8 sm:pl-9">${chapter.trivia.content}</p>
+          </div>
+        `;
+
+        container.appendChild(chapterSection);
+      });
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderApp();
+
+      const sidebar = document.getElementById('sidebar');
+      const backdrop = document.getElementById('sidebar-backdrop');
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('close-sidebar-btn');
+
+      function openMenu() {
+        sidebar.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      }
+
+      function closeMenu() {
+        sidebar.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      backdrop.addEventListener('click', closeMenu);
+
+      const searchInput = document.getElementById('chapter-search');
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const links = document.querySelectorAll('.chapter-link');
+        
+        courseChapters.forEach((chapter, index) => {
+          const matchTitle = chapter.title.toLowerCase().includes(query);
+          const matchCode = chapter.code.toLowerCase().includes(query);
+          const matchVocab = chapter.vocab.some(v => v.jp.toLowerCase().includes(query) || v.zh.includes(query) || v.romaji.toLowerCase().includes(query) || v.kana.includes(query));
+          const matchPhrases = chapter.phrases.some(p => p.jp.includes(query) || p.zh.includes(query) || p.romaji.toLowerCase().includes(query));
+          const matchGrammar = chapter.grammar.pattern.toLowerCase().includes(query) || chapter.grammar.explanation.includes(query);
+
+          if (matchTitle || matchCode || matchVocab || matchPhrases || matchGrammar || query === '') {
+            links[index].style.display = 'flex';
+          } else {
+            links[index].style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
