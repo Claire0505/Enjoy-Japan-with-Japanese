@@ -103,6 +103,33 @@
         </button>
       </div>
     </div>
+    
+    <!-- Floating Chapter Navigation Bar on Scroll -->
+    <div id="sticky-chapter-nav" class="bg-white/95 border-t border-b border-stone-200 shadow-sm backdrop-blur-md px-3 sm:px-6 py-2 transition-all duration-300">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 overflow-hidden">
+        
+        <!-- Left: Quick jump select on mobile/desktop -->
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="text-xs font-bold text-rose-600 flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i> <span class="hidden sm:inline">跳轉目錄：</span>
+          </span>
+          <select id="quick-jump-select" class="bg-stone-100 border border-stone-200 text-stone-800 text-xs sm:text-sm rounded-xl px-2.5 py-1.5 font-bold focus:outline-none focus:ring-2 focus:ring-rose-400 max-w-[140px] sm:max-w-xs truncate cursor-pointer">
+            <!-- Dynamically populated -->
+          </select>
+        </div>
+
+        <!-- Center/Right: Horizontal scrollable chapter pills -->
+        <div id="scrollable-pills" class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar py-0.5 no-scrollbar flex-1 justify-start">
+          <!-- Dynamically populated with pills -->
+        </div>
+
+        <!-- Right: Fast shortcut to homework -->
+        <button onclick="scrollToSection('homework-section')" class="touch-btn shrink-0 text-xs px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold border border-rose-200 flex items-center gap-1 transition" title="前往作業檢測">
+          <i class="fa-solid fa-file-pen text-rose-600"></i>
+          <span class="hidden md:inline">作業測驗</span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex-1 flex w-full py-4 sm:py-6 gap-6 sm:gap-8">
@@ -288,8 +315,22 @@
     </main>
   </div>
 
+  <!-- Floating Action Button: Quick Return to Index Drawer / Top -->
+  <div class="fixed bottom-5 left-5 z-40 flex flex-col gap-2">
+    <button id="floating-menu-btn" onclick="openSidebarDrawer()" class="touch-btn shadow-xl bg-stone-900/90 hover:bg-stone-900 text-white p-3 sm:px-4 sm:py-3 rounded-2xl backdrop-blur-md flex items-center gap-2 text-xs sm:text-sm font-bold border border-stone-700 transition hover:scale-105 active:scale-95" title="打開目錄選單">
+      <i class="fa-solid fa-bars-staggered text-rose-400 text-base"></i>
+      <span class="hidden sm:inline">章節目錄</span>
+    </button>
+  </div>
+
+  <div class="fixed bottom-5 right-5 z-40 flex flex-col gap-2">
+    <button id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="touch-btn opacity-0 translate-y-4 pointer-events-none transition-all duration-300 shadow-xl bg-white hover:bg-rose-50 text-stone-700 hover:text-rose-600 p-3 rounded-2xl border border-stone-200 flex items-center justify-center" title="回到頂部">
+      <i class="fa-solid fa-arrow-up text-base"></i>
+    </button>
+  </div>
+
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-stone-900/90 backdrop-blur text-white text-xs sm:text-sm px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2.5">
+  <div id="toast" class="fixed bottom-20 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-stone-900/90 backdrop-blur text-white text-xs sm:text-sm px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2.5">
     <i class="fa-solid fa-volume-high text-emerald-400 text-sm sm:text-base"></i>
     <span id="toast-text">發音中...</span>
   </div>
@@ -1820,13 +1861,36 @@
       modal.classList.toggle('hidden');
     }
 
+    function openSidebarDrawer() {
+      document.getElementById('sidebar').classList.remove('-translate-x-full');
+      document.getElementById('sidebar-backdrop').classList.remove('hidden');
+    }
+
     function renderApp() {
       const container = document.getElementById('chapters-container');
       const sidebarNav = document.getElementById('chapter-list');
+      const jumpSelect = document.getElementById('quick-jump-select');
+      const pillsContainer = document.getElementById('scrollable-pills');
+
       container.innerHTML = '';
       sidebarNav.innerHTML = '';
+      jumpSelect.innerHTML = '<option value="" disabled selected>選擇章節跳轉...</option>';
+      pillsContainer.innerHTML = '';
 
       courseChapters.forEach(chapter => {
+        // Quick Jump Select Option
+        const opt = document.createElement('option');
+        opt.value = chapter.id;
+        opt.textContent = `${chapter.code} ${chapter.title}`;
+        jumpSelect.appendChild(opt);
+
+        // Quick Jump Scrollable Pill
+        const pill = document.createElement('button');
+        pill.className = `pill-${chapter.id} touch-btn shrink-0 text-xs px-2.5 py-1 rounded-xl bg-stone-100 hover:bg-rose-100 hover:text-rose-700 text-stone-700 font-medium transition border border-transparent whitespace-nowrap`;
+        pill.innerHTML = `<span class="font-bold text-rose-600">${chapter.code}</span> ${chapter.title.split('（')[0]}`;
+        pill.onclick = () => scrollToSection(chapter.id);
+        pillsContainer.appendChild(pill);
+
         // Sidebar item
         const navItem = document.createElement('a');
         navItem.href = `#${chapter.id}`;
@@ -1849,7 +1913,7 @@
         // Section card
         const chapterSection = document.createElement('article');
         chapterSection.id = chapter.id;
-        chapterSection.className = "bg-white rounded-3xl p-4 sm:p-7 lg:p-9 border border-stone-200 shadow-sm scroll-mt-20 space-y-6 sm:space-y-7";
+        chapterSection.className = "chapter-section bg-white rounded-3xl p-4 sm:p-7 lg:p-9 border border-stone-200 shadow-sm scroll-mt-32 space-y-6 sm:space-y-7";
 
         chapterSection.innerHTML = `
           <!-- Header -->
@@ -2007,6 +2071,13 @@
 
         container.appendChild(chapterSection);
       });
+
+      // Quick Jump select change event
+      jumpSelect.addEventListener('change', (e) => {
+        if (e.target.value) {
+          scrollToSection(e.target.value);
+        }
+      });
     }
 
     function scrollToSection(id) {
@@ -2023,6 +2094,8 @@
       const backdrop = document.getElementById('sidebar-backdrop');
       const menuBtn = document.getElementById('mobile-menu-btn');
       const closeBtn = document.getElementById('close-sidebar-btn');
+      const scrollTopBtn = document.getElementById('scroll-top-btn');
+      const jumpSelect = document.getElementById('quick-jump-select');
 
       function openMenu() {
         sidebar.classList.remove('-translate-x-full');
@@ -2037,6 +2110,56 @@
       menuBtn.addEventListener('click', openMenu);
       closeBtn.addEventListener('click', closeMenu);
       backdrop.addEventListener('click', closeMenu);
+
+      // Scroll Spy: Highlight active chapter in pill and sync select dropdown
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY + 160;
+
+        // Toggle back to top button
+        if (window.scrollY > 400) {
+          scrollTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+          scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          scrollTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+        }
+
+        // Detect current visible section
+        const sections = document.querySelectorAll('.chapter-section');
+        let currentSectionId = '';
+
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            currentSectionId = section.id;
+          }
+        });
+
+        if (currentSectionId) {
+          // Sync select
+          if (jumpSelect.value !== currentSectionId) {
+            jumpSelect.value = currentSectionId;
+          }
+
+          // Highlight pill
+          document.querySelectorAll('#scrollable-pills button').forEach(pill => {
+            if (pill.classList.contains(`pill-${currentSectionId}`)) {
+              pill.classList.add('bg-rose-500', 'text-white', 'border-rose-600');
+              pill.classList.remove('bg-stone-100', 'text-stone-700');
+              pill.querySelector('span')?.classList.add('text-white');
+              pill.querySelector('span')?.classList.remove('text-rose-600');
+              // Bring active pill into view smoothly
+              pill.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+            } else {
+              pill.classList.remove('bg-rose-500', 'text-white', 'border-rose-600');
+              pill.classList.add('bg-stone-100', 'text-stone-700');
+              pill.querySelector('span')?.classList.remove('text-white');
+              pill.querySelector('span')?.classList.add('text-rose-600');
+            }
+          });
+        }
+      });
 
       const searchInput = document.getElementById('chapter-search');
       searchInput.addEventListener('input', (e) => {
