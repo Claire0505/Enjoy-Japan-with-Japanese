@@ -209,106 +209,528 @@
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
           <div>
-            <h3 class="text-lg sm:text-2xl font-bold text-stone-900">115學年度上學期「輕鬆用日語玩日本」第一次作業自我檢測</h3>
-            <p class="text-xs sm:text-sm text-stone-500 mt-0.5">範疇：第 1～8 講核心內容，含平假名讀音、行李口袋清單、會話選擇題與生存應答</p>
+            <h3 class="text-lg sm:text-2xl font-bold text-stone-900">115學年度上學期「輕鬆用日語玩日本」第一次作業自我檢測（完整五大題）</h3>
+            <p class="text-xs sm:text-sm text-stone-500 mt-0.5">出題範圍：第 1～8 講 核心內容，含平假名讀音、口袋清單、會話選擇10題、生存應答與文化分享</p>
           </div>
         </div>
 
         <div class="space-y-8 text-base">
           <!-- Part 1 -->
           <div>
-            <h4 class="font-bold text-stone-800 text-base sm:text-lg mb-3 flex items-center gap-2">
-              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">一</span>
-              日本實境旅遊地標大搜尋（日語漢字的平假名讀音）
-            </h4>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <h4 class="font-bold text-stone-800 text-base sm:text-lg flex items-center gap-2">
+                <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">一</span>
+                日本實境旅遊地標大搜尋（請寫出下列日語漢字的平假名讀音）20%
+              </h4>
+              <span class="text-xs text-stone-400">點擊喇叭即可聆聽正確讀音</span>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">1. 空港</span>
-                <span class="text-rose-600 font-bold font-jp">くうこう (kūkō)</span>
+                <div>
+                  <span class="font-bold text-stone-800">1. 空港</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">くうこう</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(kūkō)</span>
+                </div>
+                <button onclick="speakText('くうこう')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">2. 往復</span>
-                <span class="text-rose-600 font-bold font-jp">おうふく (ōfuku)</span>
+                <div>
+                  <span class="font-bold text-stone-800">2. 往復</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">おうふく</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(ōfuku)</span>
+                </div>
+                <button onclick="speakText('おうふく')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">3. 片道</span>
-                <span class="text-rose-600 font-bold font-jp">かたみち (katamichi)</span>
+                <div>
+                  <span class="font-bold text-stone-800">3. 片道</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">かたみち</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(katamichi)</span>
+                </div>
+                <button onclick="speakText('かたみち')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">4. 禁煙</span>
-                <span class="text-rose-600 font-bold font-jp">きんえん (kin'en)</span>
+                <div>
+                  <span class="font-bold text-stone-800">4. 禁煙</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">きんえん</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(kin'en)</span>
+                </div>
+                <button onclick="speakText('きんえん')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">5. 案内</span>
-                <span class="text-rose-600 font-bold font-jp">あんない (annai)</span>
+                <div>
+                  <span class="font-bold text-stone-800">5. 案内</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">あんない</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(annai)</span>
+                </div>
+                <button onclick="speakText('あんない')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">6. 苦情</span>
-                <span class="text-rose-600 font-bold font-jp">くじょう (kujō)</span>
+                <div>
+                  <span class="font-bold text-stone-800">6. 苦情</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">くじょう</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(kujō)</span>
+                </div>
+                <button onclick="speakText('くじょう')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">7. 賽銭</span>
-                <span class="text-rose-600 font-bold font-jp">さいせん (saisen)</span>
+                <div>
+                  <span class="font-bold text-stone-800">7. 賽銭</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">さいせん</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(saisen)</span>
+                </div>
+                <button onclick="speakText('さいせん')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">8. 無料</span>
-                <span class="text-rose-600 font-bold font-jp">むりょう (muryō)</span>
+                <div>
+                  <span class="font-bold text-stone-800">8. 無料</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">むりょう</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(muryō)</span>
+                </div>
+                <button onclick="speakText('むりょう')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">9. 乗り換え</span>
-                <span class="text-rose-600 font-bold font-jp">のりかえ (norikae)</span>
+                <div>
+                  <span class="font-bold text-stone-800">9. 乗り換え</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">のりかえ</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(norikae)</span>
+                </div>
+                <button onclick="speakText('のりかえ')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
-                <span class="font-bold text-stone-800">10. 精算機</span>
-                <span class="text-rose-600 font-bold font-jp">せいさんき (seisanki)</span>
+                <div>
+                  <span class="font-bold text-stone-800">10. 精算機</span>
+                  <span class="text-rose-600 font-bold font-jp ml-2">せいさんき</span>
+                  <span class="text-xs text-stone-400 font-mono block sm:inline sm:ml-1">(seisanki)</span>
+                </div>
+                <button onclick="speakText('せいさんき')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="聆聽讀音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
             </div>
           </div>
 
           <!-- Part 2 -->
           <div>
-            <h4 class="font-bold text-stone-800 text-base sm:text-lg mb-3 flex items-center gap-2">
-              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">二</span>
-              行前打包與美食口袋清單（中翻日，漢字標註假名與羅馬拼音）
-            </h4>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <h4 class="font-bold text-stone-800 text-base sm:text-lg flex items-center gap-2">
+                <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">二</span>
+                行前打包與美食口袋清單（請將中文翻譯成日文，漢字請標註假名）20%
+              </h4>
+              <span class="text-xs text-stone-400">例：學生 ➔ 学生（がくせい）</span>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 font-jp">
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">1. 護照</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg">パスポート <span class="text-xs text-stone-500 font-mono">(pasupōto)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">1. 護照</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg">パスポート</div>
+                  <div class="text-xs text-rose-600 font-mono">(pasupōto)</div>
+                </div>
+                <button onclick="speakText('パスポート')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">2. 盥洗用品</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg">アメニティ <span class="text-xs text-stone-500 font-mono">(ameniti)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">2. 盥洗用品</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg">アメニティ</div>
+                  <div class="text-xs text-rose-600 font-mono">(ameniti)</div>
+                </div>
+                <button onclick="speakText('アメニティ')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">3. 拖鞋</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg">スリッパ <span class="text-xs text-stone-500 font-mono">(surippa)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">3. 拖鞋</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg">スリッパ</div>
+                  <div class="text-xs text-rose-600 font-mono">(surippa)</div>
+                </div>
+                <button onclick="speakText('スリッパ')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">4. 護身符</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg"><ruby>御守<rt>おまも</rt></ruby>り <span class="text-xs text-stone-500 font-mono">(omamori)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">4. 護身符</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg"><ruby>御守<rt>おまも</rt></ruby>り</div>
+                  <div class="text-xs text-rose-600 font-mono">(omamori)</div>
+                </div>
+                <button onclick="speakText('お守り')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">5. 拉麵</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg">ラーメン <span class="text-xs text-stone-500 font-mono">(rāmen)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">5. 拉麵</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg">ラーメン</div>
+                  <div class="text-xs text-rose-600 font-mono">(rāmen)</div>
+                </div>
+                <button onclick="speakText('ラーメン')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">6. 章魚燒</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg">たこ<ruby>焼<rt>や</rt></ruby>き <span class="text-xs text-stone-500 font-mono">(takoyaki)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">6. 章魚燒</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg">たこ<ruby>焼<rt>や</rt></ruby>き</div>
+                  <div class="text-xs text-rose-600 font-mono">(takoyaki)</div>
+                </div>
+                <button onclick="speakText('たこ焼き')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">7. 味噌湯</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg"><ruby>味噌汁<rt>みそしる</rt></ruby> <span class="text-xs text-stone-500 font-mono">(misoshiru)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">7. 味噌湯</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg"><ruby>味噌汁<rt>みそしる</rt></ruby></div>
+                  <div class="text-xs text-rose-600 font-mono">(misoshiru)</div>
+                </div>
+                <button onclick="speakText('味噌汁')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">8. 賞花</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg">お<ruby>花見<rt>はなみ</rt></ruby> <span class="text-xs text-stone-500 font-mono">(ohanami)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">8. 賞花</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg">お<ruby>花見<rt>はなみ</rt></ruby></div>
+                  <div class="text-xs text-rose-600 font-mono">(ohanami)</div>
+                </div>
+                <button onclick="speakText('お花見')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
-              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200">
-                <div class="text-xs text-stone-500 mb-0.5">9. 款待（款客之道）</div>
-                <div class="text-stone-900 font-bold text-base sm:text-lg">おもてなし <span class="text-xs text-stone-500 font-mono">(omotenashi)</span></div>
+              <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex justify-between items-center">
+                <div class="min-w-0">
+                  <div class="text-xs text-stone-500 mb-0.5">9. 款待（賓至如歸之道）</div>
+                  <div class="text-stone-900 font-bold text-base sm:text-lg">おもてなし</div>
+                  <div class="text-xs text-rose-600 font-mono">(omotenashi)</div>
+                </div>
+                <button onclick="speakText('おもてなし')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="單字發音">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
               </div>
             </div>
+          </div>
+
+          <!-- Part 3: Complete 10 Multiple Choice Questions -->
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <h4 class="font-bold text-stone-800 text-base sm:text-lg flex items-center gap-2">
+                <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">三</span>
+                日常會話情境選擇題（請選出括號中最適合的助詞或語彙）20%【完整 10 題】
+              </h4>
+              <span class="text-xs text-stone-400">含題幹假名、發音與文法解析</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              <!-- Q1 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">1. ( <span class="text-rose-600 font-bold">A</span> ) 機場櫃台報到：</div>
+                  <button onclick="speakText('パスポートをお願いします')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  パスポート<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　を　</span>、お<ruby>願<rt>ねが</rt></ruby>いします。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">A. を</span>
+                  <span class="text-stone-500">B. に</span>
+                  <span class="text-stone-500">C. は</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>動作受詞接賓格助詞「を」，即「パスポートをお願いします」（請給我/請出示護照）。
+                </div>
+              </div>
+
+              <!-- Q2 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">2. ( <span class="text-rose-600 font-bold">B</span> ) 咖啡廳點餐：</div>
+                  <button onclick="speakText('コーヒーをください')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  コーヒー<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　を　</span>、ください。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-stone-500">A. が</span>
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">B. を</span>
+                  <span class="text-stone-500">C. で</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>索取、點餐時名詞後接助詞「を」再接「ください」，意為「請給我咖啡」。
+                </div>
+              </div>
+
+              <!-- Q3 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">3. ( <span class="text-rose-600 font-bold">A</span> ) 詢問洗手間位置：</div>
+                  <button onclick="speakText('トイレはありますか')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  トイレ<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　は　</span>、ありますか。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">A. は</span>
+                  <span class="text-stone-500">B. を</span>
+                  <span class="text-stone-500">C. が</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>將詢問主題提出作為話題焦點時使用主題助詞「は」（請問有洗手間嗎？/洗手間在哪裡？）。
+                </div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">4. ( <span class="text-rose-600 font-bold">A</span> ) 描述邊走邊聊：</div>
+                  <button onclick="speakText('歩きながら話します')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  <ruby>歩<rt>ある</rt></ruby>き<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　ながら　</span>、<ruby>話<rt>はな</rt></ruby>します。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">A. ながら</span>
+                  <span class="text-stone-500">B. て</span>
+                  <span class="text-stone-500">C. ます</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>表示同時進行兩項動作接續「動詞ます形去ます + ながら」，「歩きます ➔ 歩き ＋ ながら」表一邊走路一邊說話。
+                </div>
+              </div>
+
+              <!-- Q5 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">5. ( <span class="text-rose-600 font-bold">A</span> ) 飯店詢問票券：</div>
+                  <button onclick="speakText('チケットをいただけますか')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  チケット<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　を　</span>、いただけますか。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">A. を</span>
+                  <span class="text-stone-500">B. に</span>
+                  <span class="text-stone-500">C. は</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>索取物件委託「[名詞] + をいただけますか」，表示高度禮貌地索取票券。
+                </div>
+              </div>
+
+              <!-- Q6 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">6. ( <span class="text-rose-600 font-bold">B</span> ) 試穿看中的鞋子：</div>
+                  <button onclick="speakText('履いてみます')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  <ruby>履<rt>は</rt></ruby>い<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　て　</span>、みます。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-stone-500">A. きます</span>
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">B. て</span>
+                  <span class="text-stone-500">C. ながら</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>表達嘗試體驗使用「動詞て形 + みます」，履きます 的て形為「履いて」，接「みます」即「試穿看看」。
+                </div>
+              </div>
+
+              <!-- Q7 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">7. ( <span class="text-rose-600 font-bold">A</span> ) 形容不小心買太多了：</div>
+                  <button onclick="speakText('買いすぎます')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  <ruby>買<rt>か</rt></ruby>い<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　すぎます　</span>。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">A. すぎます</span>
+                  <span class="text-stone-500">B. ながら</span>
+                  <span class="text-stone-500">C. て</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>表示行為超過限度使用「動詞ます形去ます + すぎます」，買います ➔ 「買いすぎます / 買いすぎました」（買太多了）。
+                </div>
+              </div>
+
+              <!-- Q8 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">8. ( <span class="text-rose-600 font-bold">B</span> ) 壽司店做點餐決定：</div>
+                  <button onclick="speakText('お寿司にします')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  お<ruby>寿司<rt>すし</rt></ruby><span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　に　</span>、します。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-stone-500">A. を</span>
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">B. に</span>
+                  <span class="text-stone-500">C. が</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>在多個菜色或選項中做出個人最後選擇使用「[名詞] + にします」（我決定選壽司）。
+                </div>
+              </div>
+
+              <!-- Q9 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">9. ( <span class="text-rose-600 font-bold">A</span> ) 詢問去日本環球影城的路線：</div>
+                  <button onclick="speakText('USJまでどうやって行きますか')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  USJまで<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　どうやって　</span>、<ruby>行<rt>い</rt></ruby>きますか。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">A. どうやって</span>
+                  <span class="text-stone-500">B. どうして</span>
+                  <span class="text-stone-500">C. どうか</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>詢問具體交通前往方式、工具與轉乘使用「どうやって行きますか」（怎麼去）。「どうして」為詢問原因理由。
+                </div>
+              </div>
+
+              <!-- Q10 -->
+              <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="font-bold text-stone-800 text-sm sm:text-base">10. ( <span class="text-rose-600 font-bold">C</span> ) 在甜點店表達想買的意願：</div>
+                  <button onclick="speakText('ケーキを買いたいです')" class="touch-btn p-1.5 text-rose-600 hover:bg-rose-100 rounded-xl transition shrink-0" title="朗讀題目">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                  </button>
+                </div>
+                <div class="font-jp text-stone-900 text-base leading-relaxed">
+                  ケーキを<span class="underline decoration-rose-400 font-bold text-rose-600 px-1">　買い　</span>、たいです。
+                </div>
+                <div class="text-xs text-stone-600 space-x-3">
+                  <span class="text-stone-500">A. 買います</span>
+                  <span class="text-stone-500">B. 買って</span>
+                  <span class="text-rose-600 font-bold bg-rose-100/70 px-2 py-0.5 rounded-md">C. 買い</span>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-50/80 p-2 rounded-xl border border-emerald-100">
+                  <strong>解析：</strong>表第一人稱想要做某事接「動詞ます形去ます + たいです」，「買います ➔ 買い ＋ たいです」即「想買蛋糕」。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Part 4: Survival Japanese -->
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <h4 class="font-bold text-stone-800 text-base sm:text-lg flex items-center gap-2">
+                <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-500 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">四</span>
+                日本旅遊生存應答任務（中翻日實戰）20%
+              </h4>
+              <span class="text-xs text-stone-400">點擊右側發音按鈕可反覆跟讀</span>
+            </div>
+            
+            <div class="space-y-3">
+              <div class="p-3.5 bg-stone-50 rounded-2xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div>
+                  <span class="text-xs text-stone-500 block mb-0.5">1. 機上覺得冷：「麻煩請給我毯子（毛布）。」</span>
+                  <span class="font-bold text-stone-900 font-jp text-base sm:text-lg"><ruby>毛布<rt>もうふ</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。</span>
+                  <span class="text-xs text-rose-600 font-mono block sm:inline sm:ml-2">(Mōfu o onegai shimasu.)</span>
+                </div>
+                <button onclick="speakText('毛布をお願いします')" class="touch-btn self-start sm:self-auto px-3.5 py-1.5 bg-white border border-stone-200 rounded-xl text-xs font-bold text-rose-600 flex items-center gap-1.5 hover:bg-rose-50 shadow-sm shrink-0">
+                  <i class="fa-solid fa-volume-high"></i> 發音
+                </button>
+              </div>
+
+              <div class="p-3.5 bg-stone-50 rounded-2xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div>
+                  <span class="text-xs text-stone-500 block mb-0.5">2. 地鐵詢問轉乘：「請問在哪裡換車（乗り換え）？」</span>
+                  <span class="font-bold text-stone-900 font-jp text-base sm:text-lg">どこで<ruby>乗<rt>の</rt></ruby>り<ruby>換<rt>か</rt></ruby>えますか。</span>
+                  <span class="text-xs text-rose-600 font-mono block sm:inline sm:ml-2">(Doko de norikaemasu ka.)</span>
+                </div>
+                <button onclick="speakText('どこで乗り換えますか')" class="touch-btn self-start sm:self-auto px-3.5 py-1.5 bg-white border border-stone-200 rounded-xl text-xs font-bold text-rose-600 flex items-center gap-1.5 hover:bg-rose-50 shadow-sm shrink-0">
+                  <i class="fa-solid fa-volume-high"></i> 發音
+                </button>
+              </div>
+
+              <div class="p-3.5 bg-stone-50 rounded-2xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div>
+                  <span class="text-xs text-stone-500 block mb-0.5">3. 飯店寄放行李：「麻煩（您）了，拜託了。」</span>
+                  <span class="font-bold text-stone-900 font-jp text-base sm:text-lg">よろしくお<ruby>願<rt>ねが</rt></ruby>いします。</span>
+                  <span class="text-xs text-rose-600 font-mono block sm:inline sm:ml-2">(Yoroshiku onegai shimasu.)</span>
+                </div>
+                <button onclick="speakText('よろしくお願いします')" class="touch-btn self-start sm:self-auto px-3.5 py-1.5 bg-white border border-stone-200 rounded-xl text-xs font-bold text-rose-600 flex items-center gap-1.5 hover:bg-rose-50 shadow-sm shrink-0">
+                  <i class="fa-solid fa-volume-high"></i> 發音
+                </button>
+              </div>
+
+              <div class="p-3.5 bg-stone-50 rounded-2xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div>
+                  <span class="text-xs text-stone-500 block mb-0.5">4. 接受協助後致謝：「謝謝。」</span>
+                  <span class="font-bold text-stone-900 font-jp text-base sm:text-lg">ありがとうございます。</span>
+                  <span class="text-xs text-rose-600 font-mono block sm:inline sm:ml-2">(Arigatō gozaimasu.)</span>
+                </div>
+                <button onclick="speakText('ありがとうございます')" class="touch-btn self-start sm:self-auto px-3.5 py-1.5 bg-white border border-stone-200 rounded-xl text-xs font-bold text-rose-600 flex items-center gap-1.5 hover:bg-rose-50 shadow-sm shrink-0">
+                  <i class="fa-solid fa-volume-high"></i> 發音
+                </button>
+              </div>
+
+              <div class="p-3.5 bg-stone-50 rounded-2xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div>
+                  <span class="text-xs text-stone-500 block mb-0.5">5. 在車站補票：「請問精算機在哪裡？」</span>
+                  <span class="font-bold text-stone-900 font-jp text-base sm:text-lg"><ruby>精算機<rt>せいさんき</rt></ruby>はどこですか。</span>
+                  <span class="text-xs text-rose-600 font-mono block sm:inline sm:ml-2">(Seisanki wa doko desu ka.)</span>
+                </div>
+                <button onclick="speakText('精算機はどこですか')" class="touch-btn self-start sm:self-auto px-3.5 py-1.5 bg-white border border-stone-200 rounded-xl text-xs font-bold text-rose-600 flex items-center gap-1.5 hover:bg-rose-50 shadow-sm shrink-0">
+                  <i class="fa-solid fa-volume-high"></i> 發音
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Part 5: Culture Essay Prompt -->
+          <div class="p-4 sm:p-5 bg-rose-50/60 rounded-2xl border border-rose-200">
+            <h4 class="font-bold text-rose-900 text-base sm:text-lg mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-600 text-white text-xs sm:text-sm inline-flex items-center justify-center shrink-0">五</span>
+              旅遊豆知識圖文與文化分享（20% 寫作題導引）
+            </h4>
+            <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+              在媒體教材的「旅遊豆知識」中（如：初夢吉祥話一富士二鷹三茄子、精算機操作技巧、JR Pass 活用、居酒屋「とりあえずビール」與お通し、炸串燒「二度付け禁止」等），哪一個內容讓您印象最深刻？請說明理由並結合您過去的日本旅遊趣事，或未來最想體驗的日本文化進行分享（需達 300 字以上；非常歡迎隨文附上旅遊舊照或隨手小插圖分享！）。
+            </p>
           </div>
         </div>
       </section>
@@ -785,10 +1207,178 @@
         }
       },
       {
+        id: "ch-3-2",
+        code: "3.2",
+        title: "上野（關東地區篇 - 購物與美食）",
+        subtitle: "阿美橫町探索・事物存在「[名詞] + があります」",
+        badge: "關東地區",
+        dialogue: {
+          scene: "上野阿美橫町購物與特色美食探索",
+          lines: [
+            {
+              speaker: "觀光客",
+              romaji: "'Ameyoko' wa yūmeina basho desu ka.",
+              japanese: "「アメ横」は有名な場所ですか。",
+              ruby: "「アメ<ruby>横<rt>よこ</rt></ruby>」は<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>場所<rt>ばしょ</rt></ruby>ですか。",
+              chinese: "「阿美橫町」是一個有名的地方嗎？"
+            },
+            {
+              speaker: "導覽人員",
+              romaji: "Hai, rekishi aru shōtengai desu. O-kashi ya yōfuku, yatai gurume ga arimasu yo.",
+              japanese: "はい、歴史ある商店街です。お菓子や洋服、屋台グルメがありますよ。",
+              ruby: "はい、<ruby>歴史<rt>れきし</rt></ruby>ある<ruby>商店街<rt>しょうてんがい</rt></ruby>です。お<ruby>菓子<rt>かし</rt></ruby>や<ruby>洋服<rt>ようふく</rt></ruby>、<ruby>屋台<rt>やたい</rt></ruby>グルメがありますよ。",
+              chinese: "是的，這裡是具有歷史的商店街。有零食、衣服和路邊攤美食喔。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Osusume wa nan desu ka.",
+              japanese: "おすすめは何ですか。",
+              ruby: "おすすめは<ruby>何<rt>なん</rt></ruby>ですか。",
+              chinese: "推薦什麼呢？"
+            },
+            {
+              speaker: "導覽人員",
+              romaji: "Yakitori ga osusume desu.",
+              japanese: "焼き鳥がおすすめです。",
+              ruby: "<ruby>焼<rt>や</rt></ruby>き<ruby>鳥<rt>とり</rt></ruby>がおすすめです。",
+              chinese: "推薦烤雞肉串燒。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + があります (ga arimasu)",
+          explanation: "意為「表示存在或有...」，用於陳述無生命物品、場所、活動或事件的存在。",
+          examples: [
+            {
+              jp: "駅の中にトイレがあります。",
+              ruby: "<ruby>駅<rt>えき</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にトイレがあります。",
+              romaji: "Eki no naka ni toire ga arimasu.",
+              zh: "車站裡有廁所。"
+            },
+            {
+              jp: "ここにカフェがあります。",
+              ruby: "ここにカフェがあります。",
+              romaji: "Koko ni kafe ga arimasu.",
+              zh: "這裡有咖啡廳。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "レストラン", pattern: "レストランがあります", romaji: "Resutoran ga arimasu.", zh: "有餐廳。" },
+          { item: "美術館", pattern: "美術館があります", romaji: "Bijutsukan ga arimasu.", zh: "有美術館。" },
+          { item: "時間", pattern: "時間があります", romaji: "Jikan ga arimasu.", zh: "有時間。" },
+          { item: "お金", pattern: "お金があります", romaji: "O-kane ga arimasu.", zh: "有錢。" }
+        ],
+        vocab: [
+          { jp: "飲み放題", kana: "のみほうだい", romaji: "nomihōdai", zh: "喝到飽" },
+          { jp: "お得", kana: "おとく", romaji: "otoku", zh: "划算 / 超值" },
+          { jp: "グルメ", kana: "グルメ", romaji: "gurume", zh: "美食" },
+          { jp: "訳あり商品", kana: "わけありしょうひん", romaji: "wakeari shōhin", zh: "瑕疵特惠品" },
+          { jp: "激安", kana: "げきやす", romaji: "gekiyasu", zh: "超便宜" },
+          { jp: "飲み歩く", kana: "のみあるく", romaji: "nomiaruku", zh: "一家接一家續攤喝" },
+          { jp: "値切り", kana: "ねぎり", romaji: "negiri", zh: "討價還價" },
+          { jp: "買い物", kana: "かいもの", romaji: "kaimono", zh: "買東西" }
+        ],
+        phrases: [
+          { scene: "禁止外食", jp: "飲食物の持ち込みはご遠慮ください。", ruby: "<ruby>飲食物<rt>いんしょくぶつ</rt></ruby>の<ruby>持<rt>も</rt></ruby>ち<ruby>込<rt>こ</rt></ruby>みはご<ruby>遠慮<rt>えんりょ</rt></ruby>ください。", romaji: "Inshokubutsu no mochikomi wa go-enryo kudasai.", zh: "請勿攜帶外食進入。" },
+          { scene: "詢問殺價", jp: "値切りができますか。", ruby: "<ruby>値切<rt>ねぎ</rt></ruby>りができますか。", romaji: "Negiri ga dekimasu ka.", zh: "可以算便宜/殺價嗎？" },
+          { scene: "尋找結帳", jp: "レジはどこですか。", ruby: "レジはどこですか。", romaji: "Reji wa doko desu ka.", zh: "在哪裡結帳？" },
+          { scene: "分開結帳", jp: "会計は別々にお願いします。", ruby: "<ruby>会計<rt>かいけい</rt></ruby>は<ruby>別々<rt>べつべつ</rt></ruby>にお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Kaikei wa betsubetsu ni onegai shimasu.", zh: "結帳麻煩請分開付。" }
+        ],
+        trivia: {
+          title: "居酒屋「總之先來杯啤酒（とりあえずビール）」與小菜（お通し）潛規則",
+          content: "入座時先點生啤酒能讓整桌迅速乾杯熱絡。居酒屋隨即送上的小菜（お通し）為收取座位費（席料）之象徵，並非免費招待。"
+        }
+      },
+      {
+        id: "ch-4-1",
+        code: "4.1",
+        title: "吉祥寺（關東地區篇 - 咖啡與雜貨散策）",
+        subtitle: "文青街道探索・嘗試體驗「[動詞て形] + みます」",
+        badge: "關東地區",
+        dialogue: {
+          scene: "吉祥寺特色咖啡與雜貨散策",
+          lines: [
+            {
+              speaker: "山田",
+              romaji: "Kichijōji ni wa nani ga arimasu ka.",
+              japanese: "吉祥寺には何がありますか。",
+              ruby: "<ruby>吉祥寺<rt>きちじょうじ</rt></ruby>には<ruby>何<rt>なに</rt></ruby>がありますか。",
+              chinese: "吉祥寺有什麼呢？"
+            },
+            {
+              speaker: "木村",
+              romaji: "Kafe ya zakkaten, furugiya ga takusan arimasu.",
+              japanese: "カフェや雑貨店、古着屋がたくさんあります。",
+              ruby: "カフェや<ruby>雑貨店<rt>ざっかてん</rt></ruby>、<ruby>古着屋<rt>ふるぎや</rt></ruby>がたくさんあります。",
+              chinese: "有很多咖啡廳、雜貨店和二手衣店。"
+            },
+            {
+              speaker: "山田",
+              romaji: "Wakai hito ni ninki ga arimasu ne.",
+              japanese: "若い人に人気がありますね。",
+              ruby: "<ruby>若<rt>わか</rt></ruby>い<ruby>人<rt>ひと</rt></ruby>に<ruby>人気<rt>にんき</rt></ruby>がありますね。",
+              chinese: "年輕人很喜歡這裡吧。"
+            },
+            {
+              speaker: "木村",
+              romaji: "Hai, ninki desu. Zehi, itte mite kudasai.",
+              japanese: "はい、人気です。ぜひ、行ってみてください。",
+              ruby: "はい、<ruby>人気<rt>にんき</rt></ruby>です。ぜひ、<ruby>行<rt>い</rt></ruby>ってみてください。",
+              chinese: "是的，很受歡迎。請一定要去看看！"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[動詞て形] + みます (temimasu)",
+          explanation: "意為「試著...」或「嘗試...」，用於表示嘗試做某個動作來看看結果或體驗如何。",
+          examples: [
+            {
+              jp: "触ってみます。",
+              ruby: "<ruby>触<rt>さわ</rt></ruby>ってみます。",
+              romaji: "Sawatte mimasu.",
+              zh: "摸看看。"
+            },
+            {
+              jp: "見てみます。",
+              ruby: "<ruby>見<rt>み</rt></ruby>てみます。",
+              romaji: "Mite mimasu.",
+              zh: "看一看。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "食べます", pattern: "食べてみます", romaji: "Tabete mimasu.", zh: "試吃看看。" },
+          { item: "考えます", pattern: "考えてみます", romaji: "Kangaete mimasu.", zh: "想看看。" },
+          { item: "着ます", pattern: "着てみます", romaji: "Kite mimasu.", zh: "試穿（上衣）看看。" },
+          { item: "履きます", pattern: "履いてみます", romaji: "Haite mimasu.", zh: "試穿（鞋褲）看看。" }
+        ],
+        vocab: [
+          { jp: "古着屋・古本屋", kana: "ふるぎや・ふるほんや", romaji: "furugiya / furuhonya", zh: "二手衣店 / 二手書店" },
+          { jp: "営業時間", kana: "えいぎょうじかん", romaji: "eigyō jikan", zh: "營業時間" },
+          { jp: "ハンドメイド", kana: "ハンドメイド", romaji: "handomeido", zh: "手工製作" },
+          { jp: "文房具", kana: "ぶんぼうぐ", romaji: "bunbōgu", zh: "文具" },
+          { jp: "アクセサリー", kana: "アクセサリー", romaji: "akusesarī", zh: "配件 / 配飾" },
+          { jp: "散策します", kana: "さんさくします", romaji: "sansaku shimasu", zh: "漫步散策" },
+          { jp: "ファッション", kana: "ファッション", romaji: "fasshon", zh: "流行時尚款式" },
+          { jp: "商店街", kana: "しょうてんがい", romaji: "shōtengai", zh: "商店街" }
+        ],
+        phrases: [
+          { scene: "確認距離", jp: "駅からどのくらいの距離ですか。", ruby: "<ruby>駅<rt>えき</rt></ruby>からどのくらいの<ruby>距離<rt>きょり</rt></ruby>ですか。", romaji: "Eki kara dono kurai no kyori desu ka.", zh: "距離車站有多遠？" },
+          { scene: "尋找結帳", jp: "レジはどこですか。", ruby: "レジはどこですか。", romaji: "Reji wa doko desu ka.", zh: "在哪裡結帳？" },
+          { scene: "考慮購買", jp: "ちょっと考えます。", ruby: "ちょっと<ruby>考<rt>かんが</rt></ruby>えます。", romaji: "Chotto kangaemasu.", zh: "我考慮一下。" },
+          { scene: "詢問排隊", jp: "並んでいますか。", ruby: "<ruby>並<rt>なら</rt></ruby>んでいますか。", romaji: "Narande imasu ka.", zh: "在排隊嗎？" }
+        ],
+        trivia: {
+          title: "塑膠購物袋收費制（レジ袋有料化）與環保購物",
+          content: "日本全國自2020年起超商、藥妝店塑膠袋皆須自費購買（約3~5日圓）。結帳時若不需塑膠袋可主動出示環保袋並回答「袋はいりません（不用袋子）」。"
+        }
+      },
+      {
         id: "ch-4-2",
         code: "4.2",
         title: "買い物（關東地區篇 - 購物與試穿）",
-        subtitle: "藥妝店與服飾店・徵詢許可「～てもいいですか」",
+        subtitle: "藥妝店與服飾店・徵詢許可「[動詞て形] + もいいですか」",
         badge: "購物與退稅",
         dialogue: {
           scene: "鞋履服飾店試穿徵詢",
@@ -820,6 +1410,13 @@
               japanese: "少々お待ちください。",
               ruby: "<ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちください。",
               chinese: "請稍等片刻。"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Kono iro ga ii desu ne. Ja, kore o onegai shimasu.",
+              japanese: "この色がいいですね。じゃ、これをお願いします。",
+              ruby: "この<ruby>色<rt>いろ</rt></ruby>がいいですね。じゃ、これをお<ruby>願<rt>ねが</rt></ruby>いします。",
+              chinese: "這個顏色很好看。那我就選這個了。"
             }
           ]
         },
@@ -863,8 +1460,8 @@
           { scene: "禮品包裝", jp: "プレゼント用に包装してもらえますか。", ruby: "プレゼント<ruby>用<rt>よう</rt></ruby>に<ruby>包装<rt>ほうそう</rt></ruby>してもらえますか。", romaji: "Purezento-yō ni hōsō shite moraemasu ka.", zh: "可以幫我包裝成送禮用的嗎？" }
         ],
         trivia: {
-          title: "日本免稅手續（Tax-Free）與密封袋規範",
-          content: "外國旅客當日未稅滿 5,000 日圓可退稅。消耗品封入專用透明袋後，出境前嚴禁拆封使用。"
+          title: "日本免稅手續（Tax-Free）與關西常用方言",
+          content: "外國旅客當日未稅滿 5,000 日圓可退稅。消耗品封入專用透明袋後，出境前嚴禁拆封。關西常用「まけて（算便宜點）」、「おおきに（謝謝）」！"
         }
       },
       {
@@ -967,7 +1564,7 @@
       {
         id: "ch-6-1",
         code: "6.1",
-        title: "大阪（關西地區篇 - 交通與地標）",
+        title: "大阪（關西地區篇 - 都會探索與問路）",
         subtitle: "關西風情・問路抵達「～までどうやって行きますか」",
         badge: "關西地區",
         dialogue: {
@@ -1032,6 +1629,103 @@
         trivia: {
           title: "道頓堀跑跑人地標與大阪方言",
           content: "道頓堀固力果看板於1935年設立。關西必備腔調：めっちゃ（非常）、なんでやねん（搞什麼鬼啊）、おおきに（謝謝）。"
+        }
+      },
+      {
+        id: "ch-6-2",
+        code: "6.2",
+        title: "たこ焼き（關西地區篇 - 大阪庶民小吃）",
+        subtitle: "屋台美味・決定點餐「[名詞] + にします」",
+        badge: "庶民美食",
+        dialogue: {
+          scene: "大阪章魚燒攤位前點餐",
+          lines: [
+            {
+              speaker: "顧客",
+              romaji: "Takoyaki o kudasai.",
+              japanese: "たこ焼きをください。",
+              ruby: "たこ<ruby>焼<rt>や</rt></ruby>きをください。",
+              chinese: "請給我章魚燒。"
+            },
+            {
+              speaker: "店員",
+              romaji: "Irasshaimase. Nan-ko ni shimasu ka.",
+              japanese: "いらっしゃいませ。何個にしますか。",
+              ruby: "いらっしゃいませ。<ruby>何個<rt>なんこ</rt></ruby>にしますか。",
+              chinese: "歡迎光臨。您要幾個呢？"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Hakko kudasai.",
+              japanese: "８個ください。",
+              ruby: "８<ruby>個<rt>こ</rt></ruby>（はっこ）ください。",
+              chinese: "請給我 8 個。"
+            },
+            {
+              speaker: "店員",
+              romaji: "Sōsu to mayonēzu wa dō shimasu ka.",
+              japanese: "ソースとマヨネーズはどうしますか。",
+              ruby: "ソースとマヨネーズはどうしますか。",
+              chinese: "醬汁和美乃滋要怎麼加呢？"
+            },
+            {
+              speaker: "顧客",
+              romaji: "Ryōhō de onegai shimasu.",
+              japanese: "両方でお願いします。",
+              ruby: "<ruby>両方<rt>りょうほう</rt></ruby>でお<ruby>願<rt>ねが</rt></ruby>いします。",
+              chinese: "兩樣都要，麻煩你了。"
+            },
+            {
+              speaker: "店員",
+              romaji: "Hai, omachi kudasai.",
+              japanese: "はい、お待ちください。",
+              ruby: "はい、お<ruby>待<rt>ま</rt></ruby>ちください。",
+              chinese: "好的，請稍候。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + にします (ni shimasu)",
+          explanation: "意為「我決定選... / 我要...」，用於在多個選項中做出個人最後的選擇與決定。",
+          examples: [
+            {
+              jp: "ラーメンにします。",
+              ruby: "ラーメンにします。",
+              romaji: "Rāmen ni shimasu.",
+              zh: "我選拉麵。"
+            },
+            {
+              jp: "コーヒーにします。",
+              ruby: "コーヒーにします。",
+              romaji: "Kōhī ni shimasu.",
+              zh: "我要咖啡。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "たこ焼き８個", pattern: "たこ焼き８個にします", romaji: "Takoyaki hakko ni shimasu.", zh: "我要 8 顆章魚燒。" },
+          { item: "お茶", pattern: "お茶にします", romaji: "Ocha ni shimasu.", zh: "我選茶。" },
+          { item: "これ", pattern: "これにします", romaji: "Kore ni shimasu.", zh: "我決定選這個。" }
+        ],
+        vocab: [
+          { jp: "屋台料理", kana: "やたいりょうり", romaji: "yatai ryōri", zh: "路邊攤小吃料理" },
+          { jp: "ソース", kana: "ソース", romaji: "sōsu", zh: "章魚燒專用醬汁" },
+          { jp: "青のり", kana: "あおのり", romaji: "aonori", zh: "青海苔粉" },
+          { jp: "持ち帰り", kana: "もちかえり", romaji: "mochikaeri", zh: "外帶" },
+          { jp: "マヨネーズ", kana: "マヨネーズ", romaji: "mayonēzu", zh: "美乃滋" },
+          { jp: "熱い・暑い", kana: "あつい", romaji: "atsui", zh: "燙的 / 氣候炎熱的" },
+          { jp: "かつお節", kana: "かつおぶし", romaji: "katsuobushi", zh: "柴魚片" },
+          { jp: "店内・イートイン", kana: "てんない・イートイン", romaji: "tennai / ītoin", zh: "店內用餐 / 內用" }
+        ],
+        phrases: [
+          { scene: "詢問醬汁", jp: "お好みソースをかけますか。", ruby: "お<ruby>好<rt>この</rt></ruby>みソースをかけますか。", romaji: "O-konomi sōsu o kakemasu ka.", zh: "要淋上您喜歡的特調醬汁嗎？" },
+          { scene: "形容熱度", jp: "あつあつですね。", ruby: "あつあつですね。", romaji: "Atsuatsu desu ne.", zh: "熱騰騰呢！" },
+          { scene: "叮嚀小心", jp: "熱いですから、気をつけてください。", ruby: "<ruby>熱<rt>あつ</rt></ruby>いですから、<ruby>気<rt>き</rt></ruby>をつけてください。", romaji: "Atsui desu kara, ki o tsukete kudasai.", zh: "很燙，請小心燙口。" },
+          { scene: "叮嚀趁熱", jp: "冷めないうちに召し上がってください。", ruby: "<ruby>冷<rt>さ</rt></ruby>めないうちに<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がってください。", romaji: "Samenai uchi ni meshiagatte kudasai.", zh: "請趁熱享用。" }
+        ],
+        trivia: {
+          title: "大阪炸串燒（串カツ）的「禁止回沾（二度付け禁止）」",
+          content: "大阪通天閣著名的炸串燒，桌上醬汁盒為大家共用。咬過一口的炸串絕對嚴禁再次放入醬汁鐵盒沾取！如醬汁不夠可用高麗菜片舀取澆在肉串上。"
         }
       },
       {
@@ -1194,7 +1888,7 @@
       {
         id: "ch-8-1",
         code: "8.1",
-        title: "和菓子（人氣甜點篇 - 傳統四季風雅）",
+        title: "和菓子（日本人氣甜點篇 - 傳統四季風雅）",
         subtitle: "伴手禮品茶・柔性提議「～でも、〜」",
         badge: "日本甜品",
         dialogue: {
@@ -1277,7 +1971,7 @@
       {
         id: "ch-8-2",
         code: "8.2",
-        title: "抹茶スイーツ（人氣甜點篇 - 抹茶甜品）",
+        title: "抹茶スイーツ（日本人氣甜點篇 - 抹茶甜品）",
         subtitle: "外觀推測評價「～そうです」",
         badge: "日本甜品",
         dialogue: {
@@ -1348,6 +2042,232 @@
         trivia: {
           title: "下午三點點心（3 時のおやつ）",
           content: "起源於古代「八刻（下午2~4點）」的休憩輕食習慣，老店文明堂的電視廣告更使之深植人心。"
+        }
+      },
+      {
+        id: "ch-9",
+        code: "9",
+        title: "學習成果彙整（第 1～8 週）",
+        subtitle: "核心語法體系、情境應對整合與社會文化七大哲學",
+        badge: "期中總回顧",
+        isReviewChapter: true,
+        dialogue: {
+          scene: "第 1 至第 8 週實務應對總檢閱",
+          lines: [
+            {
+              speaker: "總結",
+              romaji: "Kore made benkyō shita bunpō to kotoba o fukushū shimashō.",
+              japanese: "これまで勉強した文法と言葉を復習しましょう。",
+              ruby: "これまで<ruby>勉強<rt>べんきょう</rt></ruby>した<ruby>文法<rt>ぶんぽう</rt></ruby>と<ruby>言葉<rt>ことば</rt></ruby>を<ruby>復習<rt>ふくしゅう</rt></ruby>しましょう。",
+              chinese: "讓我們一起複習至今所學的文法與語彙吧！"
+            }
+          ]
+        },
+        grammarRules: [
+          { code: "1.1", form: "～をお願いします", syntax: "名詞 ＋ をお願いします", func: "提出正式服務委託或請求索取", ex: "チェックインをお願いします。" },
+          { code: "1.2", form: "～はどこですか", syntax: "名詞 ＋ はどこですか", func: "空間定位與公共設施方位詢問", ex: "トイレはどこですか。" },
+          { code: "2.1", form: "～ていただけますか", syntax: "動詞て形 ＋ いただけますか", func: "高度禮貌性地請求他人協助", ex: "荷物を預かっていただけますか。" },
+          { code: "2.2", form: "～すぎます", syntax: "形容詞詞幹 / 動詞連用形 ＋ すぎます", func: "描述客觀狀態或感受超越適度範圍", ex: "冷房が強すぎます。" },
+          { code: "3.1", form: "～ながら、〜", syntax: "動詞連用形 ＋ ながら、[主動詞]", func: "描述同一主體於同一時段兼行兩項動作", ex: "歩きながら、話します。" },
+          { code: "3.2", form: "～があります", syntax: "名詞 ＋ があります", func: "陳述無生命物體、場所或設施之客觀存在", ex: "ここにカフェがあります。" },
+          { code: "4.1", form: "～てみます", syntax: "動詞て形 ＋ みます", func: "表達嘗試性行動以確認結果或體驗", ex: "食べてみます。" },
+          { code: "4.2", form: "～てもいいですか", syntax: "動詞て形 ＋ もいいですか", func: "於特定空間或行為前向對方徵詢許可", ex: "これを履いてもいいですか。" },
+          { code: "5.2", form: "～をください", syntax: "名詞 ＋ をください", func: "日常消費場合中直接明確之點餐或索取", ex: "水をください。" },
+          { code: "6.1", form: "～までどうやって行きますか", syntax: "目的地 ＋ までどうやって行きますか", func: "詢問前往指定目的地之交通途徑與方法", ex: "道頓堀までどうやって行きますか。" },
+          { code: "6.2", form: "～にします", syntax: "名詞 ＋ にします", func: "於多個項目中做出個人最終之決定", ex: "たこ焼き８個にします。" },
+          { code: "7.1", form: "～たいです", syntax: "動詞ます形去ます ＋ たいです", func: "表達說話者第一人稱主觀之願望", ex: "写真をいっぱい撮りたいです。" },
+          { code: "7.2", form: "お／ご～ください", syntax: "お/ご ＋ 動詞ます形/名詞 ＋ ください", func: "典雅優美地引導或指示對方", ex: "写真撮影はご遠慮ください。" },
+          { code: "8.1", form: "～でも、〜", syntax: "名詞 ＋ でも、〜", func: "提出軟性提議或舉出代表性選項", ex: "コーヒーでもどうですか。" },
+          { code: "8.2", form: "～そうです", syntax: "形容詞詞幹 / 動詞連用形 ＋ そうです", func: "基於視覺直觀對事物特質提出推測與評價", ex: "おいしそうです。" }
+        ],
+        culturalPhilosophies: [
+          { title: "1. 空中視角的地理景觀（左進右出原則）", desc: "台灣飛往日本去程選左側靠窗（A席）、回程選右側（K席），天氣晴朗可鳥瞰富士山雪冠。" },
+          { title: "2. 自動化票證與精算機機制", desc: "日本鐵道改札口專設黃色「精算機」，兼顧效率與個人隱私自律補票。" },
+          { title: "3. 居酒屋飲酒文化之演變與潛規則", desc: "「とりあえずビール」最快開場乾杯；入座附上的「お通し」屬象徵性座位費。" },
+          { title: "4. 神道教與佛教之參拜儀軌差異", desc: "神社（神道）為「二禮二拍手一禮」；寺廟（佛教）經山門合十默禱切勿拍手。抽凶籤繫於指定架上轉厄為祥。" },
+          { title: "5. 飲食衛生之共同契約（二度付け禁止）", desc: "大阪炸串燒醬汁鐵盒全桌共用，咬過絕不可再次回沾，體現庶民公德自律。" },
+          { title: "6. 京都市景觀法制與款待文化", desc: "古都超商招牌自主降低彩度；傳統料亭「謝絕生客（一見さんお断り）」源自深厚信任記帳制。" },
+          { title: "7. 茶道精神與五感體驗之順序", desc: "先享用甘甜和菓子保護味蕾，後飲濃苦抹茶帶出甘甜回味；茶碗轉兩次避開正面就口，最後一口發出「吸氣聲（吸い切り）」向茶師致敬。" }
+        ]
+      },
+      {
+        id: "ch-10-1",
+        code: "10.1",
+        title: "静岡（中部地區篇 - 富士山與靜岡魅力）",
+        subtitle: "富士名勝導覽・表達偏好與選擇「[名詞] + がいいです」",
+        badge: "中部地區",
+        dialogue: {
+          scene: "靜岡遠眺富士山名勝導覽",
+          lines: [
+            {
+              speaker: "導遊",
+              romaji: "Minasan, kochira ga yūmeina Fujisan desu.",
+              japanese: "皆さん、こちらが有名な富士山です。",
+              ruby: "<ruby>皆<rt>みな</rt></ruby>さん、こちらが<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>富士山<rt>ふじさん</rt></ruby>です。",
+              chinese: "各位，這裡就是著名的富士山。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Fujisan wa itsu ga ichiban kirei desu ka.",
+              japanese: "富士山はいつが一番きれいですか。",
+              ruby: "<ruby>富士山<rt>ふじさん</rt></ruby>はいつが<ruby>一番<rt>いちばん</rt></ruby>きれいですか。",
+              chinese: "富士山是什麼時候最漂亮呢？"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Fuyu ga ii desu. Shiroi yuki no Fujisan ga tokuni kirei desu.",
+              japanese: "冬がいいです。白い雪の富士山が特にきれいです。",
+              ruby: "<ruby>冬<rt>ふゆ</rt></ruby>がいいです。<ruby>白<rt>しろ</rt></ruby>い<ruby>雪<rt>ゆき</rt></ruby>の<ruby>富士山<rt>ふじさん</rt></ruby>が<ruby>特<rt>とく</rt></ruby>にきれいです。",
+              chinese: "冬天是最漂亮的。白雪覆蓋的富士山特別美。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Fuyu ni akai Fujisan mo miemasu ka.",
+              japanese: "冬に赤い富士山も見えますか。",
+              ruby: "<ruby>冬<rt>ふゆ</rt></ruby>に<ruby>赤<rt>あか</rt></ruby>い<ruby>富士山<rt>ふじさん</rt></ruby>も<ruby>見<rt>み</rt></ruby>えますか。",
+              chinese: "冬天也能看到紅色的富士山（赤富士）嗎？"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Iie, natsu no owari kara aki no asa ni miemasu. Aka-Fuji ga mieru to, engi ga ii to iwarete imasu yo.",
+              japanese: "いいえ、夏の終わりから秋の朝に見えます。赤富士が見えると、縁起がいいと言われていますよ。",
+              ruby: "いいえ、<ruby>夏<rt>なつ</rt></ruby>の<ruby>終<rt>お</rt></ruby>わりから<ruby>秋<rt>あき</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>に<ruby>見<rt>み</rt></ruby>えます。<ruby>赤富士<rt>あかふじ</rt></ruby>が<ruby>見<rt>み</rt></ruby>えると、<ruby>縁起<rt>えんぎ</rt></ruby>がいいと<ruby>言<rt>い</rt></ruby>われていますよ。",
+              chinese: "不行，紅色的富士山在夏末到秋天的清晨才能看到。看到赤富士被認為是好兆頭喔。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + がいいです (ga ii desu)",
+          explanation: "意為「...比較好 / 我希望選擇...」，用於表達主觀偏好或在多個選項中指定最理想的選擇。",
+          examples: [
+            {
+              jp: "このレストランがいいです。",
+              ruby: "このレストランがいいです。",
+              romaji: "Kono resutoran ga ii desu.",
+              zh: "這家餐廳比較好。"
+            },
+            {
+              jp: "寒い日は、温かい飲み物がいいです。",
+              ruby: "<ruby>寒<rt>さむ</rt></ruby>い<ruby>日<rt>ひ</rt></ruby>は、<ruby>温<rt>あたた</rt></ruby>かい<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>がいいです。",
+              romaji: "Samui hi wa, atatakai nomimono ga ii desu.",
+              zh: "冷天時，喝熱飲比較好。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "温泉", pattern: "温泉がいいです", romaji: "Onsen ga ii desu.", zh: "溫泉比較好 / 我想選溫泉。" },
+          { item: "ハンバーグ", pattern: "ハンバーグがいいです", romaji: "Hanbāgu ga ii desu.", zh: "漢堡排比較好。" },
+          { item: "静岡おでん", pattern: "静岡おでんがいいです", romaji: "Shizuoka oden ga ii desu.", zh: "靜岡黑輪（關東煮）比較好。" }
+        ],
+        vocab: [
+          { jp: "一番", kana: "いちばん", romaji: "ichiban", zh: "最... / 第一" },
+          { jp: "有名", kana: "ゆうめい", romaji: "yūmei", zh: "有名" },
+          { jp: "縁起がいい", kana: "えんぎがいい", romaji: "engi ga ii", zh: "好兆頭 / 吉利" },
+          { jp: "温泉", kana: "おんせん", romaji: "onsen", zh: "溫泉" },
+          { jp: "ハンバーグ", kana: "ハンバーグ", romaji: "hanbāgu", zh: "漢堡排" },
+          { jp: "赤富士", kana: "あかふじ", romaji: "akafuji", zh: "紅富士（朝陽照耀之紅色富士山）" },
+          { jp: "茶畑", kana: "ちゃばたけ", romaji: "chabatake", zh: "茶園" },
+          { jp: "うなぎパイ", kana: "うなぎパイ", romaji: "unagipai", zh: "鰻魚派（濱松名物甜點）" }
+        ],
+        phrases: [
+          { scene: "讚美風景", jp: "ここはとても美しいですね。", ruby: "ここはとても<ruby>美<rt>うつく</rt></ruby>しいですね。", romaji: "Koko wa totemo utsukushii desu ne.", zh: "這裡非常美麗呢。" },
+          { scene: "尋找土產", jp: "地元のお土産はありますか。", ruby: "<ruby>地元<rt>じもと</rt></ruby>のお<ruby>土産<rt>みやげ</rt></ruby>はありますか。", romaji: "Jimoto no omiyage wa arimasu ka.", zh: "有當地的特產土產嗎？" },
+          { scene: "詢問景點", jp: "ここで有名な観光地は何ですか。", ruby: "ここで<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>観光地<rt>かんこうち</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。", romaji: "Koko de yūmeina kankōchi wa nan desu ka.", zh: "這裡知名的觀光景點是什麼？" },
+          { scene: "導覽行程", jp: "ガイドツアーはありますか。", ruby: "ガイドツアーはありますか。", romaji: "Gaido tsuā wa arimasu ka.", zh: "有專人導覽行程嗎？" }
+        ],
+        trivia: {
+          title: "初夢吉祥話「一富士二鷹三茄子」與靜岡在地淵源",
+          content: "新年第一個夢夢見「一富士（諧音不死無事）、二鷹（志向高遠）、三茄子（事成）」為大吉。據傳這三大吉兆正是統一日本的德川家康晚年在靜岡最鍾愛的駿河名物！"
+        }
+      },
+      {
+        id: "ch-10-2",
+        code: "10.2",
+        title: "緑茶（中部地區篇 - 靜岡茶文化與生活）",
+        subtitle: "茶園體驗・表達喜好愛憎「[名詞] + が好き / 嫌いです」",
+        badge: "中部地區",
+        dialogue: {
+          scene: "靜岡茶園品茗體驗",
+          lines: [
+            {
+              speaker: "導遊",
+              romaji: "Shizuoka wa ryokucha ga yūmei desu. Totemo oishii desu.",
+              japanese: "静岡は緑茶が有名です。とてもおいしいです。",
+              ruby: "<ruby>静岡<rt>しずおか</rt></ruby>は<ruby>緑茶<rt>りょくちゃ</rt></ruby>が<ruby>有名<rt>ゆうめい</rt></ruby>です。とてもおいしいです。",
+              chinese: "靜岡的綠茶很有名。非常好喝。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Watashi mo ryokucha ga suki desu.",
+              japanese: "わたしも緑茶が好きです。",
+              ruby: "わたしも<ruby>緑茶<rt>りょくちゃ</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+              chinese: "我也喜歡綠茶。"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Chabatake de ocha o nonde mimasen ka. Ninki desu yo.",
+              japanese: "茶畑でお茶を飲んでみませんか。人気ですよ。",
+              ruby: "<ruby>茶畑<rt>ちゃばたけ</rt></ruby>でお<ruby>茶<rt>ちゃ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んでみませんか。<ruby>人気<rt>にんき</rt></ruby>ですよ。",
+              chinese: "要不要在茶園裡喝茶體驗看看呢？很受歡迎喔。"
+            },
+            {
+              speaker: "觀光客",
+              romaji: "Hē, tanoshisō desu ne.",
+              japanese: "へぇ、楽しそうですね。",
+              ruby: "へぇ、<ruby>楽<rt>たの</rt></ruby>しそうですね。",
+              chinese: "哇，看起來很有趣呢。"
+            },
+            {
+              speaker: "導遊",
+              romaji: "Oishii ocha o nonde, nonbiri dekimasu.",
+              japanese: "おいしいお茶を飲んで、のんびりできます。",
+              ruby: "おいしいお<ruby>茶<rt>ちゃ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んで、のんびりできます。",
+              chinese: "喝著美味的好茶，還能悠閒放鬆身心。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + が好き / 嫌いです (ga suki / kirai desu)",
+          explanation: "意為「喜歡 / 討厭...」，用於直接明確表達個人對於食物、事物、天氣或嗜好的愛憎。",
+          examples: [
+            {
+              jp: "お茶が好きです。",
+              ruby: "お<ruby>茶<rt>ちゃ</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+              romaji: "O-cha ga suki desu.",
+              zh: "我喜歡茶。"
+            },
+            {
+              jp: "辛い食べ物が嫌いです。",
+              ruby: "<ruby>辛<rt>から</rt></ruby>い<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>が<ruby>嫌<rt>きら</rt></ruby>いです。",
+              romaji: "Karai tabemono ga kirai desu.",
+              zh: "我討厭辛辣食物。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "緑茶", pattern: "緑茶が好きです", romaji: "Ryokucha ga suki desu.", zh: "我喜歡綠茶。" },
+          { item: "焼肉", pattern: "焼肉が好きです", romaji: "Yakiniku ga suki desu.", zh: "我喜歡燒肉。" },
+          { item: "花見", pattern: "お花見が好きです", romaji: "O-hanami ga suki desu.", zh: "我喜歡賞花。" }
+        ],
+        vocab: [
+          { jp: "緑茶", kana: "りょくちゃ", romaji: "ryokucha", zh: "綠茶" },
+          { jp: "のんびり", kana: "のんびり", romaji: "nonbiri", zh: "悠閒的 / 放鬆舒緩" },
+          { jp: "焼肉", kana: "やきにく", romaji: "yakiniku", zh: "燒肉 / 烤肉" },
+          { jp: "人気", kana: "にんき", romaji: "ninki", zh: "受歡迎 / 人氣" },
+          { jp: "おいしい", kana: "おいしい", romaji: "oishii", zh: "美味好吃的" },
+          { jp: "寒い", kana: "さむい", romaji: "samui", zh: "寒冷的" },
+          { jp: "辛い", kana: "からい", romaji: "karai", zh: "辛辣的" },
+          { jp: "花見", kana: "はなみ", romaji: "hanami", zh: "賞櫻花" }
+        ],
+        phrases: [
+          { scene: "採茶體驗", jp: "お茶摘みに行きます。", ruby: "お<ruby>茶摘<rt>ちゃつ</rt></ruby>みに<ruby>行<rt>い</rt></ruby>きます。", romaji: "O-chatsumi ni ikimasu.", zh: "去採茶。" },
+          { scene: "請教泡茶", jp: "お茶の淹れ方を教えてください。", ruby: "お<ruby>茶<rt>ちゃ</rt></ruby>の<ruby>淹<rt>い</rt></ruby>れ<ruby>方<rt>かた</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。", romaji: "O-cha no irekata o oshiete kudasai.", zh: "可以教我泡茶的方法嗎？" },
+          { scene: "確認水溫", jp: "お茶の温度がちょうどいいです。", ruby: "お<ruby>茶<rt>ちゃ</rt></ruby>の<ruby>温度<rt>おんど</rt></ruby>がちょうどいいです。", romaji: "O-cha no ondo ga chōdo ii desu.", zh: "茶的溫度剛剛好。" },
+          { scene: "漫步茶園", jp: "お茶畑を散策したいです。", ruby: "お<ruby>茶畑<rt>ちゃばたけ</rt></ruby>を<ruby>散策<rt>さんさく</rt></ruby>したいです。", romaji: "O-chabatake o sansaku shitai desu.", zh: "想去茶園走走散策。" }
+        ],
+        trivia: {
+          title: "櫻桃小丸子故鄉與靜岡限定人氣名店「Sawayaka 炭烤漢堡排」",
+          content: "國民動漫《櫻桃小丸子》舞台就在靜岡清水！靜岡縣民最自豪的排隊神店「炭烤漢堡排Sawayaka（さわやか）」，厚實多汁牛肉漢堡排在全日本享有超高人氣。"
         }
       },
       {
@@ -1810,6 +2730,227 @@
           title: "不二家與聖誕節草莓蛋糕文化",
           content: "1922年老牌洋菓子不二家推出紅白喜慶草莓蛋糕，促成日本在聖誕夜全家享用草莓蛋糕的國民風俗。"
         }
+      },
+      {
+        id: "ch-14",
+        code: "14",
+        title: "從動漫了解日文及日本文化",
+        subtitle: "作品賞析：《我們這一家（あたしンち）》與吉卜力公園巡禮",
+        badge: "流行文化",
+        dialogue: {
+          scene: "動漫會話賞析：母とアザラシ（媽媽與海豹）",
+          lines: [
+            {
+              speaker: "花媽",
+              romaji: "Kawaii!!",
+              japanese: "かわいい！！",
+              ruby: "かわいい！！",
+              chinese: "太可愛了吧！！（激動地發出嗅聞海豹的聲音）"
+            },
+            {
+              speaker: "橘子",
+              romaji: "Dōshite azarashi o miru hito wa minna azarashi ni natchau no!?",
+              japanese: "どうしてアザラシを見る人はみんなアザラシになっちゃうの！？",
+              ruby: "どうしてアザラシを<ruby>見<rt>み</rt></ruby>る<ruby>人<rt>ひと</rt></ruby>はみんなアザラシになっちゃうの！？",
+              chinese: "為什麼看海豹的人自己都會變成海豹呢！？"
+            },
+            {
+              speaker: "花媽",
+              romaji: "Nē, Mikan, okāsan Yuki-chan ni nitenai?",
+              japanese: "ねぇ、みかん、お母さんユキちゃんに似てない？",
+              ruby: "ねぇ、みかん、お<ruby>母<rt>かあ</rt></ruby>さんユキちゃんに<ruby>似<rt>に</rt></ruby>てない？",
+              chinese: "喂，橘子，你不覺得媽媽長得很像小雪嗎？"
+            },
+            {
+              speaker: "橘子",
+              romaji: "E-!? Marui chūnen josei to shika ii yō ga nai kedo...",
+              japanese: "えー、丸い中年女性としか言いようがないけど…",
+              ruby: "えー、<ruby>丸<rt>まる</rt></ruby>い<ruby>中年女性<rt>ちゅうねんじょせい</rt></ruby>としか<ruby>言<rt>い</rt></ruby>いようがないけど…",
+              chinese: "咦，只能說是一個圓滾滾的中年女性吧……"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "動漫會話常用擬聲擬態語與口語表達",
+          explanation: "日語動漫中常使用生動的擬聲擬態詞（如ピクピク、ふがふが）與親密口語助詞（ねぇ、～ちゃう）。",
+          examples: [
+            {
+              jp: "たしかに、ちょっとかわいいですね。",
+              ruby: "たしかに、ちょっとかわいいですね。",
+              romaji: "Tashikani, chotto kawaii desu ne.",
+              zh: "確實，是有點可愛呢。"
+            },
+            {
+              jp: "ネットで話題になっています。",
+              ruby: "ネットで<ruby>話題<rt>わだい</rt></ruby>になっています。",
+              romaji: "Netto de wadai ni natte imasu.",
+              zh: "在網路上成為熱門話題。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "話題 / ネット", pattern: "ネットで話題です", romaji: "Netto de wadai desu.", zh: "在網路上引起熱話。" },
+          { item: "丸い / 顔", pattern: "顔が丸いです", romaji: "Kao ga marui desu.", zh: "臉圓圓的。" }
+        ],
+        vocab: [
+          { jp: "アザラシ", kana: "アザラシ", romaji: "azarashi", zh: "海豹" },
+          { jp: "話題", kana: "わだい", romaji: "wadai", zh: "話題 / 討論熱點" },
+          { jp: "ネット", kana: "ネット", romaji: "netto", zh: "網際網路" },
+          { jp: "メッセージ", kana: "メッセージ", romaji: "messēji", zh: "訊息 / 留言" },
+          { jp: "ふがふが", kana: "ふがふが", romaji: "fugafuga", zh: "嗅聞吸氣聲" },
+          { jp: "ピクピク", kana: "ピクピク", romaji: "pikupiku", zh: "抽動、微動" },
+          { jp: "丸い", kana: "まるい", romaji: "marui", zh: "圓形的 / 圓滾滾的" },
+          { jp: "たしかに", kana: "たしかに", romaji: "tashikani", zh: "確實、的確" }
+        ],
+        phrases: [
+          { scene: "讚嘆可愛", jp: "とてもかわいいですね！", ruby: "とてもかわいいですね！", romaji: "Totemo kawaii desu ne!", zh: "非常可愛呢！" },
+          { scene: "表達認同", jp: "たしかにその通りです。", ruby: "たしかにその<ruby>通<rt>とお</rt></ruby>りです。", romaji: "Tashikani sono tōri desu.", zh: "確實是那樣沒錯。" },
+          { scene: "詢問熱門", jp: "今、日本で何のアニメが話題ですか。", ruby: "<ruby>今<rt>いま</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>で<ruby>何<rt>なん</rt></ruby>のアニメが<ruby>話題<rt>わだい</rt></ruby>ですか。", romaji: "Ima, Nihon de nan no anime ga wadai desu ka.", zh: "現在日本流行什麼話題動漫？" }
+        ],
+        trivia: {
+          title: "吉卜力短片《隨風遊玩吧》與愛知吉卜力公園巡禮",
+          content: "吉卜力為愛知縣打造官方短片《風になって、遊ぼう。》，展示犬山城與綠洲21。長久手市吉卜力公園不破壞森林共生，重現《龍貓》草壁家、《心之谷》地球屋等經典實景。"
+        }
+      },
+      {
+        id: "ch-15",
+        code: "15",
+        title: "從日劇了解日文及日本文化",
+        subtitle: "作品賞析：《日本人的未知日語（日本人の知らない日本語）》",
+        badge: "流行文化",
+        dialogue: {
+          scene: "日語學校課堂與電車乘車禮儀指導",
+          lines: [
+            {
+              speaker: "老師",
+              romaji: "Densha no naka de wa shizukani shite kudasai ne.",
+              japanese: "電車の中では静かにしてくださいね。",
+              ruby: "<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>では<ruby>静<rt>しず</rt></ruby>かにしてくださいね。",
+              chinese: "在電車車廂內請保持安靜喔。"
+            },
+            {
+              speaker: "學生",
+              romaji: "Oto-more mo NG desu ka.",
+              japanese: "音漏れもNGですか。",
+              ruby: "<ruby>音漏<rt>おとも</rt></ruby>れもNGですか。",
+              chinese: "耳機聲音外洩也是 NG 行為嗎？"
+            },
+            {
+              speaker: "老師",
+              romaji: "Hai, mawari no hito e no meiwaku ni narimasu kara ne.",
+              japanese: "はい、周りの人への迷惑になりますからね。",
+              ruby: "はい、<ruby>周<rt>まわ</rt></ruby>りの<ruby>人<rt>ひと</rt></ruby>への<ruby>迷惑<rt>めいわく</rt></ruby>になりますからね。",
+              chinese: "是的，因為那會造成周遭乘客的困擾喔。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "公共禮儀與「迷惑（めいわく）」觀念",
+          explanation: "日本社會核心講求「不造成他人困擾（人に迷惑をかけない）」，在公共交通與餐飲場所特別重視隱性規範。",
+          examples: [
+            {
+              jp: "車内での通話はご遠慮ください。",
+              ruby: "<ruby>車内<rt>しゃない</rt></ruby>での<ruby>通話<rt>つうわ</rt></ruby>はご<ruby>遠慮<rt>えんりょ</rt></ruby>ください。",
+              romaji: "Shanai de no tsūwa wa go-enryo kudasai.",
+              zh: "車廂內請避免通話。"
+            },
+            {
+              jp: "席をお譲りします。",
+              ruby: "<ruby>席<rt>せき</rt></ruby>をお<ruby>譲<rt>ゆず</rt></ruby>りします。",
+              romaji: "Seki o oyuzuri shimasu.",
+              zh: "我把座位讓給您。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "マナー", pattern: "マナーを守ります", romaji: "Manā o mamorimasu.", zh: "遵守禮儀規範。" },
+          { item: "通話", pattern: "通話はご遠慮ください", romaji: "Tsūwa wa go-enryo kudasai.", zh: "請勿講電話。" }
+        ],
+        vocab: [
+          { jp: "満員電車", kana: "まんいんでんしゃ", romaji: "man'in densha", zh: "客滿擁擠的電車" },
+          { jp: "マナー", kana: "マナー", romaji: "manā", zh: "禮貌 / 禮儀規範" },
+          { jp: "音漏れ", kana: "おともれ", romaji: "otomore", zh: "耳機漏音" },
+          { jp: "座席", kana: "ざせき", romaji: "zaseki", zh: "座位" },
+          { jp: "隠語", kana: "いんご", romaji: "ingo", zh: "行業行話 / 隱語" },
+          { jp: "職人", kana: "しょくにん", romaji: "shokunin", zh: "專業職人" },
+          { jp: "シャリ・ネタ", kana: "しゃり・ねた", romaji: "shari / neta", zh: "壽司醋飯・食材" },
+          { jp: "アガリ・ナミダ", kana: "あがり・なみだ", romaji: "agari / namida", zh: "熱綠茶・芥末" }
+        ],
+        phrases: [
+          { scene: "電車讓座", jp: "どうぞ、お座りください。", ruby: "どうぞ、お<ruby>座<rt>すわ</rt></ruby>りください。", romaji: "Dōzo, osuwari kudasai.", zh: "請坐，位子讓給您。" },
+          { scene: "索取熱茶", jp: "温かいお茶をお願いします。", ruby: "<ruby>温<rt>あたた</rt></ruby>かいお<ruby>茶<rt>ちゃ</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Atatakai ocha o onegai shimasu.", zh: "麻煩請給我熱茶。" },
+          { scene: "避免講電話", jp: "電車の中なので、後でかけ直します。", ruby: "<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>なので、<ruby>後<rt>あと</rt></ruby>でかけ<ruby>直<rt>なお</rt></ruby>します。", romaji: "Densha no naka nanode, ato de kakenaoshimasu.", zh: "因為在電車裡，我稍後再回撥。" }
+        ],
+        trivia: {
+          title: "壽司店「業界行話」：シャリ、ネタ、アガリ、ナミダ、ムラサキ、ガリ",
+          content: "壽司師傅間的暗語：シャリ（舍利/米飯）、ネタ（生魚片食材）、アガリ（結尾上的熱茶）、ナミダ（嗆出眼淚的芥末）、ムラサキ（紫黑醬油）、ガリ（咬起來嘎哩嘎哩的甜薑片）。客人直接稱呼お茶即可！"
+        }
+      },
+      {
+        id: "ch-16",
+        code: "16",
+        title: "從電影了解日文及日本文化",
+        subtitle: "作品賞析：《ALWAYS 幸福的三丁目（三丁目の夕日）》",
+        badge: "流行文化",
+        dialogue: {
+          scene: "電影懷舊風情與日本聖誕節演變",
+          lines: [
+            {
+              speaker: "觀眾",
+              romaji: "Shōwa no Tōkyō wa atatakai fun'iki ga arimasu ne.",
+              japanese: "昭和の東京は温かい雰囲気がありますね。",
+              ruby: "<ruby>昭和<rt>しょうわ</rt></ruby>の<ruby>東京<rt>とうきょう</rt></ruby>は<ruby>温<rt>あたた</rt></ruby>かい<ruby>雰囲気<rt>ふんいき</rt></ruby>がありますね。",
+              chinese: "昭和時代的東京有種溫馨溫暖的氛圍呢。"
+            },
+            {
+              speaker: "導讀",
+              romaji: "Hai, Tōkyō Tawā ga dekita koro no jidai o kaita subarashii eiga desu.",
+              japanese: "はい、東京タワーができた頃の時代を描いた素晴らしい映画です。",
+              ruby: "はい、<ruby>東京<rt>とうきょう</rt></ruby>タワーができた<ruby>頃<rt>ころ</rt></ruby>の<ruby>時代<rt>じだい</rt></ruby>を<ruby>描<rt>えが</rt></ruby>いた<ruby>素晴<rt>すば</rt></ruby>らしい<ruby>映画<rt>えいが</rt></ruby>です。",
+              chinese: "是的，這是一部描寫東京鐵塔落成時期人情之美的極佳電影。"
+            }
+          ]
+        },
+        grammar: {
+          pattern: "昭和人情味與節慶文化的語意連結",
+          explanation: "日語中經常用「～頃（ころ）」表示時代或時光；在年末與聖誕節則有互祝的專屬文化應對。",
+          examples: [
+            {
+              jp: "メリークリスマス！良いお年を。",
+              ruby: "メリークリスマス！<ruby>良<rt>よ</rt></ruby>いお<ruby>年<rt>とし</rt></ruby>を。",
+              romaji: "Merī Kurisumasu! Yoi otoshi o.",
+              zh: "聖誕快樂！祝您過個好年。"
+            },
+            {
+              jp: "夕日がとてもきれいですね。",
+              ruby: "<ruby>夕日<rt>ゆうひ</rt></ruby>がとてもきれいですね。",
+              romaji: "Yūhi ga totemo kirei desu ne.",
+              zh: "夕陽非常美麗呢。"
+            }
+          ]
+        },
+        replacements: [
+          { item: "昭和の町", pattern: "昭和の町を歩きます", romaji: "Shōwa no machi o arukimasu.", zh: "漫步在昭和風情的街區。" },
+          { item: "クリスマス", pattern: "クリスマスを楽しみます", romaji: "Kurisumasu o tanoshimimasu.", zh: "享受聖誕節慶。" }
+        ],
+        vocab: [
+          { jp: "クリスマス", kana: "クリスマス", romaji: "kurisumasu", zh: "聖誕節" },
+          { jp: "イルミネーション", kana: "イルミネーション", romaji: "iruminēshon", zh: "街頭燈飾 / 光雕展" },
+          { jp: "夕日", kana: "ゆうひ", romaji: "yūhi", zh: "夕陽" },
+          { jp: "昭和", kana: "しょうわ", romaji: "shōwa", zh: "昭和時代 (1926-1989)" },
+          { jp: "チキン", kana: "チキン", romaji: "chikin", zh: "炸雞 / 烤雞" },
+          { jp: "ケーキ", kana: "ケーキ", romaji: "kēki", zh: "蛋糕" },
+          { jp: "年末", kana: "ねんまつ", romaji: "nenmatsu", zh: "歲末年終" },
+          { jp: "良いお年を", kana: "よいおとしを", romaji: "yoi otoshi o", zh: "祝您過個好年（年末道別辭）" }
+        ],
+        phrases: [
+          { scene: "年末問候", jp: "どうぞ良いお年をお迎えください。", ruby: "どうぞ<ruby>良<rt>よ</rt></ruby>いお<ruby>年<rt>とし</rt></ruby>をお<ruby>迎<rt>むか</rt></ruby>えください。", romaji: "Dōzo yoi otoshi o omukae kudasai.", zh: "祝您迎接美好的新年。" },
+          { scene: "欣賞燈飾", jp: "冬のイルミネーションを見に行きましょう。", ruby: "<ruby>冬<rt>ふゆ</rt></ruby>のイルミネーションを<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>きましょう。", romaji: "Fuyu no iruminēshon o mi ni ikimashō.", zh: "我們去看冬季街頭點燈展吧。" }
+        ],
+        trivia: {
+          title: "日式聖誕節演變、肯德基炸雞傳奇與山下達郎名曲",
+          content: "日本在平安夜以情侶約會與享用草莓鮮奶油蛋糕為主流。1974年肯德基以「聖誕節就要吃肯德基」行銷大獲全勝，促成吃炸雞桶的國民習俗；山下達郎《Christmas Eve》伴隨新幹線廣告更成為國民聖誕神曲。"
+        }
       }
     ];
 
@@ -1915,70 +3056,203 @@
         chapterSection.id = chapter.id;
         chapterSection.className = "chapter-section bg-white rounded-3xl p-4 sm:p-7 lg:p-9 border border-stone-200 shadow-sm scroll-mt-32 space-y-6 sm:space-y-7";
 
-        chapterSection.innerHTML = `
-          <!-- Header -->
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-stone-100 pb-4 sm:pb-5">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="px-2.5 py-0.5 text-xs sm:text-sm font-bold rounded-full bg-rose-50 text-rose-600 border border-rose-100">${chapter.badge}</span>
-                <span class="text-xs sm:text-sm text-stone-400 font-mono">第 ${chapter.code} 單元</span>
-              </div>
-              <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900">${chapter.title}</h3>
-              <p class="text-xs sm:text-sm text-stone-500 mt-0.5">${chapter.subtitle}</p>
-            </div>
-            <button onclick="speakText('${chapter.dialogue.lines.map(l => l.japanese).join(' ')}')" class="touch-btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-2xl bg-stone-100 hover:bg-rose-50 active:bg-rose-100 text-stone-700 hover:text-rose-600 text-xs sm:text-sm font-bold transition shadow-sm border border-stone-200 self-start sm:self-auto">
-              <i class="fa-solid fa-play text-rose-500"></i> 朗讀整段會話
-            </button>
-          </div>
-
-          <!-- 1. Dialogue Box -->
-          <div class="bg-stone-50/90 rounded-3xl p-4 sm:p-6 border border-stone-200 space-y-3 sm:space-y-4">
-            <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-stone-700">
-              <span class="flex items-center gap-1.5">
-                <i class="fa-solid fa-comments text-rose-500 text-sm sm:text-base"></i> 1. 情境會話：${chapter.dialogue.scene}
-              </span>
-              <span class="text-[11px] text-stone-400 font-normal">點右側喇叭單句跟讀</span>
-            </div>
-            <div class="space-y-3 pt-1">
-              ${chapter.dialogue.lines.map(line => `
-                <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-stone-200/90 flex items-start justify-between gap-3 hover:border-rose-300 transition shadow-sm">
-                  <div class="space-y-1 sm:space-y-1.5 min-w-0">
-                    <div class="flex items-center gap-2">
-                      <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-lg bg-stone-100 text-stone-700">${line.speaker}</span>
-                    </div>
-                    <div class="text-base sm:text-xl font-jp text-stone-900 leading-loose">${line.ruby}</div>
-                    <div class="text-xs sm:text-sm text-rose-600 font-mono break-all">${line.romaji}</div>
-                    <div class="text-xs sm:text-sm text-stone-600">${line.chinese}</div>
-                  </div>
-                  <button onclick="speakText('${line.japanese}')" class="touch-btn shrink-0 p-2.5 sm:p-3 rounded-2xl bg-stone-50 hover:bg-rose-50 text-stone-500 hover:text-rose-600 active:bg-rose-100 transition" title="單句發音">
-                    <i class="fa-solid fa-volume-high text-base sm:text-lg"></i>
-                  </button>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- 2. Grammar Focus & 4. Replacement Drill -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
-            <div class="bg-rose-50/50 rounded-3xl p-4 sm:p-6 border border-rose-100 flex flex-col justify-between">
+        // Specialized rendering for Chapter 9 Synthesis
+        if (chapter.isReviewChapter) {
+          chapterSection.innerHTML = `
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-stone-100 pb-4 sm:pb-5">
               <div>
-                <span class="text-xs font-bold text-rose-600 uppercase tracking-wider block mb-1">
-                  <i class="fa-solid fa-star text-rose-500"></i> 2. 核心句型
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2.5 py-0.5 text-xs sm:text-sm font-bold rounded-full bg-amber-100 text-amber-800 border border-amber-200">${chapter.badge}</span>
+                  <span class="text-xs sm:text-sm text-stone-400 font-mono">第 ${chapter.code} 單元</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900">${chapter.title}</h3>
+                <p class="text-xs sm:text-sm text-stone-500 mt-0.5">${chapter.subtitle}</p>
+              </div>
+            </div>
+
+            <!-- 9.1 Grammar Matrix -->
+            <div class="space-y-3">
+              <h4 class="font-bold text-stone-800 text-base sm:text-lg flex items-center gap-2">
+                <i class="fa-solid fa-layer-group text-rose-500"></i> 9.1 核心語法體系與功能彙整（15 大經典句型對照）
+              </h4>
+              <div class="overflow-x-auto rounded-2xl border border-stone-200">
+                <table class="w-full text-left text-xs sm:text-sm bg-white divide-y divide-stone-200">
+                  <thead class="bg-stone-50 font-bold text-stone-700">
+                    <tr>
+                      <th class="p-3">單元</th>
+                      <th class="p-3">核心表達</th>
+                      <th class="p-3">形態接續規範</th>
+                      <th class="p-3">語用語意功能</th>
+                      <th class="p-3">實務情境範例</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-stone-100 text-stone-600">
+                    ${chapter.grammarRules.map(r => `
+                      <tr class="hover:bg-rose-50/40 transition">
+                        <td class="p-3 font-bold text-rose-600">${r.code}</td>
+                        <td class="p-3 font-bold font-jp text-stone-900">${r.form}</td>
+                        <td class="p-3 text-stone-700 font-mono">${r.syntax}</td>
+                        <td class="p-3">${r.func}</td>
+                        <td class="p-3 font-jp text-stone-800">${r.ex}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 9.4 Cultural Philosophies -->
+            <div class="space-y-3 pt-2">
+              <h4 class="font-bold text-stone-800 text-base sm:text-lg flex items-center gap-2">
+                <i class="fa-solid fa-torii-gate text-amber-600"></i> 9.4 日本社會文化與哲學七大核心解析
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                ${chapter.culturalPhilosophies.map(c => `
+                  <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-1">
+                    <div class="font-bold text-stone-900 text-sm sm:text-base text-rose-700">${c.title}</div>
+                    <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${c.desc}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        } else {
+          // Standard Chapter Rendering
+          chapterSection.innerHTML = `
+            <!-- Header -->
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-stone-100 pb-4 sm:pb-5">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2.5 py-0.5 text-xs sm:text-sm font-bold rounded-full bg-rose-50 text-rose-600 border border-rose-100">${chapter.badge}</span>
+                  <span class="text-xs sm:text-sm text-stone-400 font-mono">第 ${chapter.code} 單元</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900">${chapter.title}</h3>
+                <p class="text-xs sm:text-sm text-stone-500 mt-0.5">${chapter.subtitle}</p>
+              </div>
+              <button onclick="speakText('${chapter.dialogue.lines.map(l => l.japanese).join(' ')}')" class="touch-btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-2xl bg-stone-100 hover:bg-rose-50 active:bg-rose-100 text-stone-700 hover:text-rose-600 text-xs sm:text-sm font-bold transition shadow-sm border border-stone-200 self-start sm:self-auto">
+                <i class="fa-solid fa-play text-rose-500"></i> 朗讀整段會話
+              </button>
+            </div>
+
+            <!-- 1. Dialogue Box -->
+            <div class="bg-stone-50/90 rounded-3xl p-4 sm:p-6 border border-stone-200 space-y-3 sm:space-y-4">
+              <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-stone-700">
+                <span class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-comments text-rose-500 text-sm sm:text-base"></i> 1. 情境會話：${chapter.dialogue.scene}
                 </span>
-                <div class="text-lg sm:text-xl font-bold text-stone-900 font-jp mb-2">${chapter.grammar.pattern}</div>
-                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${chapter.grammar.explanation}</p>
+                <span class="text-[11px] text-stone-400 font-normal">點右側喇叭單句跟讀</span>
+              </div>
+              <div class="space-y-3 pt-1">
+                ${chapter.dialogue.lines.map(line => `
+                  <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-stone-200/90 flex items-start justify-between gap-3 hover:border-rose-300 transition shadow-sm">
+                    <div class="space-y-1 sm:space-y-1.5 min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-lg bg-stone-100 text-stone-700">${line.speaker}</span>
+                      </div>
+                      <div class="text-base sm:text-xl font-jp text-stone-900 leading-loose">${line.ruby}</div>
+                      <div class="text-xs sm:text-sm text-rose-600 font-mono break-all">${line.romaji}</div>
+                      <div class="text-xs sm:text-sm text-stone-600">${line.chinese}</div>
+                    </div>
+                    <button onclick="speakText('${line.japanese}')" class="touch-btn shrink-0 p-2.5 sm:p-3 rounded-2xl bg-stone-50 hover:bg-rose-50 text-stone-500 hover:text-rose-600 active:bg-rose-100 transition" title="單句發音">
+                      <i class="fa-solid fa-volume-high text-base sm:text-lg"></i>
+                    </button>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- 2. Grammar Focus & 4. Replacement Drill -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+              <div class="bg-rose-50/50 rounded-3xl p-4 sm:p-6 border border-rose-100 flex flex-col justify-between">
+                <div>
+                  <span class="text-xs font-bold text-rose-600 uppercase tracking-wider block mb-1">
+                    <i class="fa-solid fa-star text-rose-500"></i> 2. 核心句型
+                  </span>
+                  <div class="text-lg sm:text-xl font-bold text-stone-900 font-jp mb-2">${chapter.grammar.pattern}</div>
+                  <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${chapter.grammar.explanation}</p>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-rose-200/60 space-y-2">
+                  <div class="text-xs font-bold text-stone-700 uppercase">3. 句型例句與應用</div>
+                  ${chapter.grammar.examples.map(ex => `
+                    <div class="flex items-center justify-between gap-2 bg-white/90 p-3 rounded-2xl border border-rose-100 text-xs sm:text-sm shadow-sm">
+                      <div class="min-w-0">
+                        <div class="font-jp font-bold text-stone-900 text-sm sm:text-base">${ex.ruby}</div>
+                        <div class="text-rose-600 font-mono text-[11px] sm:text-xs break-all">${ex.romaji}</div>
+                        <div class="text-stone-500 text-xs mt-0.5">${ex.zh}</div>
+                      </div>
+                      <button onclick="speakText('${ex.jp}')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 active:bg-rose-200 rounded-xl transition shrink-0">
+                        <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                      </button>
+                    </div>
+                  `).join('')}
+                </div>
               </div>
 
-              <div class="mt-4 pt-3 border-t border-rose-200/60 space-y-2">
-                <div class="text-xs font-bold text-stone-700 uppercase">3. 句型例句與應用</div>
-                ${chapter.grammar.examples.map(ex => `
-                  <div class="flex items-center justify-between gap-2 bg-white/90 p-3 rounded-2xl border border-rose-100 text-xs sm:text-sm shadow-sm">
+              <!-- 4. Replacements Drill -->
+              <div class="bg-amber-50/40 rounded-3xl p-4 sm:p-6 border border-amber-200/60 flex flex-col justify-between">
+                <div>
+                  <span class="text-xs font-bold text-amber-700 uppercase tracking-wider block mb-1.5">
+                    <i class="fa-solid fa-repeat text-amber-600"></i> 4. 開口練習：替換訓練
+                  </span>
+                  <div class="space-y-2.5">
+                    ${chapter.replacements.map(rep => `
+                      <div class="bg-white p-3 rounded-2xl border border-amber-100 flex items-center justify-between gap-2 text-xs sm:text-sm shadow-sm">
+                        <div class="min-w-0">
+                          <div class="font-bold text-stone-800 font-jp text-sm sm:text-base truncate">${rep.pattern}</div>
+                          <div class="text-rose-600 font-mono text-[11px] truncate">${rep.romaji}</div>
+                          <div class="text-stone-500 text-xs">${rep.zh}</div>
+                        </div>
+                        <button onclick="speakText('${rep.pattern}')" class="touch-btn p-2 text-amber-700 hover:bg-amber-100 active:bg-amber-200 rounded-xl transition shrink-0">
+                          <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                        </button>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Vocabulary Word Bank -->
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-stone-700 mb-3 flex items-center gap-1.5">
+                <i class="fa-solid fa-book-bookmark text-rose-500 text-sm sm:text-base"></i> 5. 本單元常用單字（完整收錄）
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3">
+                ${chapter.vocab.map(v => `
+                  <div class="bg-stone-50 hover:bg-white p-3 rounded-2xl border border-stone-200 flex flex-col justify-between transition group shadow-sm hover:border-rose-300">
                     <div class="min-w-0">
-                      <div class="font-jp font-bold text-stone-900 text-sm sm:text-base">${ex.ruby}</div>
-                      <div class="text-rose-600 font-mono text-[11px] sm:text-xs break-all">${ex.romaji}</div>
-                      <div class="text-stone-500 text-xs mt-0.5">${ex.zh}</div>
+                      <div class="text-[11px] text-rose-600 font-jp font-bold truncate">${v.kana}</div>
+                      <div class="font-bold text-stone-900 font-jp text-base sm:text-lg group-hover:text-rose-600 leading-snug truncate">${v.jp}</div>
+                      <div class="text-[11px] text-stone-400 font-mono truncate">${v.romaji}</div>
+                      <div class="text-xs sm:text-sm text-stone-600 mt-1 font-medium">${v.zh}</div>
                     </div>
-                    <button onclick="speakText('${ex.jp}')" class="touch-btn p-2 text-rose-600 hover:bg-rose-100 active:bg-rose-200 rounded-xl transition shrink-0">
+                    <button onclick="speakText('${v.jp}')" class="touch-btn mt-2.5 w-full py-1.5 bg-white hover:bg-rose-50 text-rose-600 border border-stone-200 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm active:bg-rose-100">
+                      <i class="fa-solid fa-volume-high text-xs"></i> 發音
+                    </button>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- 6. Section 6 Practical Phrases -->
+            <div class="bg-sky-50/40 rounded-3xl p-4 sm:p-6 border border-sky-200/70 space-y-3 sm:space-y-4">
+              <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-sky-900">
+                <span class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-bolt text-sky-600 text-sm sm:text-base"></i> 6. 實用情境短句庫
+                </span>
+                <span class="text-[11px] text-sky-700 font-normal">實務現場應對即學即用</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
+                ${chapter.phrases.map(p => `
+                  <div class="bg-white p-3 rounded-2xl border border-sky-100 flex items-center justify-between gap-2.5 hover:border-sky-300 transition shadow-sm">
+                    <div class="min-w-0">
+                      <span class="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md bg-sky-100 text-sky-800">${p.scene}</span>
+                      <div class="font-bold text-stone-900 font-jp text-sm sm:text-base mt-1 leading-snug">${p.ruby}</div>
+                      <div class="text-rose-600 font-mono text-[11px] break-all">${p.romaji}</div>
+                      <div class="text-xs text-stone-600 mt-0.5">${p.zh}</div>
+                    </div>
+                    <button onclick="speakText('${p.jp}')" class="touch-btn shrink-0 p-2 sm:p-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 active:bg-sky-200 text-sky-700 transition" title="短句發音">
                       <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
                     </button>
                   </div>
@@ -1986,88 +3260,18 @@
               </div>
             </div>
 
-            <!-- 4. Replacements Drill -->
-            <div class="bg-amber-50/40 rounded-3xl p-4 sm:p-6 border border-amber-200/60 flex flex-col justify-between">
-              <div>
-                <span class="text-xs font-bold text-amber-700 uppercase tracking-wider block mb-1.5">
-                  <i class="fa-solid fa-repeat text-amber-600"></i> 4. 開口練習：替換訓練
+            <!-- 7. Travel Trivia -->
+            <div class="bg-gradient-to-br from-stone-50 to-rose-50/30 rounded-3xl p-4 sm:p-6 border border-stone-200 text-xs sm:text-sm text-stone-700">
+              <div class="flex items-center gap-2 font-bold text-stone-900 mb-1.5 text-sm sm:text-base">
+                <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-400/20 text-amber-600 flex items-center justify-center text-xs shrink-0">
+                  <i class="fa-solid fa-lightbulb"></i>
                 </span>
-                <div class="space-y-2.5">
-                  ${chapter.replacements.map(rep => `
-                    <div class="bg-white p-3 rounded-2xl border border-amber-100 flex items-center justify-between gap-2 text-xs sm:text-sm shadow-sm">
-                      <div class="min-w-0">
-                        <div class="font-bold text-stone-800 font-jp text-sm sm:text-base truncate">${rep.pattern}</div>
-                        <div class="text-rose-600 font-mono text-[11px] truncate">${rep.romaji}</div>
-                        <div class="text-stone-500 text-xs">${rep.zh}</div>
-                      </div>
-                      <button onclick="speakText('${rep.pattern}')" class="touch-btn p-2 text-amber-700 hover:bg-amber-100 active:bg-amber-200 rounded-xl transition shrink-0">
-                        <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
-                      </button>
-                    </div>
-                  `).join('')}
-                </div>
+                <span>7. 旅遊豆知識：${chapter.trivia.title}</span>
               </div>
+              <p class="leading-relaxed text-stone-600 pl-8 sm:pl-9">${chapter.trivia.content}</p>
             </div>
-          </div>
-
-          <!-- 5. Vocabulary Word Bank -->
-          <div>
-            <h4 class="text-xs sm:text-sm font-bold text-stone-700 mb-3 flex items-center gap-1.5">
-              <i class="fa-solid fa-book-bookmark text-rose-500 text-sm sm:text-base"></i> 5. 本單元常用單字（完整收錄）
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3">
-              ${chapter.vocab.map(v => `
-                <div class="bg-stone-50 hover:bg-white p-3 rounded-2xl border border-stone-200 flex flex-col justify-between transition group shadow-sm hover:border-rose-300">
-                  <div class="min-w-0">
-                    <div class="text-[11px] text-rose-600 font-jp font-bold truncate">${v.kana}</div>
-                    <div class="font-bold text-stone-900 font-jp text-base sm:text-lg group-hover:text-rose-600 leading-snug truncate">${v.jp}</div>
-                    <div class="text-[11px] text-stone-400 font-mono truncate">${v.romaji}</div>
-                    <div class="text-xs sm:text-sm text-stone-600 mt-1 font-medium">${v.zh}</div>
-                  </div>
-                  <button onclick="speakText('${v.jp}')" class="touch-btn mt-2.5 w-full py-1.5 bg-white hover:bg-rose-50 text-rose-600 border border-stone-200 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm active:bg-rose-100">
-                    <i class="fa-solid fa-volume-high text-xs"></i> 發音
-                  </button>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- 6. Section 6 Practical Phrases -->
-          <div class="bg-sky-50/40 rounded-3xl p-4 sm:p-6 border border-sky-200/70 space-y-3 sm:space-y-4">
-            <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-sky-900">
-              <span class="flex items-center gap-1.5">
-                <i class="fa-solid fa-bolt text-sky-600 text-sm sm:text-base"></i> 6. 實用情境短句庫
-              </span>
-              <span class="text-[11px] text-sky-700 font-normal">實務現場應對即學即用</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
-              ${chapter.phrases.map(p => `
-                <div class="bg-white p-3 rounded-2xl border border-sky-100 flex items-center justify-between gap-2.5 hover:border-sky-300 transition shadow-sm">
-                  <div class="min-w-0">
-                    <span class="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md bg-sky-100 text-sky-800">${p.scene}</span>
-                    <div class="font-bold text-stone-900 font-jp text-sm sm:text-base mt-1 leading-snug">${p.ruby}</div>
-                    <div class="text-rose-600 font-mono text-[11px] break-all">${p.romaji}</div>
-                    <div class="text-xs text-stone-600 mt-0.5">${p.zh}</div>
-                  </div>
-                  <button onclick="speakText('${p.jp}')" class="touch-btn shrink-0 p-2 sm:p-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 active:bg-sky-200 text-sky-700 transition" title="短句發音">
-                    <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
-                  </button>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- 7. Travel Trivia -->
-          <div class="bg-gradient-to-br from-stone-50 to-rose-50/30 rounded-3xl p-4 sm:p-6 border border-stone-200 text-xs sm:text-sm text-stone-700">
-            <div class="flex items-center gap-2 font-bold text-stone-900 mb-1.5 text-sm sm:text-base">
-              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-400/20 text-amber-600 flex items-center justify-center text-xs shrink-0">
-                <i class="fa-solid fa-lightbulb"></i>
-              </span>
-              <span>7. 旅遊豆知識：${chapter.trivia.title}</span>
-            </div>
-            <p class="leading-relaxed text-stone-600 pl-8 sm:pl-9">${chapter.trivia.content}</p>
-          </div>
-        `;
+          `;
+        }
 
         container.appendChild(chapterSection);
       });
@@ -2149,7 +3353,6 @@
               pill.classList.remove('bg-stone-100', 'text-stone-700');
               pill.querySelector('span')?.classList.add('text-white');
               pill.querySelector('span')?.classList.remove('text-rose-600');
-              // Bring active pill into view smoothly
               pill.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
             } else {
               pill.classList.remove('bg-rose-500', 'text-white', 'border-rose-600');
@@ -2169,9 +3372,9 @@
         courseChapters.forEach((chapter, index) => {
           const matchTitle = chapter.title.toLowerCase().includes(query);
           const matchCode = chapter.code.toLowerCase().includes(query);
-          const matchVocab = chapter.vocab.some(v => v.jp.toLowerCase().includes(query) || v.zh.includes(query) || v.romaji.toLowerCase().includes(query) || v.kana.includes(query));
-          const matchPhrases = chapter.phrases.some(p => p.jp.includes(query) || p.zh.includes(query) || p.romaji.toLowerCase().includes(query));
-          const matchGrammar = chapter.grammar.pattern.toLowerCase().includes(query) || chapter.grammar.explanation.includes(query);
+          const matchVocab = chapter.vocab ? chapter.vocab.some(v => v.jp.toLowerCase().includes(query) || v.zh.includes(query) || v.romaji.toLowerCase().includes(query) || v.kana.includes(query)) : false;
+          const matchPhrases = chapter.phrases ? chapter.phrases.some(p => p.jp.includes(query) || p.zh.includes(query) || p.romaji.toLowerCase().includes(query)) : false;
+          const matchGrammar = chapter.grammar ? (chapter.grammar.pattern.toLowerCase().includes(query) || chapter.grammar.explanation.includes(query)) : false;
 
           if (matchTitle || matchCode || matchVocab || matchPhrases || matchGrammar || query === '') {
             links[index].style.display = 'flex';
