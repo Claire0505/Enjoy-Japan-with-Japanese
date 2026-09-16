@@ -1339,6 +1339,54 @@
         }
       },
       {
+        id: "ch-5-1",
+        code: "5.1",
+        title: "ラーメン（日本庶民美食篇 - 拉麵文化）",
+        subtitle: "日本代表性國民庶民美食・拉麵店點餐與陳述斷定句型",
+        badge: "日本美食",
+        dialogue: {
+          scene: "拉麵店點餐（ラーメン店）",
+          lines: [
+            { speaker: "顧客", romaji: "Kamban menyū wa nan desu ka.", japanese: "看板メニューは何ですか。", ruby: "<ruby>看板<rt>かんばん</rt></ruby>メニューは<ruby>何<rt>なん</rt></ruby>ですか。", chinese: "招牌菜是什麼？" },
+            { speaker: "店員", romaji: "Shōyu rāmen desu. Nōkō na tonkotsu to tori no sūpu ni, chāshū ga haitte imasu.", japanese: "醤油ラーメンです。濃厚な豚骨と鶏のスープに、チャーシューが入っています。", ruby: "<ruby>醤油<rt>しょうゆ</rt></ruby>ラーメンです。<ruby>濃厚<rt>のうこう</rt></ruby>な<ruby>豚骨<rt>とんこつ</rt></ruby>と<ruby>鶏<rt>にわとり</rt></ruby>のスープに、チャーシューが<ruby>入<rt>はい</rt></ruby>っています。", chinese: "是醬油拉麵。濃郁的豬骨和雞湯，裡面有叉燒。" },
+            { speaker: "顧客", romaji: "Jā, shōyu rāmen o onegai shimasu.", japanese: "じゃあ、醤油ラーメンをお願いします。", ruby: "じゃあ、<ruby>醤油<rt>しょうゆ</rt></ruby>ラーメンをお<ruby>願<rt>ねが</rt></ruby>いします。", chinese: "那就來一份醬油拉麵。" },
+            { speaker: "店員", romaji: "Kashikomarimashita. Shōshō omachi kudasai.", japanese: "かしこまりました。少々お待ちください。", ruby: "かしこまりました。<ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちください。", chinese: "好的，請稍等。" }
+          ]
+        },
+        grammar: {
+          pattern: "[名詞] + は + [名詞] + です (wa... desu)",
+          explanation: "此句型意為「...是...」，是日語文法中最基礎的判斷與陳述句型，用於說明事物的屬性、身分、名稱或狀態。",
+          examples: [
+            { jp: "私は学生です。", ruby: "<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。", romaji: "Watashi wa gakusei desu.", zh: "我是學生。" },
+            { jp: "これはペンです。", ruby: "これはペンです。", romaji: "Kore wa pen desu.", zh: "這是筆。" }
+          ]
+        },
+        replacements: [
+          { item: "彼 / 先生", pattern: "彼は先生です", romaji: "Kare wa sensei desu.", zh: "他是老師。" },
+          { item: "これ / 何", pattern: "これは何ですか", romaji: "Kore wa nan desu ka.", zh: "這是什麼？" }
+        ],
+        vocab: [
+          { jp: "味玉・メンマ", kana: "あじたま・メンマ", romaji: "ajitama / menma", zh: "滷蛋（溏心蛋）/ 筍乾" },
+          { jp: "豚骨・味噌", kana: "とんこつ・みそ", romaji: "tonkotsu / miso", zh: "豬骨 / 味噌" },
+          { jp: "替え玉", kana: "かえだま", romaji: "kaedama", zh: "追加麵（加麵）" },
+          { jp: "レンゲ・スプーン", kana: "レンゲ・スプーン", romaji: "renge / supūn", zh: "湯匙" },
+          { jp: "大盛り・少なめ", kana: "おおもり・すくなめ", romaji: "ōmori / sukuname", zh: "多一點（大碗）/ 少一點" },
+          { jp: "トッピング", kana: "トッピング", romaji: "toppingu", zh: "配料（加料）" },
+          { jp: "炒飯（チャーハン）", kana: "チャーハン", romaji: "chāhan", zh: "炒飯" },
+          { jp: "ご当地", kana: "ごとうち", romaji: "gotōchi", zh: "當地（地方特色）" }
+        ],
+        phrases: [
+          { scene: "開動用餐", jp: "いただきます。", ruby: "いただきます。", romaji: "Itadakimasu.", zh: "我要開動了。" },
+          { scene: "感謝款待", jp: "おいしかったです。ご馳走さまでした。", ruby: "おいしかったです。ご<ruby>馳走<rt>ちそう</rt></ruby>さまでした。", romaji: "Oishikatta desu. Gochisōsama deshita.", zh: "很好吃，謝謝你的款待。" },
+          { scene: "示意點餐", jp: "注文をお願いします。", ruby: "<ruby>注文<rt>ちゅうもん</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Chūmon o onegai shimasu.", zh: "我要點餐。" },
+          { scene: "續茶需求", jp: "お茶のおかわりをお願いします。", ruby: "お<ruby>茶<rt>ちゃ</rt></ruby>のおかわりをお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Ocha no okawari o onegai shimasu.", zh: "麻煩再給我一杯茶。" }
+        ],
+        trivia: {
+          title: "拉麵店的用餐禮儀與常見三大 NG 行為指南",
+          content: "1. 將衛生紙或牙籤直接丟入麵碗：餐巾紙請丟桌下垃圾桶或置於托盤邊緣；2. 長時間拍照或用完餐後久坐滑手機：拉麵講究翻桌率且麵易軟爛，吃完應儘速結帳離席；3. 攜帶外食與佔位不點餐：店內嚴禁外食，每位成人須各自點一碗麵（低消）。"
+        }
+      },
+      {
         id: "ch-5-2",
         code: "5.2",
         title: "寿司（日本庶民美食篇 - 壽司文化）",
