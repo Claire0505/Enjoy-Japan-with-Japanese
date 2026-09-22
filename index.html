@@ -1332,23 +1332,37 @@
           { item: "入ります", pattern: "入ってもいいですか", romaji: "Haitte mo ii desu ka.", zh: "可以進去嗎？" }
         ],
         vocab: [
-          { jp: "試着室", kana: "しちゃくしつ", romaji: "shichakushitsu", zh: "試衣間" },
-          { jp: "免税", kana: "めんぜい", romaji: "menzei", zh: "免稅（Tax-Free）" },
+          { jp: "化粧品・化粧水", kana: "けしょうひん・けしょうすい", romaji: "keshōhin / keshōsui", zh: "化妝品 / 化妝水" },
+          { jp: "スニーカー", kana: "スニーカー", romaji: "sunīkā", zh: "運動鞋" },
+          { jp: "マスク", kana: "マスク", romaji: "masuku", zh: "面膜" },
           { jp: "サイズ", kana: "サイズ", romaji: "saizu", zh: "尺寸" },
-          { jp: "色違い", kana: "いろちがい", romaji: "irochigai", zh: "不同顏色" },
-          { jp: "鏡", kana: "かがみ", romaji: "kagami", zh: "鏡子" },
-          { jp: "新品", kana: "しんぴん", romaji: "shinpin", zh: "未拆封全新商品" },
-          { jp: "領収書", kana: "りょうしゅうしょ", romaji: "ryōshūsho", zh: "報帳收據" }
+          { jp: "日焼け止め", kana: "ひやけどめ", romaji: "hiyakedome", zh: "防曬油" },
+          { jp: "サンダル", kana: "サンダル", romaji: "sandaru", zh: "涼鞋" },
+          { jp: "スキンケア", kana: "スキンケア", romaji: "sukinkea", zh: "護膚用品" },
+          { jp: "メイク落とし", kana: "メイクおとし", romaji: "meikuotoshi", zh: "卸妝油" }
         ],
         phrases: [
-          { scene: "詢問不同尺寸", jp: "これの大きい／小さいサイズはありますか。", ruby: "これの<ruby>大<rt>おお</rt></ruby>きい／<ruby>小<rt>ちい</rt></ruby>さいサイズはありますか。", romaji: "Kore no ōkii / chiisai saizu wa arimasu ka.", zh: "這件有更大/更小的尺寸嗎？" },
-          { scene: "詢問免稅資格", jp: "免税手続きができますか。", ruby: "<ruby>免税<rt>めんぜい</rt></ruby><ruby>手続<rt>てつづ</rt></ruby>きができますか。", romaji: "Menzei tetsuzuki ga dekimasu ka.", zh: "可以辦理免稅手續嗎？" },
-          { scene: "信用卡確認", jp: "クレジットカードで払えますか。", ruby: "クレジットカードで<ruby>払<rt>はら</rt></ruby>えますか。", romaji: "Kurejitto kādo de haraemasu ka.", zh: "可以使用信用卡付款嗎？" }
+          { scene: "詢問試用品", jp: "このサンプルはありますか。", ruby: "このサンプルはありますか。", romaji: "Kono sanpuru wa arimasu ka.", zh: "有這個試用品嗎？" },
+          { scene: "說明膚質", jp: "乾燥肌／オイリー肌です。", ruby: "<ruby>乾燥肌<rt>かんそうはだ</rt></ruby>／オイリー<ruby>肌<rt>はだ</rt></ruby>です。", romaji: "Kansōhada / Oirīhada desu.", zh: "乾性皮膚／油性皮膚。" },
+          { scene: "反應尺寸", jp: "これはちょっと大きい／小さい／短い／きついです。", ruby: "これはちょっと<ruby>大<rt>おお</rt></ruby>きい／<ruby>小<rt>ちい</rt></ruby>さい／<ruby>短<rt>みじか</rt></ruby>い／きついです。", romaji: "Kore wa chotto ōkii / chiisai / mijikai / kitsui desu.", zh: "這個有點太大／太小／太短／太緊了。" },
+          { scene: "請求包裝", jp: "プレゼント用に包装してもらえますか。", ruby: "プレゼント<ruby>用<rt>よう</rt></ruby>に<ruby>包装<rt>ほうそう</rt></ruby>してもらえますか。", romaji: "Purezento-yō ni hōsō shite moraemasu ka.", zh: "可以包裝成送禮用的嗎？" }
         ],
         trivia: {
           title: "日本免稅手續（Tax-Free）規範與出境核驗指南",
           content: "同一商店當日未稅消費滿 5,000 日圓以上即可辦理免稅。消耗品（藥妝、食品）會以特製透明袋密封，在出境日本離開前嚴禁拆封，海關將透過護照晶片連線抽查核驗！"
-        }
+        },
+        quiz: [
+          { q: "1. 「涼鞋」的日文是哪一個？", options: ["1. スニーカー", "2. サンダル", "3. サンプル"], ans: 1, explain: "「涼鞋」為外來語「サンダル（sandals）」。スニーカー 是運動鞋，サンプル 是樣品/試用品。" },
+          { q: "2. 「運動鞋」的日文是哪一個？", options: ["1. スニーカー", "2. サンダル", "3. サンプル"], ans: 0, explain: "「運動鞋/球鞋」為外來語「スニーカー（sneakers）」。サンダル 是涼鞋。" },
+          { q: "3. 「護膚用品」的日文是哪一個？", options: ["1. 日焼け止め", "2. メイク落とし", "3. スキンケア"], ans: 2, explain: "「護膚用品/保養品」為外來語「スキンケア（skincare）」。日焼け止め 是防曬油，メイク落とし 是卸妝油。" },
+          { q: "4. 「防曬油」的日文是哪一個？", options: ["1. 日焼け止め", "2. メイク落とし", "3. スキンケア"], ans: 0, explain: "「防曬油/乳」的日文漢字為「日焼け止め（ひやけどめ）」。メイク落とし 是卸妝油。" },
+          { q: "5. 日語「化粧水」的讀音是哪一個？", options: ["1. けしょうすい", "2. けっしょうす", "3. けしょすい"], ans: 0, explain: "「化粧水（化妝水）」的正確平假名讀音為「けしょうすい（keshōsui）」。" },
+          { q: "6. 日語「距離」的讀音是哪一個？", options: ["1. きょうり", "2. きょり", "3. きょりう"], ans: 1, explain: "「距離」的正確平假名讀音為「きょり（kyori）」，注意「きょ」為拗音短音。" },
+          { q: "7. (　　　）もいいですか。（　　）填入適當答案", options: ["1. 撮ります", "2. 撮って", "3. 撮り"], ans: 1, explain: "徵求許可的句型接續為「動詞て形 + もいいですか」。「撮ります」的て形為「撮って」，即「写真を撮ってもいいですか（可以拍照嗎？）」。" },
+          { q: "8. 靴を（　　　）ます。（　　）填入適當答案", options: ["1. 着", "2. 履き", "3. し"], ans: 1, explain: "穿著下半身衣物或鞋襪時使用的動詞為「履きます（はきます）」，穿鞋即為「靴を履きます」。上半身穿衣才用「着ます（きます）」。" },
+          { q: "9. （　　）お待ちください。（　　）填入適當答案", options: ["1. 少々", "2. 多々", "3. なかなか"], ans: 0, explain: "請客人稍候片刻的敬語慣用語為「少々お待ちください（しょうしょうおまちください）」。" },
+          { q: "10. 下列對「日本免稅」的敘述何者為非？", options: ["1. 須持觀光簽證", "2. 滿5000日圓以上", "3. 全部的商店都可以免稅"], ans: 2, explain: "只有取得日本政府核發許可並貼有「Japan Tax-free Shop」標誌的指定商店才能辦理免稅，並非所有店家都能免稅，故選項 3 為非。" }
+        ]
       },
       {
         id: "ch-5-1",
