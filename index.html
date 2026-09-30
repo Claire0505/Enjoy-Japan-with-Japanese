@@ -1410,7 +1410,19 @@
         trivia: {
           title: "拉麵店的用餐禮儀與常見三大 NG 行為指南",
           content: "1. 將衛生紙或牙籤直接丟入麵碗：餐巾紙請丟桌下垃圾桶或置於托盤邊緣；2. 長時間拍照或用完餐後久坐滑手機：拉麵講究翻桌率且麵易軟爛，吃完應儘速結帳離席；3. 攜帶外食與佔位不點餐：店內嚴禁外食，每位成人須各自點一碗麵（低消）。"
-        }
+        },
+        quiz: [
+          { q: "1. 「炒飯」的日文是哪一個？", options: ["1. チャーハン", "2. レンゲ", "3. メンマ"], ans: 0, explain: "「炒飯」的日文外來語是「チャーハン（chāhan）」。レンゲ 是湯匙，メンマ 是筍乾。" },
+          { q: "2. 「叉燒肉」的日文是哪一個？", options: ["1. メンマ", "2. チャーハン", "3. チャーシュー"], ans: 2, explain: "「叉燒肉」的日語為「チャーシュー（chāshū）」。メンマ 是筍乾，チャーハン 是炒飯。" },
+          { q: "3. 「筍乾」的日文是哪一個？", options: ["1. レンゲ", "2. メンマ", "3. チャーシュー"], ans: 1, explain: "拉麵中的配料「筍乾」日文為「メンマ（menma）」。レンゲ 是湯匙。" },
+          { q: "4. 日語「豚骨」的讀音是哪一個？", options: ["1. ぶたほね", "2. ぶたこつ", "3. とんこつ"], ans: 2, explain: "「豚骨」的正確日語讀音為「とんこつ（tonkotsu）」，「豚」音讀為「とん」，「骨」讀為「こつ」。" },
+          { q: "5. 日語「ご馳走」的讀音是哪一個？", options: ["1. ごちそ", "2. ごしそ", "3. ごちそう"], ans: 2, explain: "「ご馳走（款待/美食）」的正確讀音為「ごちそう（gochisō）」，飯後感謝用語為「ご馳走さ合でした」。" },
+          { q: "6. 日語「注文」的讀音是哪一個？", options: ["1. ちゅうもん", "2. ちゅうぶん", "3. ずうぶん"], ans: 0, explain: "「注文（點餐/訂購）」的正確讀音為「ちゅうもん（chūmon）」。" },
+          { q: "7. 私（　　　）学生です。（　　）填入適當答案", options: ["1. へ", "2. は", "3. を"], ans: 1, explain: "主語/主題標示助詞使用「は（讀作 wa）」，形成「私は学生です（我是學生）」的斷定陳述句。" },
+          { q: "8. 注文（　　　）お願いします。（　　）填入適當答案", options: ["1. に", "2. を", "3. へ"], ans: 1, explain: "委託或索取動作所指的受詞後接賓格助詞「を」，即「注文をお願いします（我要點餐 / 麻煩點餐）」。" },
+          { q: "9. チャーシュー（　　）入っています。（　　）填入適當答案", options: ["1. が", "2. を", "3. へ"], ans: 0, explain: "自動詞「入っています（有放/含在裡面）」前面標示存在的對象使用主格助詞「が」，即「チャーシューが入っています」。" },
+          { q: "10. 下列對「在拉麵店用餐時」的敘述何者為非？", options: ["1. 用餐後即離開", "2. 可將垃圾丟到湯碗內", "3. 可以加麵"], ans: 1, explain: "將擦手紙、面紙或牙籤丟入吃剩的拉麵湯碗中在日本被視為嚴重不衛生的 NG 行為，故選項 2 敘述為非。用餐紙屑應丟入桌下垃圾桶或置於托盤旁。" }
+        ]
       },
       {
         id: "ch-5-2",
@@ -1419,41 +1431,61 @@
         subtitle: "壽司吧台點餐・食材種類與用餐禮節",
         badge: "日本美食",
         dialogue: {
-          scene: "壽司吧台（カウンター席）點餐",
+          scene: "寿司屋（壽司店點餐）",
           lines: [
-            { speaker: "顧客", romaji: "Maguro to sāmon o kudasai.", japanese: "マグロとサーモンをください。", ruby: "マグロとサーモンをください。", chinese: "請給我一份鮪魚和一份鮭魚壽司。" },
-            { speaker: "壽司師傅", romaji: "Hai, sabinuki desu ka.", japanese: "はい、サビ抜きですか。", ruby: "はい、サビ<ruby>抜<rt>ぬ</rt></ruby>きですか。", chinese: "好的，需要幫您去芥末嗎？" },
-            { speaker: "顧客", romaji: "Iie, wasabi o irete kudasai.", japanese: "いいえ、ワサビを入れてください。", ruby: "いいえ、ワサビを<ruby>入<rt>い</rt></ruby>れてください。", chinese: "不用，請幫我加山葵（芥末）。" }
+            { speaker: "店員", romaji: "Irasshaimase. Nan-mei sama desu ka.", japanese: "いらっしゃいませ。何名様ですか。", ruby: "いらっしゃいませ。<ruby>何名様<rt>なんめいさま</rt></ruby>ですか。", chinese: "歡迎光臨。幾位呢？" },
+            { speaker: "顧客", romaji: "Futari desu. Yoyaku shite imasen ga, daijōbu desu ka.", japanese: "二人です。予約していませんが、大丈夫ですか。", ruby: "<ruby>二人<rt>ふたり</rt></ruby>です。<ruby>予約<rt>よやく</rt></ruby>していませんが、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>ですか。", chinese: "兩位。沒有預約，可以嗎？" },
+            { speaker: "店員", romaji: "Daijōbu desu yo. Kochira e dōzo. Osushi wa nan ni shimasu ka.", japanese: "大丈夫ですよ。こちらへどうぞ。お寿司は何にしますか。", ruby: "<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>ですよ。こちらへどうぞ。お<ruby>寿司<rt>すし</rt></ruby>は<ruby>何<rt>なに</rt></ruby>にしますか。", chinese: "沒問題的。請這邊走。您要點什麼壽司呢？" },
+            { speaker: "顧客", romaji: "Maguro to sāmon ni shimasu.", japanese: "マグロとサーモンにします。", ruby: "マグロとサーモンにします。", chinese: "我要鮪魚和鮭魚。" },
+            { speaker: "店員", romaji: "Onomimono wa.", japanese: "お飲み物は。", ruby: "お<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>は。", chinese: "要喝點什麼呢？" },
+            { speaker: "顧客", romaji: "Nihonshu o kudasai.", japanese: "日本酒をください。", ruby: "<ruby>日本酒<rt>にほんしゅ</rt></ruby>をください。", chinese: "請給我日本酒。" }
           ]
         },
         grammar: {
           pattern: "[名詞] + をください (o kudasai)",
-          explanation: "點餐、索取物品時最直接、自然的請求用語。",
+          explanation: "此句型意為「請給我...」，用於向店家請求某物品或提出要求。適用於點餐、索取水杯、菜單、餐具或調味料。比較說明：「[名詞] + をお願いします」語氣較為禮貌、正式，多用於要求服務或正式點餐；「[名詞] + をください」口語直接，廣泛應用於日常口語對話與日常消費場景。",
           examples: [
-            { jp: "お茶をください。", ruby: "お<ruby>茶<rt>ちゃ</rt></ruby>をください。", romaji: "Ocha o kudasai.", zh: "請給我熱茶。" },
-            { jp: "メニューをください。", ruby: "メニューをください。", romaji: "Menyū o kudasai.", zh: "請給我菜單。" }
+            { jp: "水をください。", ruby: "<ruby>水<rt>みず</rt></ruby>をください。", romaji: "Mizu o kudasai.", zh: "請給我水。" },
+            { jp: "コーヒーをください。", ruby: "コーヒーをください。", romaji: "Kōhī o kudasai.", zh: "請給我咖啡。" }
           ]
         },
         replacements: [
-          { item: "水", pattern: "水をください", romaji: "Mizu o kudasai.", zh: "請給我冰水。" },
-          { item: "スプーン", pattern: "スプーンをください", romaji: "Supūn o kudasai.", zh: "請給我湯匙。" }
+          { item: "ペン", pattern: "ペンをください", romaji: "Pen o kudasai.", zh: "請給我筆。" },
+          { item: "抹茶アイス", pattern: "抹茶アイスをください", romaji: "Matcha aisu o kudasai.", zh: "請給我抹茶冰淇淋。" },
+          { item: "これ", pattern: "これをください", romaji: "Kore o kudasai.", zh: "請給我這個。" }
         ],
         vocab: [
-          { jp: "寿司", kana: "すし", romaji: "sushi", zh: "壽司" },
           { jp: "刺身", kana: "さしみ", romaji: "sashimi", zh: "生魚片" },
-          { jp: "わさび抜き", kana: "わさびぬき", romaji: "wasabinuki", zh: "去除芥末" },
-          { jp: "握り寿司", kana: "にぎりずし", romaji: "nigirizushi", zh: "握壽司" },
-          { jp: "回転寿司", kana: "かいてんずし", romaji: "kaitenzushi", zh: "迴轉壽司" },
-          { jp: "醤油", kana: "しょうゆ", romaji: "shōyu", zh: "醬油" }
+          { jp: "わさび", kana: "わさび", romaji: "wasabi", zh: "芥末" },
+          { jp: "軍艦", kana: "ぐんかん", romaji: "gunkan", zh: "軍艦壽司" },
+          { jp: "ウニ", kana: "ウニ", romaji: "uni", zh: "海膽" },
+          { jp: "だし巻き玉子", kana: "だしまきたまご", romaji: "dashimaki tamago", zh: "玉子燒" },
+          { jp: "いなり寿司", kana: "いなりずし", romaji: "inarizushi", zh: "豆皮 / 稻荷壽司" },
+          { jp: "しゃり・酢飯", kana: "しゃり・すめし", romaji: "shari / sumeshi", zh: "醋飯" },
+          { jp: "おしぼり", kana: "おしぼり", romaji: "oshibori", zh: "濕毛巾" }
         ],
         phrases: [
-          { scene: "索取熱茶", jp: "あがりをお願いします。", ruby: "あがりをお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Agari o onegai shimasu.", zh: "麻煩請給我熱茶。" },
-          { scene: "確認推薦", jp: "今日のおすすめは何ですか。", ruby: "<ruby>今日<rt>きょう</rt></ruby>のおすすめは<ruby>何<rt>なん</rt></ruby>ですか。", romaji: "Kyō no osusume wa nan desu ka.", zh: "請問今天推薦的主打是什麼？" }
+          { scene: "不要芥末", jp: "わさび抜きでお願いします。", ruby: "わさび<ruby>抜<rt>ぬ</rt></ruby>きでお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Wasabinuki de onegai shimasu.", zh: "麻煩請去掉芥末。" },
+          { scene: "確認營業", jp: "営業中ですか。", ruby: "<ruby>営業中<rt>えいぎょうちゅう</rt></ruby>ですか。", romaji: "Eigyōchū desu ka.", zh: "營業中嗎？" },
+          { scene: "確認座位", jp: "テーブル席・カウンター席ですか。", ruby: "テーブル<ruby>席<rt>せき</rt></ruby>・カウンター<ruby>席<rt>せき</rt></ruby>ですか。", romaji: "Tēburu-seki / Kauntā-seki desu ka.", zh: "桌位/櫃台位嗎？" },
+          { scene: "詢問附餐", jp: "サイドメニューは何がありますか。", ruby: "サイドメニューは<ruby>何<rt>なに</rt></ruby>がありますか。", romaji: "Saido menyū wa nani ga arimasu ka.", zh: "有什麼附餐呢？" }
         ],
         trivia: {
           title: "壽司品嚐禮儀與業界隱藏文化",
-          content: "沾醬油時應用生魚片（ネタ）那一側輕點醬油，避免醋飯（シャリ）吸入過多醬油散開。用手指直接拿取或用筷子均合乎傳統禮儀！"
-        }
+          content: "1. 醬油沾取法則（壽司料 vs 醋飯）：品嚐握壽司時，正確吃法是將壽司稍微側翻，用生魚片（壽司料 / ネタ）的前端輕沾少量醬油，切忌用下方的醋飯（しゃり）直接吸飽醬油，否則米飯容易散落於醬油碟中，也會破壞醋飯原有的酸甜平衡。2. 用手拿還是用筷子？：在傳統江戶前壽司店，直接用手指拿取壽司食用是完全合乎禮儀的（店內提供的濕毛巾「おしぼり」即是用於隨時擦拭手指）；當然使用筷子夾取亦完全沒問題，原則上以「一口吃進一顆（一口サイズ）」最能體會魚生與醋飯交融的極致風味。3. 尊重食材完整性：在日本壽司文化中，將生魚片從飯糰上剝下來單獨吃掉而留下白飯被視為對師傅手藝極不尊重的行為。若不想吃太多澱粉，可在點餐時提前向師傅告知「シャリ小さめで（請幫我將飯糰捏小一點）」。"
+        },
+        quiz: [
+          { q: "1. 「(壽司用的)醋飯」的日文是哪一個？", options: ["1. しゃり", "2. がり", "3. あがり"], ans: 0, explain: "壽司店中將醋飯稱為「しゃり（shari）」，源自於「舍利」。がり 是醃生薑，あがり 是用餐結束時送上的熱茶。" },
+          { q: "2. 「芥末」的日文是哪一個？", options: ["1. すし", "2. まぐろ", "3. わさび"], ans: 2, explain: "「芥末 / 山葵」日文為「わさび（wasabi）」。すし 是壽司，まぐろ 是鮪魚。" },
+          { q: "3. 「海膽」的日文是哪一個？", options: ["1. カニ", "2. ウニ", "3. サーモン"], ans: 1, explain: "「海膽」日語為「ウニ（uni）」。カニ 是螃蟹，サーモン 是鮭魚。" },
+          { q: "4. 日語「軍艦」的讀音是哪一個？", options: ["1. くんかん", "2. ぐんかん", "3. くんがん"], ans: 1, explain: "「軍艦（軍艦壽司）」的正確平假名讀音為「ぐんかん（gunkan）」，開頭是濁音「ぐ」。" },
+          { q: "5. 日語「刺身」的讀音是哪一個？", options: ["1. さしみ", "2. さかな", "3. さくら"], ans: 0, explain: "「刺身（生魚片）」的讀音為「さしみ（sashimi）」。さかな 是魚，さくら 是櫻花。" },
+          { q: "6. 日語「水」的讀音是哪一個？", options: ["1. おゆ", "2. みず", "3. おちゃ"], ans: 1, explain: "「水（常溫水 / 冰水）」的平假名讀音為「みず（mizu）」。おゆ 是熱水，おちゃ 是茶。" },
+          { q: "7. コーヒー（　　　）ください。（　　）填入適當答案", options: ["1. へ", "2. が", "3. を"], ans: 2, explain: "索取物品或點餐句型為「[名詞] + をください」，受詞後面接賓格助詞「を」，即「コーヒーをください（請給我咖啡）」。" },
+          { q: "8. 日語「サイドメニュー」是什麼意思（　　）填入適當答案", options: ["1. 副食品", "2. 附餐", "3. 主餐"], ans: 1, explain: "「サイドメニュー（side menu）」中文為「附餐、配菜 / 小菜」，如茶碗蒸、味噌湯或炸物等副餐料理。" },
+          { q: "9. こちら（　　）どうぞ。（　　）填入適當答案", options: ["1. へ", "2. が", "3. を"], ans: 0, explain: "店員帶位引導客人走向特定方向時接格助詞「へ（讀作 e）」，「こちらへどうぞ」意為「請這邊走 / 這邊請」。" },
+          { q: "10. 下列對「吃壽司時」的敘述何者為非？", options: ["1. 醬油沾在壽司料上", "2. 可以只吃壽司料", "3. 可以用手吃"], ans: 1, explain: "在日本壽司文化中，把生魚片（壽司料）剝下來單獨吃掉而留下白飯，被視為對壽司師傅非常不尊重的行為，故選項 2 錯誤。正確吃法是沾醬油於魚生上，用手或筷子整顆一口享用。" }
+        ]
       },
       {
         id: "ch-6-1",
