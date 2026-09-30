@@ -1491,82 +1491,102 @@
         id: "ch-6-1",
         code: "6.1",
         title: "大阪（關西地區篇 - 都會探索與問路）",
-        subtitle: "道頓堀地標・觀光案內所交通問路",
+        subtitle: "道頓堀與心齋橋商圈・觀光案內所交通問路",
         badge: "關西地區",
         dialogue: {
-          scene: "旅客服務中心（観光案内所）詢問前往 USJ 環球影城路線",
+          scene: "観光案内所（旅客服務中心問路）",
           lines: [
-            { speaker: "觀光客", romaji: "Sumimasen, Yū-Esu-Jē made dōyatte ikimasu ka.", japanese: "すみません、USJまでどうやって行きますか。", ruby: "すみません、USJまでどうやって<ruby>行<rt>い</rt></ruby>きますか。", chinese: "不好意思，請問到日本環球影城怎麼去呢？" },
-            { speaker: "案内人員", romaji: "Densha de ikimasu. Namba kara norikaete kudasai.", japanese: "電車で行きます。難波から乗り換えてください。", ruby: "<ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>行<rt>い</rt></ruby>きます。<ruby>難波<rt>なんば</rt></ruby>から<ruby>乗<rt>の</rt></ruby>り<ruby>換<rt>か</rt></ruby>えてください。", chinese: "搭乘電車前往。請在難波站轉車。" }
+            { speaker: "觀光客", romaji: "Ōsaka no osusume no kankō supotto wa doko desu ka.", japanese: "大阪のおすすめの観光スポットはどこですか。", ruby: "<ruby>大阪<rt>おおさか</rt></ruby>のおすすめの<ruby>観光<rt>かんこう</rt></ruby>スポットはどこですか。", chinese: "請問大阪有哪些推薦的觀光景點？" },
+            { speaker: "工作人員", romaji: "Dōtonbori wa dō desu ka. Takoyaki ya okonomiyaki ga oishii desu yo.", japanese: "道頓堀はどうですか。たこ焼きやお好み焼きがおいしいですよ。", ruby: "<ruby>道頓堀<rt>どうとんぼり</rt></ruby>はどうですか。たこ<ruby>焼<rt>や</rt></ruby>きやお<ruby>好<rt>この</rt></ruby>み<ruby>焼<rt>や</rt></ruby>きがおいしいですよ。", chinese: "道頓堀如何？章魚燒和大阪燒很好吃喔！" },
+            { speaker: "觀光客", romaji: "Ii desu ne. Koko kara Dōtonbori made dōyatte ikimasu ka.", japanese: "いいですね。ここから道頓堀までどうやって行きますか。", ruby: "いいですね。ここから<ruby>道頓堀<rt>どうとんぼり</rt></ruby>までどうやって<ruby>行<rt>い</rt></ruby>きますか。", chinese: "好耶。從這裡到道頓堀怎麼去？" },
+            { speaker: "工作人員", romaji: "Chikatetsu de Namba eki de orimasu. Toho de yaku go-fun desu.", japanese: "地下鉄でなんば駅で降ります。徒歩で約5分です。", ruby: "<ruby>地下鉄<rt>ちかてつ</rt></ruby>でなんば<ruby>駅<rt>えき</rt></ruby>で<ruby>降<rt>お</rt></ruby>ります。<ruby>徒歩<rt>とほ</rt></ruby>で<ruby>約<rt>やく</rt></ruby><ruby>5分<rt>ごふん</rt></ruby>です。", chinese: "搭乘地鐵在難波車站下車。步行約5分鐘即可到達。" }
           ]
         },
         grammar: {
           pattern: "[目的地] + までどうやって行きますか (made dōyatte ikimasu ka)",
-          explanation: "詢問前往某地的交通工具與具體乘車轉乘路線方式。",
+          explanation: "此句型意為「到...要怎麼去？」，用於詢問抵達特定目的地的移動手段與路線步驟。能引導對方具體說明搭乘何種交通工具與乘車耗費時間。",
           examples: [
-            { jp: "京都までどうやって行きますか。", ruby: "<ruby>京都<rt>きょうと</rt></ruby>までどうやって<ruby>行<rt>い</rt></ruby>きますか。", romaji: "Kyōto made dōyatte ikimasu ka.", zh: "到京都要怎麼去呢？" }
+            { jp: "大阪駅までどうやって行きますか。", ruby: "<ruby>大阪駅<rt>おおさかえき</rt></ruby>までどうやって<ruby>行<rt>い</rt></ruby>きますか。", romaji: "Ōsaka eki made dōyatte ikimasu ka.", zh: "到大阪車站怎麼走？" },
+            { jp: "ホテルまでどうやって行きますか。", ruby: "ホテルまでどうやって<ruby>行<rt>い</rt></ruby>きますか。", romaji: "Hoteru made dōyatte ikimasu ka.", zh: "到飯店怎麼走？" }
           ]
         },
         replacements: [
-          { item: "大阪城", pattern: "大阪城までどうやって行きますか", romaji: "Ōsakajō made dōyatte ikimasu ka.", zh: "請問去大阪城怎麼走？" }
+          { item: "梅田", pattern: "梅田までどうやって行きますか", romaji: "Umeda made dōyatte ikimasu ka.", zh: "到梅田怎麼走？" },
+          { item: "なんば", pattern: "なんばまでどうやって行きますか", romaji: "Namba made dōyatte ikimasu ka.", zh: "到難波怎麼走？" },
+          { item: "USJ", pattern: "USJまでどうやって行きますか", romaji: "Yū-Esu-Jē made dōyatte ikimasu ka.", zh: "到日本環球影城怎麼走？" },
+          { item: "道頓堀", pattern: "道頓堀までどうやって行きますか", romaji: "Dōtonbori made dōyatte ikimasu ka.", zh: "到道頓堀怎麼走？" }
         ],
         vocab: [
-          { jp: "道頓堀", kana: "どうとんぼり", romaji: "dōtonbori", zh: "道頓堀" },
-          { jp: "心斎橋", kana: "しんさいばし", romaji: "shinsaibashi", zh: "心齋橋" },
-          { jp: "グリコサイン", kana: "グリコサイン", romaji: "gurikosain", zh: "固力果跑跑人霓虹招牌" },
-          { jp: "観光案内所", kana: "かんこうあんないしょ", romaji: "kankō annaisho", zh: "觀光旅遊諮詢處" }
+          { jp: "薬局", kana: "やっきょく", romaji: "yakkyoku", zh: "藥局" },
+          { jp: "大阪城", kana: "おおさかじょう", romaji: "ōsakajō", zh: "大阪城" },
+          { jp: "たこ焼き", kana: "たこやき", romaji: "takoyaki", zh: "章魚燒" },
+          { jp: "観光スポット", kana: "かんこうスポット", romaji: "kankō supotto", zh: "觀光景點" },
+          { jp: "お好み焼き", kana: "おこのみやき", romaji: "okonomiyaki", zh: "大阪燒" },
+          { jp: "串カツ", kana: "くしかつ", romaji: "kushikatsu", zh: "炸串燒" },
+          { jp: "地下鉄", kana: "ちかてつ", romaji: "chikatetsu", zh: "地鐵" },
+          { jp: "グリコ看板", kana: "グリコかんばん", romaji: "guriko kamban", zh: "固力果看板" }
         ],
         phrases: [
-          { scene: "現做要求", jp: "揚げたてをお願いします。", ruby: "<ruby>揚<rt>あ</rt></ruby>げたてをお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Agetate o onegai shimasu.", zh: "麻煩請給我剛炸好的。" },
-          { scene: "索取小盤分食", jp: "小皿をお願いします。", ruby: "<ruby>小皿<rt>こざら</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Kozara o onegai shimasu.", zh: "麻煩請給我分食小盤子。" }
+          { scene: "現炸要求", jp: "揚げたてをお願いします。", ruby: "<ruby>揚<rt>あ</rt></ruby>げたてをお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Agetate o onegai shimasu.", zh: "請給我現炸的。" },
+          { scene: "食材過敏", jp: "食物アレルギーはお持ちですか。", ruby: "<ruby>食物<rt>しょくもつ</rt></ruby>アレルギーはお<ruby>持<rt>も</rt></ruby>ちですか。", romaji: "Shokumotsu areregī wa omochi desu ka.", zh: "您有過敏的食材嗎？" },
+          { scene: "致歉見諒", jp: "ご勘弁ください。", ruby: "ご<ruby>勘弁<rt>かんべん</rt></ruby>ください。", romaji: "Gokamben kudasai.", zh: "請饒恕我們（造成不便請見諒）。" },
+          { scene: "索取餐具", jp: "小皿、お願いします。", ruby: "<ruby>小皿<rt>こざら</rt></ruby>、お<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Kozara, onegai shimasu.", zh: "請給我小盤子。" }
         ],
         trivia: {
           title: "道頓堀跑跑人地標與大阪方言（大阪弁）大解析",
-          content: "固力果跑跑人始於 1935 年，如今是第 6 代高科技 LED 螢幕。大阪人熱情幽默，常以「めっちゃ（超～）」、「まけて（算便宜一點嘛）」與「おおきに（多謝）」展現親和力。"
+          content: "【道頓堀江崎固力果（Glico）跑者看板的歷史演進】設立於 1935 年的道頓堀江崎固力果跑者看板，是大阪最經典的城市象徵。目前展示的是第 6 代 LED 數位霓虹看板，高達 20 公尺、寬 10.38 公尺。跑者背景會隨時間與節慶變換日本各大地標（如富士山、大阪城）。在戎橋上擺出單腳站立、雙手高舉的「固力果姿勢」合照，是每位到訪大阪遊客的必備儀式。\n\n【旅遊必學實用大阪腔（大阪弁）精選】\n・めっちゃ（Meccha）：相當於標準語的「とても（非常）」，例：めっちゃおいしい（超好吃）。\n・なんでやねん（Nandeyanen）：關西漫才經典吐槽句，意為「怎麼會這樣呢！/ 搞什麼鬼啊！」。\n・まけて（Makete）：在傳統黑門市場或商店街購物時常用的「算便宜一點嘛（安くして）」。\n・ほな（Hona）：意為「那麼、告辭了（それでは、さよなら）」，常說「ほな、またね（那麼，下次見）」。\n・おおきに（Ookini）：最具代表性的大阪感恩用語，相當於「ありがとうございます（非常感謝）」。"
         }
       },
       {
         id: "ch-6-2",
         code: "6.2",
         title: "たこ焼き（關西地區篇 - 大阪庶民小吃）",
-        subtitle: "章魚燒與炸串燒・點餐決定與飲食文化",
+        subtitle: "大阪飲食靈魂・章魚燒點餐與抉擇句型",
         badge: "關西地區",
         dialogue: {
-          scene: "道頓堀章魚燒攤位前點餐",
+          scene: "たこ焼き（章魚燒點餐）",
           lines: [
-            { speaker: "店員", romaji: "Irasshaimase. Nan-ko ni shimasu ka.", japanese: "いらっしゃいませ。何個にしますか。", ruby: "いらっしゃいませ。<ruby>何個<rt>なんこ</rt></ruby>にしますか。", chinese: "歡迎光臨，請問您要選幾顆裝的呢？" },
-            { speaker: "顧客", romaji: "Hachiko ni shimasu.", japanese: "8個にします。", ruby: "<ruby>8個<rt>はちこ</rt></ruby>にします。", chinese: "我決定選 8 顆裝的。" },
-            { speaker: "店員", romaji: "Aonori to katsuobushi wa kakete mo ii desu ka.", japanese: "青のりと鰹節はかけてもいいですか。", ruby: "<ruby>青<rt>あお</rt></ruby>のりと<ruby>鰹節<rt>かつおぶし</rt></ruby>はかけてもいいですか。", chinese: "可以幫您灑上青海苔與柴魚片嗎？" },
-            { speaker: "顧客", romaji: "Hai, onegai shimasu.", japanese: "はい、お願いします。", ruby: "はい、お<ruby>願<rt>ねが</rt></ruby>いします。", chinese: "好的，麻煩請幫我加！" }
+            { speaker: "顧客", romaji: "Takoyaki o kudasai.", japanese: "たこ焼きをください。", ruby: "たこ<ruby>焼<rt>や</rt></ruby>きをください。", chinese: "請給我章魚燒。" },
+            { speaker: "店員", romaji: "Irasshaimase. Nan-ko ni shimasu ka.", japanese: "いらっしゃいませ。何個にしますか。", ruby: "いらっしゃいませ。<ruby>何個<rt>なんこ</rt></ruby>にしますか。", chinese: "歡迎光臨。請問要幾個？" },
+            { speaker: "顧客", romaji: "Hakko kudasai.", japanese: "8個ください。", ruby: "<ruby>8個<rt>はっこ</rt></ruby>ください。", chinese: "請給我8個。" },
+            { speaker: "店員", romaji: "Sōsu to mayonēzu wa dō shimasu ka.", japanese: "ソースとマヨネーズはどうしますか。", ruby: "ソースとマヨネーズはどうしますか。", chinese: "醬料和美乃滋怎麼搭配呢？" },
+            { speaker: "顧客", romaji: "Ryōhō de onegai shimasu.", japanese: "両方でお願いします。", ruby: "<ruby>両方<rt>りょうほう</rt></ruby>でお<ruby>願<rt>ねが</rt></ruby>いします。", chinese: "請兩樣都加。" },
+            { speaker: "店員", romaji: "Hai, omachi kudasai.", japanese: "はい、お待ちください。", ruby: "はい、お<ruby>待<rt>ま</rt></ruby>ちください。", chinese: "好的，請稍等。" }
           ]
         },
         grammar: {
           pattern: "[名詞] + にします (ni shimasu)",
-          explanation: "在多種餐點或選項中做出個人最終決定的核心表達（我決定要～）。",
+          explanation: "此句型意為「決定選...」或「決定要...」，用於在多個選項中做出最終抉擇。使用時機：在菜單眾多項目中決定餐點、飲料、份量或款式。對話中店員詢問「何個にしますか」是在確認您要選擇的份量；回答「両方でお願いします（兩樣都麻煩您）」是在面對兩種配料都要添加時極好用的道地表達方式。",
           examples: [
-            { jp: "たこ焼きにします。", ruby: "たこ<ruby>焼<rt>や</rt></ruby>きにします。", romaji: "Takoyaki ni shimasu.", zh: "我決定選章魚燒。" },
-            { jp: "お寿司にします。", ruby: "お<ruby>寿司<rt>すし</rt></ruby>にします。", romaji: "Osushi ni shimasu.", zh: "我決定選壽司。" }
+            { jp: "カレーにします。", ruby: "カレーにします。", romaji: "Karē ni shimasu.", zh: "決定選咖哩飯。" },
+            { jp: "何にしますか。", ruby: "<ruby>何<rt>なに</rt></ruby>にしますか。", romaji: "Nan ni shimasu ka.", zh: "決定選什麼？" }
           ]
         },
         replacements: [
-          { item: "串カツ", pattern: "串カツにします", romaji: "Kushikatsu ni shimasu.", zh: "我決定選炸串燒。" },
-          { item: "お好み焼き", pattern: "お好み焼きにします", romaji: "Okonomiyaki ni shimasu.", zh: "我決定選大阪燒。" }
+          { item: "コーラ", pattern: "コーラにします", romaji: "Kōra ni shimasu.", zh: "我選可樂。" },
+          { item: "ビール", pattern: "ビールにします", romaji: "Bīru ni shimasu.", zh: "我選啤酒。" },
+          { item: "サラダ", pattern: "サラダにします", romaji: "Sarada ni shimasu.", zh: "我選生菜沙拉。" },
+          { item: "焼肉", pattern: "焼肉にします", romaji: "Yakiniku ni shimasu.", zh: "我選燒肉。" }
         ],
         vocab: [
-          { jp: "たこ焼き", kana: "たこやき", romaji: "takoyaki", zh: "章魚燒" },
-          { jp: "串カツ", kana: "くしかつ", romaji: "kushikatsu", zh: "炸串燒" },
+          { jp: "屋台料理", kana: "やたいりょうり", romaji: "yatai ryōri", zh: "路邊攤料理" },
+          { jp: "ソース", kana: "ソース", romaji: "sōsu", zh: "醬汁" },
           { jp: "青のり", kana: "あおのり", romaji: "aonori", zh: "青海苔粉" },
-          { jp: "鰹節", kana: "かつおぶし", romaji: "katsuobushi", zh: "柴魚片" },
-          { jp: "ソース", kana: "ソース", romaji: "sōsu", zh: "特製濃醬汁" },
-          { jp: "マヨネーズ", kana: "マヨネーズ", romaji: "mayonēzu", zh: "美乃滋" }
+          { jp: "持ち帰り", kana: "もちかえり", romaji: "mochikaeri", zh: "外帶" },
+          { jp: "マヨネーズ", kana: "マヨネーズ", romaji: "mayonēzu", zh: "美乃滋" },
+          { jp: "熱い・暑い", kana: "あつい", romaji: "atsui", zh: "燙的 / 熱的（氣溫熱）" },
+          { jp: "かつお節", kana: "かつおぶし", romaji: "katsuobushi", zh: "柴魚片" },
+          { jp: "店内・イートイン", kana: "てんない・イートイン", romaji: "tennai / ītoin", zh: "內用" }
         ],
         phrases: [
-          { scene: "外帶食用", jp: "持ち帰りでお願いします。", ruby: "<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>りでお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Mochikaeri de onegai shimasu.", zh: "麻煩請幫我外帶。" },
-          { scene: "美乃滋加量", jp: "マヨネーズを多めにしてください。", ruby: "マヨネーズを<ruby>多<rt>おお</rt></ruby>めにしてください。", romaji: "Mayonēzu o ōme ni shite kudasai.", zh: "美乃滋請幫我加多一點。" }
+          { scene: "詢問醬汁", jp: "お好みソースをかけますか。", ruby: "お<ruby>好<rt>この</rt></ruby>みソースをかけますか。", romaji: "Okonomi sōsu o kakemasu ka.", zh: "要加上您喜歡的醬汁嗎？" },
+          { scene: "形容熱度", jp: "あつあつですね。", ruby: "あつあつですね。", romaji: "Atsuatsu desu ne.", zh: "熱騰騰呢！" },
+          { scene: "叮嚀小心", jp: "熱いですから、気をつけてください。", ruby: "<ruby>熱<rt>あつ</rt></ruby>いですから、<ruby>気<rt>き</rt></ruby>をつけてください。", romaji: "Atsui desu kara, ki o tsukete kudasai.", zh: "很燙，請小心。" },
+          { scene: "叮嚀趁熱", jp: "冷めないうちに召し上がってください。", ruby: "<ruby>冷<rt>さ</rt></ruby>めないうちに<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりください。", romaji: "Samenai uchi ni meshiagari kudasai.", zh: "請趁熱享用。" }
         ],
         trivia: {
           title: "大阪炸串燒（串カツ）的「禁止回沾（二度付け禁止）」",
-          content: "公共醬汁桶供所有客人共用，咬過的炸串嚴禁再次伸入醬汁桶（二度付け禁止）！若醬汁不足，可用店家附上的乾淨生高麗菜舀醬汁淋在盤中。"
+          content: "【「二度付け禁止」的衛生規範由來】大阪新世界（通天閣一帶）著名的平民美食「炸串燒（串カツ）」，每張桌上都會擺放一公用長方形鐵盒醬汁。由於醬汁容器為所有顧客共用，基於公共衛生考量，形成了絕對不可破壞的黃金鐵律：咬過一口的炸串絕對嚴禁再次放入醬汁鐵盒沾取（二度づけ禁止）。\n\n【醬汁不足時的解方（高麗菜葉妙用）】店家隨炸串附贈的免費生高麗菜（キャベツ），除了能解炸物油膩、幫助消化外，還有一個關鍵功能：如果覺得手上的炸串醬汁不夠，可以用乾淨的高麗菜葉舀起醬汁，淋在自己的炸串或盤子中（高麗菜葉同樣禁止在咬過後回沾）。\n\n【竹籤丟棄禮儀】吃完炸串燒後，請將留下的竹籤投入桌上標有「串入れ」的專用竹筒或金屬桶內，方便店員最後以竹籤數量計算結帳金額。"
         }
       },
       {
