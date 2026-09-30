@@ -1593,83 +1593,99 @@
         id: "ch-7-1",
         code: "7.1",
         title: "金閣寺（關西地區篇 - 歷史古都巡禮）",
-        subtitle: "金閣倒影・京都世界遺產與拍照願望",
+        subtitle: "金閣倒影・京都世界遺產與願望句型",
         badge: "京都巡禮",
         dialogue: {
-          scene: "金閣寺鏡湖池畔庭園導覽",
+          scene: "金閣寺庭園漫步導覽",
           lines: [
-            { speaker: "導遊", romaji: "Minasan, kore ga Kinkakuji desu. Konjiki de totemo utsukushii otera desu.", japanese: "みなさん、これが金閣寺です。金色でとても美しいお寺です。", ruby: "みなさん、これが<ruby>金閣寺<rt>きんかくじ</rt></ruby>です。<ruby>金色<rt>こんじき</rt></ruby>でとても<ruby>美<rt>うつく</rt></ruby>しいお<ruby>寺<rt>てら</rt></ruby>です。", chinese: "大家請看，這就是金閣寺。通體金黃色，是非常莊嚴美麗的寺廟。" },
-            { speaker: "觀光客", romaji: "Wā, sugoi desu ne. Shashin o ippai toritai desu.", japanese: "わあ、すごいですね。写真をいっぱい撮りたいです。", ruby: "わあ、すごいですね。<ruby>写真<rt>しゃしん</rt></ruby>をいっぱい<ruby>撮<rt>と</rt></ruby>りたいです。", chinese: "哇，太震撼壯觀了！好想拍很多照片留念呢！" }
+            { speaker: "導遊", romaji: "Minasan, kore ga Kinkakuji desu. Konjiki de totemo utsukushii otera desu.", japanese: "みなさん、これが金閣寺です。金色でとても美しいお寺です。", ruby: "みなさん、これが<ruby>金閣寺<rt>きんかくじ</rt></ruby>です。<ruby>金色<rt>こんじき</rt></ruby>でとても<ruby>美<rt>うつく</rt></ruby>しいお<ruby>寺<rt>てら</rt></ruby>です。", chinese: "各位，這就是金閣寺。是一座金色且非常美麗的寺廟。" },
+            { speaker: "觀光客", romaji: "Wā, sugoi desu ne. Shashin o ippai toritai desu.", japanese: "わあ、すごいですね。写真をいっぱい撮りたいです。", ruby: "わあ、すごいですね。<ruby>写真<rt>しゃしん</rt></ruby>をいっぱい<ruby>撮<rt>と</rt></ruby>りたいです。", chinese: "哇，太棒了。我想拍很多照片。" },
+            { speaker: "導遊", romaji: "Ii desu ne. Dōzo omoikkiri tanoshinde kudasai.", japanese: "いいですね。どうぞ思いっきり楽しんでください。", ruby: "いいですね。どうぞ<ruby>思<rt>おも</rt></ruby>いっきり<ruby>楽<rt>たの</rt></ruby>しんでください。", chinese: "很好呀，請盡情享受吧。" }
           ]
         },
         grammar: {
-          pattern: "[動詞ます形去ます] + たいです (tai desu)",
-          explanation: "表達說話者第一人稱強烈的主觀願望（想做～）。",
+          pattern: "[動詞ます形] 去ます + たいです (tai desu)",
+          explanation: "此句型意為「想要做...」，用於表達說話者第一人稱的主觀希望、願望或想進行的動作。使用時機：表達個人旅遊願望、想吃的美食或想購買的物品。",
           examples: [
-            { jp: "写真を撮りたいです。", ruby: "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>りたいです。", romaji: "Shashin o toritai desu.", zh: "我想拍照。" },
-            { jp: "京都に行きたいです。", ruby: "<ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>きたいです。", romaji: "Kyōto ni ikitai desu.", zh: "我想去京都。" }
+            { jp: "ケーキを食べたいです。", ruby: "ケーキを<ruby>食<rt>た</rt></ruby>べたいです。", romaji: "Kēki o tabetai desu.", zh: "想吃蛋糕。" },
+            { jp: "お土産を買いたいです。", ruby: "お<ruby>土産<rt>みやげ</rt></ruby>を<ruby>買<rt>か</rt></ruby>いたいです。", romaji: "Omiyage o kaitai desu.", zh: "想買土產。" }
           ]
         },
         replacements: [
-          { item: "買います", pattern: "買いたいです", romaji: "Kaitai desu.", zh: "我想要買。" },
-          { item: "食べます", pattern: "食べたいです", romaji: "Tabetai desu.", zh: "我想要吃。" },
-          { item: "見ます", pattern: "見たいです", romaji: "Mitai desu.", zh: "我想要看。" }
+          { item: "飲みます", pattern: "飲みたいです", romaji: "Nomitai desu.", zh: "想喝。" },
+          { item: "食べます", pattern: "食べたいです", romaji: "Tabetai desu.", zh: "想吃。" },
+          { item: "買います", pattern: "買いたいです", romaji: "Kaitai desu.", zh: "想買。" },
+          { item: "見ます", pattern: "見たいです", romaji: "Mitai desu.", zh: "想看。" }
         ],
         vocab: [
-          { jp: "金閣寺", kana: "きんかくじ", romaji: "kinkakuji", zh: "金閣寺（鹿苑寺）" },
-          { jp: "古都", kana: "こと", romaji: "koto", zh: "歷史古都" },
-          { jp: "世界遺産", kana: "せかいいさん", romaji: "sekai isan", zh: "世界文化遺產" },
-          { jp: "庭園", kana: "ていえん", romaji: "teien", zh: "日式庭園" },
-          { jp: "金色", kana: "こんじき / きんいろ", romaji: "konjiki", zh: "金碧輝煌的金色" }
+          { jp: "おこしやす・おいでやす", kana: "おこしやす・おいでやす", romaji: "okoshiyasu / oideyasu", zh: "歡迎光臨（京都方言）" },
+          { jp: "抹茶", kana: "まっちゃ", romaji: "matcha", zh: "抹茶" },
+          { jp: "漬物", kana: "つけもの", romaji: "tsukemono", zh: "醬菜 / 醃漬物" },
+          { jp: "芸妓・舞妓", kana: "げいぎ・まいこ", romaji: "geigi / maiko", zh: "藝妓 / 舞妓" },
+          { jp: "料亭・旅館", kana: "りょうてい・りょかん", romaji: "ryōtei / ryokan", zh: "日式高檔餐廳 / 傳統旅館" },
+          { jp: "京野菜", kana: "きょうやさい", romaji: "kyōyasai", zh: "京都蔬菜" },
+          { jp: "お花見", kana: "おはなみ", romaji: "ohanami", zh: "賞花" },
+          { jp: "お祭り", kana: "おまつり", romaji: "omatsuri", zh: "祭祀活動 / 廟會" }
         ],
         phrases: [
-          { scene: "請求拍照協助", jp: "写真を撮っていただけますか。", ruby: "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>っていただけますか。", romaji: "Shashin o totte itadakemasu ka.", zh: "可以請您幫我們拍張照片嗎？" },
-          { scene: "門票購買", jp: "大人２枚をお願いします。", ruby: "<ruby>大人<rt>おとな</rt></ruby><ruby>２枚<rt>にまい</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Otona nimai o onegai shimasu.", zh: "麻煩請給我兩張成人票。" }
+          { scene: "信用卡結帳", jp: "クレジットカードは使えますか。", ruby: "クレジットカードは<ruby>使<rt>つか</rt></ruby>えますか。", romaji: "Kurejitto kādo wa tsukaemasu ka.", zh: "可以使用信用卡嗎？" },
+          { scene: "尋找伴手禮", jp: "お土産を探しています。", ruby: "お<ruby>土産<rt>みやげ</rt></ruby>を<ruby>探<rt>さが</rt></ruby>しています。", romaji: "Omiyage o sagashite imasu.", zh: "我在找伴手禮。" },
+          { scene: "詢問折扣", jp: "割引ができますか。", ruby: "<ruby>割引<rt>わりびき</rt></ruby>ができますか。", romaji: "Waribiki ga dekimasu ka.", zh: "可以打折嗎？" },
+          { scene: "請求包裝", jp: "これを包んでもらえますか。", ruby: "これを<ruby>包<rt>つつ</rt></ruby>んでもらえますか。", romaji: "Kore o tsutsunde moraemasu ka.", zh: "可以幫我包起來嗎？" }
         ],
         trivia: {
           title: "京都獨特待客哲學「謝絕生客（一見さんお断り）」",
-          content: "京都祇園高級料亭與茶屋門口常見「一見さんお断り」，即不接納無熟客介紹的初訪新客人。這並非排外，而是追求為深知客人口味禁忌的熟客提供最極致細膩的款待（おもてなし）。"
+          content: "【「一見さんお断り」的文化深意】在京都祇園等傳統花街的料亭、茶屋，常會看到「一見さんお断り（拒絕初次上門的陌生客人）」的門規。這並非歧視或排外，而是源於京都深厚的誠信與極致款待（おもてなし）哲學。店家認為只有透過熟客介紹，充分了解客人的身份、喜好與禁忌，才能提供無微不至且量身打造的頂級服務。\n\n【信用記帳機制（売掛・つけ）】傳統京都茶屋在當晚宴席結束時是不會向客人出示帳單收錢的，而是累積一段時間後直接將帳單寄至熟客公司或宅邸結算。這種建立在絕對信任基礎上的「記帳賒帳文化」，也是茶屋只接待熟客或熟客帶路者的重要原因。\n\n【現代旅客體驗之道】現今許多京都百年料亭為了推廣文化，已開放部分席位供外國旅客透過五星級飯店禮賓部（Concierge）或官方合作的線上預訂系統進行預約。"
         }
       },
       {
         id: "ch-7-2",
         code: "7.2",
         title: "清水寺（關西地區篇 - 古寺參拜與和服體驗）",
-        subtitle: "清水舞台・和服體驗與音羽之瀧",
+        subtitle: "清水舞台・和服體驗與敬語請求句型",
         badge: "京都巡禮",
         dialogue: {
-          scene: "清水寺參道與和服體驗出租店",
+          scene: "清水寺景點推薦與參拜",
           lines: [
-            { speaker: "導遊", romaji: "Shizuka ni omairi kudasai.", japanese: "静かにお参りください。", ruby: "<ruby>静<rt>しず</rt></ruby>かにお<ruby>参<rt>まい</rt></ruby>りください。", chinese: "請安靜肅穆地參拜。" },
-            { speaker: "觀光客", romaji: "Kiyomizu no butai kara no keshiki wa subarashii desu.", japanese: "清水の舞台からの景色は素晴らしいです。", ruby: "<ruby>清水<rt>きよみず</rt></ruby>の<ruby>舞台<rt>ぶたい</rt></ruby>からの<ruby>景色<rt>けしき</rt></ruby>は<ruby>素晴<rt>すばら</rt></ruby>しいです。", chinese: "從清水舞台眺望出去的景色真是太壯麗優美了！" }
+            { speaker: "觀光客", romaji: "Kiyomizudera de osusume no basho wa doko desu ka.", japanese: "清水寺でおすすめの場所はどこですか。", ruby: "<ruby>清水寺<rt>きよみずでら</rt></ruby>でおすすめの<ruby>場所<rt>ばしょ</rt></ruby>はどこですか。", chinese: "清水寺有什麼推薦的地方嗎？" },
+            { speaker: "在地居民", romaji: "Butai kara no keshiki ga subarashii desu. Kimono o rentaru shite sansaku suru no mo tanoshii desu yo.", japanese: "舞台からの景色が素晴らしいです。着物をレンタルして散策するのも楽しいですよ。", ruby: "<ruby>舞台<rt>ぶたい</rt></ruby>からの<ruby>景色<rt>けしき</rt></ruby>が<ruby>素晴<rt>すばら</rt></ruby>しいです。<ruby>着物<rt>きもの</rt></ruby>をレンタルして<ruby>散策<rt>さんさく</rt></ruby>するのも<ruby>楽<rt>たの</rt></ruby>しいですよ。", chinese: "從清水舞台上眺望的景色非常壯麗。租借和服在清水寺散步也很有趣的喔！" },
+            { speaker: "觀光客", romaji: "Shashin o totte mo ii desu ka.", japanese: "写真を撮ってもいいですか。", ruby: "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってもいいですか。", chinese: "可以拍照嗎？" },
+            { speaker: "在地居民", romaji: "Hai, daijōbu desu. Demo, shizuka ni omairi kudasai ne.", japanese: "はい、大丈夫です。でも、静かにお参りくださいね。", ruby: "はい、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。でも、<ruby>静<rt>しず</rt></ruby>かにお<ruby>参<rt>まい</rt></ruby>りくださいね。", chinese: "可以的，但請安靜地參拜喔。" }
           ]
         },
         grammar: {
-          pattern: "お / ご + [動詞ます形去ます / 動作名詞] + ください (kudasai)",
-          explanation: "典雅、婉轉地指引、指示或勸請對方採取動作（請～）。",
+          pattern: "お / ご + [動詞ます形/動作名詞] + ください (kudasai)",
+          explanation: "此句型意為「請您...」，是用於向對方提出禮貌指示、請求或建議的優雅敬語形式。\n接續法則：\n1. 和語動詞（日本固有動詞）：前綴 お + 動詞ます形（去ます） + ください（例：待ちます ➔ お待ちください）\n2. 漢語動詞（動作性雙字漢字詞彙）：前綴 ご + 漢字動作名詞 + ください（例：注意します ➔ ご注意ください）",
           examples: [
-            { jp: "お入りください。", ruby: "お<ruby>入<rt>はい</rt></ruby>りください。", romaji: "Ohairi kudasai.", zh: "請進。" },
-            { jp: "ご注意ください。", ruby: "ご<ruby>注意<rt>ちゅうい</rt></ruby>ください。", romaji: "Gochūi kudasai.", zh: "請注意腳下。" }
+            { jp: "お楽しみください。", ruby: "お<ruby>楽<rt>たの</rt></ruby>しみください。", romaji: "Otanoshimi kudasai.", zh: "請盡情享受 / 敬請期待。" },
+            { jp: "写真撮影はご遠慮ください。", ruby: "<ruby>写真撮影<rt>しゃしんさつえい</rt></ruby>はご<ruby>遠慮<rt>えんりょ</rt></ruby>ください。", romaji: "Shashin satsuei wa go-enryo kudasai.", zh: "請避免拍照 / 請不要拍照。" }
           ]
         },
         replacements: [
-          { item: "待ちます", pattern: "お待ちください", romaji: "Omachi kudasai.", zh: "請稍候。" },
-          { item: "見ます", pattern: "ご覧ください", romaji: "Goran kudasai.", zh: "請過目觀賞。" }
+          { item: "和語：待ちます", pattern: "お待ちください", romaji: "Omachi kudasai.", zh: "請稍等。" },
+          { item: "和語：座ります", pattern: "お座りください", romaji: "Osuwari kudasai.", zh: "請坐。" },
+          { item: "漢語：注意します", pattern: "ご注意ください", romaji: "Gochūi kudasai.", zh: "請注意留意。" },
+          { item: "漢語：理解します", pattern: "ご理解ください", romaji: "Gorikai kudasai.", zh: "請理解見諒。" }
         ],
         vocab: [
-          { jp: "清水寺", kana: "きよみずでら", romaji: "kiyomizudera", zh: "清水寺" },
-          { jp: "着物レンタル", kana: "きものレンタル", romaji: "kimono rentaru", zh: "和服租借體驗" },
-          { jp: "舞台", kana: "ぶたい", romaji: "butai", zh: "清水舞台（懸造建築）" },
-          { jp: "着付け", kana: "きつけ", romaji: "kitsuke", zh: "和服穿著技術" },
-          { jp: "下駄", kana: "げた", romaji: "geta", zh: "日式木屐" }
+          { jp: "予約", kana: "よやく", romaji: "yoyaku", zh: "預約" },
+          { jp: "試着", kana: "しちゃく", romaji: "shichaku", zh: "試穿" },
+          { jp: "帯", kana: "おび", romaji: "obi", zh: "和服腰帶" },
+          { jp: "下駄", kana: "げた", romaji: "geta", zh: "木屐" },
+          { jp: "返却", kana: "へんきゃく", romaji: "henkyaku", zh: "歸還" },
+          { jp: "着付け", kana: "きつけ", romaji: "kitsuke", zh: "協助穿著和服（專業著裝）" },
+          { jp: "レンタル", kana: "レンタル", romaji: "rentaru", zh: "出租 / 租借" },
+          { jp: "着物・浴衣", kana: "きもの・ゆかた", romaji: "kimono / yukata", zh: "和服 / 浴衣" }
         ],
         phrases: [
-          { scene: "詢問出租費用", jp: "着物レンタルの料金はいくらですか。", ruby: "<ruby>着物<rt>きもの</rt></ruby>レンタルの<ruby>料金<rt>りょうきん</rt></ruby>はいくらですか。", romaji: "Kimono rentaru no ryōkin wa ikura desu ka.", zh: "租借和服費用是多少錢？" },
-          { scene: "預約確認", jp: "予約が必要ですか。", ruby: "<ruby>予約<rt>よやく</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>ですか。", romaji: "Yoyaku ga hitsuyō desu ka.", zh: "請問需要事先預約嗎？" }
+          { scene: "詢問費用", jp: "着物レンタルの料金はいくらですか。", ruby: "<ruby>着物<rt>きもの</rt></ruby>レンタルの<ruby>料金<rt>りょうきん</rt></ruby>はいくらですか。", romaji: "Kimono rentaru no ryōkin wa ikura desu ka.", zh: "出租和服的租金多少錢？" },
+          { scene: "預約確認", jp: "予約が必要ですか。", ruby: "<ruby>予約<rt>よやく</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>ですか。", romaji: "Yoyaku ga hitsuyō desu ka.", zh: "需要預約嗎？" },
+          { scene: "時間確認", jp: "どのぐらい時間がかかりますか。", ruby: "どのぐらい<ruby>時間<rt>じかん</rt></ruby>がかかりますか。", romaji: "Dono gurai jikan ga kakarimasu ka.", zh: "要花多長時間？" },
+          { scene: "方案內容", jp: "着付け込みのプランがありますか。", ruby: "<ruby>着付<rt>きつ</rt></ruby>け<ruby>込<rt>こ</rt></ruby>みのプランがありますか。", romaji: "Kitsukekomi no puran ga arimasu ka.", zh: "有包含幫忙穿和服的套餐嗎？" }
         ],
         trivia: {
-          title: "京都景觀保護條例與舞妓街道禮儀",
-          content: "京都為維護古色古香街道，就連麥當勞或便利超商招牌都被嚴格要求降低彩度改為深咖灰褐色。白天街上盛裝散步者多為觀光客，遇到真正趕赴宴席的舞妓嚴禁貼身追拍拉扯！"
+          title: "京都街道景觀條例與藝舞妓文化辨析",
+          content: "【京都招牌「褪色」的秘密（景觀保護條例）】初訪京都的遊客常會驚訝於麥當勞（McDonald's）、7-Eleven 或星巴克的招牌並非全球通用的鮮紅亮黃，而是呈現暗紅色、咖啡色或灰黑色。這是因為京都實施全日本最嚴格的《京都市景觀條例》，嚴禁在歷史古都使用高彩度或刺眼的鮮豔看板，所有商業招牌皆必須融合傳統色系（黑、茶、白、暗紅），以維護千百年古寺老街的整體風貌。\n\n【舞妓（まいこ）與藝妓（げいこ）的辨識與街頭禮儀】\n・白天街頭遇見的是誰？：真正的藝妓與舞妓白天多在置屋練習三味線、茶道與日本舞，傍晚才會梳妝完畢趕赴花街宴席。因此白天在清水寺或二年坂漫步拍照、身著華麗和服的，絕大多數是體驗和服的觀光客。\n・嚴禁「舞妓追拍（舞妓パパラッチ）」：若傍晚在祇園花見小路幸運看見步履匆匆趕赴宴席的真舞妓，嚴禁拉扯對方的和服、阻擋去路或強行近距離貼身自拍，請在兩側保持距離、安靜目送，展現對傳統藝術從業者的尊重。"
         }
       },
       {
