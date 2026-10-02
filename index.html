@@ -1743,37 +1743,46 @@
         subtitle: "五感藝術・四季風情與茶道作法",
         badge: "日本甜點",
         dialogue: {
-          scene: "百年和菓子老舖選購伴手禮",
+          scene: "和菓子（伴手禮與品茶建議）",
           lines: [
-            { speaker: "觀光客", romaji: "Nanika osusume no wagashi ga arimasu ka.", japanese: "何かおすすめの和菓子がありますか。", ruby: "<ruby>何<rt>なに</rt></ruby>かおすすめの<ruby>和菓子<rt>わがし</rt></ruby>がありますか。", chinese: "請問有什麼推薦的和菓子點心嗎？" },
-            { speaker: "店員", romaji: "Sakuramochi de mo ikaga desu ka. Haru no kisetsu ni pittari desu.", japanese: "桜餅でもいかがですか。春の季節にぴったりです。", ruby: "<ruby>桜餅<rt>さくらもち</rt></ruby>でもいかがですか。<ruby>春<rt>はる</rt></ruby>の<ruby>季節<rt>きせつ</rt></ruby>にぴったりです。", chinese: "要不要試試看櫻餅呢？正適合春天的季節。" },
-            { speaker: "觀光客", romaji: "Ii desu ne. Ocha ni au wagashi o onegai shimasu.", japanese: "いいですね。お茶に合う和菓子をお願いします。", ruby: "いいですね。お<ruby>茶<rt>ちゃ</rt></ruby>に<ruby>合<rt>あ</rt></ruby>う<ruby>和菓子<rt>わがし</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", chinese: "太好了！請給我適合搭配抹茶的和菓子。" }
+            { speaker: "觀光客", romaji: "Nanika osusume no wagashi ga arimasu ka.", japanese: "何かおすすめの和菓子がありますか。", ruby: "<ruby>何<rt>なに</rt></ruby>かおすすめの<ruby>和菓子<rt>わがし</rt></ruby>がありますか。", chinese: "有什麼推薦的和菓子嗎？" },
+            { speaker: "店員", romaji: "Sakuramochi de mo ikaga desu ka. Haru no kisetsu ni pittari desu.", japanese: "桜餅でもいかがですか。春の季節にぴったりです。", ruby: "<ruby>桜餅<rt>さくらもち</rt></ruby>でもいかがですか。<ruby>春<rt>はる</rt></ruby>の<ruby>季節<rt>きせつ</rt></ruby>にぴったりです。", chinese: "要不要試試櫻餅？這很適合春天的季節。" },
+            { speaker: "觀光客", romaji: "Ii desu ne. Ocha de mo issho ni tanoshimemasu ka.", japanese: "いいですね。お茶でも一緒に楽しめますか。", ruby: "いいですね。お<ruby>茶<rt>ちゃ</rt></ruby>でも<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>楽<rt>たの</rt></ruby>しめますか。", chinese: "不錯呢！可以一起搭配茶享用嗎？" },
+            { speaker: "店員", romaji: "Hai, ocha to issho ni taberu to motto oishii desu yo.", japanese: "はい、お茶と一緒に食べるともっとおいしいですよ。", ruby: "はい、お<ruby>茶<rt>ちゃ</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>食<rt>た</rt></ruby>べるともっとおいしいですよ。", chinese: "可以的，和茶一起吃會更加美味哦。" }
           ]
         },
         grammar: {
           pattern: "[名詞] + でも、〜 (demo)",
-          explanation: "提出彈性、不具強迫感的柔性建議，或列舉代表性選項供對方參考（～之類的如何？）。",
+          explanation: "此句型意為「...之類的（如何？）」，用於提出軟性提議、建議或舉出一個代表性例子。使用時機：提議喝杯咖啡、吃點點心或進行某項輕鬆活動。句型結構：[名詞] + でも + [提議問句 / 動詞]。「桜餅でもいかがですか」中的「でも」並非轉折語「但是」，而是表示隨意列舉代表性選項，語氣柔和且留給對方自由選擇的餘裕。",
           examples: [
-            { jp: "お茶でも飲みませんか。", ruby: "お<ruby>茶<rt>ちゃ</rt></ruby>でも<ruby>飲<rt>の</rt></ruby>みませんか。", romaji: "Ocha demo nomimasen ka.", zh: "要不要喝杯茶之類的呢？" }
+            { jp: "コーヒーでもどうですか。", ruby: "コーヒーでもどうですか。", romaji: "Kōhī de mo dō desu ka.", zh: "要不要喝點咖啡之類的？" },
+            { jp: "映画でも見に行きませんか。", ruby: "<ruby>映画<rt>えいが</rt></ruby>でも<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>きませんか。", romaji: "Eiga de mo mi ni ikimasen ka.", zh: "要不要去看場電影之類的呢？" }
           ]
         },
         replacements: [
-          { item: "コーヒー", pattern: "コーヒーでもいかがですか", romaji: "Kōhī demo ikaga desu ka.", zh: "要不要來杯咖啡之類的呢？" }
+          { item: "ラーメン", pattern: "ラーメンでも、どうですか", romaji: "Rāmen de mo, dō desu ka.", zh: "要不要吃拉麵呢？" },
+          { item: "休憩", pattern: "休憩でも、どうですか", romaji: "Kyūkei de mo, dō desu ka.", zh: "要不要休息一下呢？" },
+          { item: "アイスクリーム", pattern: "アイスクリームでも、どうですか", romaji: "Aisukurīmu de mo, dō desu ka.", zh: "要不要來點冰淇淋呢？" }
         ],
         vocab: [
-          { jp: "和菓子", kana: "わがし", romaji: "wagashi", zh: "傳統日式和菓子" },
           { jp: "桜餅", kana: "さくらもち", romaji: "sakuramochi", zh: "櫻餅" },
-          { jp: "羊羹", kana: "ようかん", romaji: "yōkan", zh: "羊羹" },
-          { jp: "大福", kana: "だいふく", romaji: "daifuku", zh: "大福麻糬" },
-          { jp: "賞味期限", kana: "しょうみきげん", romaji: "shōmi kigen", zh: "最佳美味賞味期限" }
+          { jp: "わらび餅", kana: "わらびもち", romaji: "warabimochi", zh: "蕨餅" },
+          { jp: "茶道", kana: "さどう", romaji: "sadō", zh: "茶道" },
+          { jp: "行事", kana: "ぎょうじ", romaji: "gyōji", zh: "行事 / 節慶活動" },
+          { jp: "手作り", kana: "てづくり", romaji: "tezukuri", zh: "手工製作" },
+          { jp: "職人", kana: "しょくにん", romaji: "shokunin", zh: "職人 / 傳統工匠" },
+          { jp: "おもてなし", kana: "おもてなし", romaji: "omotenashi", zh: "款待 / 賓至如歸之道" },
+          { jp: "季節感", kana: "きせつかん", romaji: "kisetsukan", zh: "季節感" }
         ],
         phrases: [
-          { scene: "詢問保存天數", jp: "賞味期限はどのくらいですか。", ruby: "<ruby>賞味期限<rt>しょうみきげん</rt></ruby>はどのくらいですか。", romaji: "Shōmi kigen wa dono kurai desu ka.", zh: "最佳賞味期限有多久呢？" },
-          { scene: "請求送禮包裝", jp: "プレゼント用に包んでいただけますか。", ruby: "プレゼント<ruby>用<rt>よう</rt></ruby>に<ruby>包<rt>つつ</rt></ruby>んでいただけますか。", romaji: "Purezento-yō ni tsutsunde itadakemasu ka.", zh: "可以幫我包裝成送禮用禮盒嗎？" }
+          { scene: "詢問推薦", jp: "おすすめの和菓子はありますか。", ruby: "おすすめの<ruby>和菓子<rt>わがし</rt></ruby>はありますか。", romaji: "Osusume no wagashi wa arimasu ka.", zh: "您有什麼推薦的和菓子嗎？" },
+          { scene: "禮盒打包", jp: "お土産に詰めてください。", ruby: "お<ruby>土産<rt>みやげ</rt></ruby>に<ruby>詰<rt>つ</rt></ruby>めてください。", romaji: "Omiyage ni tsumete kudasai.", zh: "請幫我打包裝入伴手禮盒。" },
+          { scene: "請教吃法", jp: "和菓子の食べ方や順序を教えてください。", ruby: "<ruby>和菓子<rt>わがし</rt></ruby>の<ruby>食<rt>た</rt></ruby>べ<ruby>方<rt>かた</rt></ruby>や<ruby>順序<rt>じゅんじょ</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。", romaji: "Wagashi no tabekata ya junjo o oshiete kudasai.", zh: "請教我和菓子的吃法與順序。" },
+          { scene: "搭配抹茶", jp: "抹茶に合う和菓子をお願いします。", ruby: "<ruby>抹茶<rt>まっちゃ</rt></ruby>に<ruby>合<rt>あ</rt></ruby>う<ruby>和菓子<rt>わがし</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Matcha ni au wagashi o onegai shimasu.", zh: "請給我適合搭配抹茶的和菓子。" }
         ],
         trivia: {
           title: "日本茶道作法（茶道の作法）與品茗禮儀指南",
-          content: "正式茶道中必定「先吃和菓子，後喝抹茶」，藉由糖分襯托抹茶的甘醇旨味。接過茶碗後需順時針微轉兩次避開美麗正面飲用，喝完最後一口微吸出聲以示對茶師的敬讚。"
+          content: "【先吃點心後喝茶的黃金順序】在正式日本茶道（茶の湯）體驗中，亭主會先奉上一枚精緻的和菓子，客人必須在喝濃茶或薄茶之前將和菓子吃完。這是因為和菓子的甘甜能在口腔中形成保護層，帶出隨後抹茶深邃濃郁的「旨味（うまみ）」與甘苦回甘。\n\n【茶碗轉動 90 度的敬意哲學】\n・當亭主遞上抹茶碗時，茶碗最美麗、有繪畫圖案的一面為「正面（しょうめん）」。\n・客人以右手拿起茶碗、置於左手掌心後，必須順時針方向輕輕旋轉茶碗兩次（約 90 度），避開正面飲用。這代表「自己不敢以尊貴的正對面就口」，體現了謙遜退讓的極致修養。\n\n【最後一口發出「吸氣聲（吸い切り）」的讚嘆】喝至最後一口時，客人應稍微用力吸氣發出「嘶」的一聲（吸い切り），明確向茶道師傅發出「我已將這碗茶一滴不剩完全享用完畢」的最高讚美訊號。"
         }
       },
       {
@@ -1783,36 +1792,46 @@
         subtitle: "宇治抹茶聖代・外觀視覺推測評語",
         badge: "日本甜點",
         dialogue: {
-          scene: "抹茶專賣喫茶店點心時間",
+          scene: "抹茶パフェ（抹茶聖代點餐）",
           lines: [
-            { speaker: "顧客 A", romaji: "Kono matcha pafe, totemo oishisō desu ne.", japanese: "この抹茶パフェ、とてもおいしそうですね。", ruby: "この<ruby>抹茶<rt>まっちゃ</rt></ruby>パフェ、とてもおいしそうですね。", chinese: "這道抹茶聖代，看起來真的非常美味呢！" },
-            { speaker: "顧客 B", romaji: "Hontō desu ne. Watashi mo sore ni shimasu.", japanese: "本当ですね。私もそれにします。", ruby: "<ruby>本当<rt>ほんとう</rt></ruby>ですね。<ruby>私<rt>わたし</rt></ruby>もそれにします。", chinese: "真的耶！那我也決定點這個了。" }
+            { speaker: "觀光客", romaji: "Matcha suītsu o试shite mitai desu.", japanese: "抹茶スイーツを試してみたいです。", ruby: "<ruby>抹茶<rt>まっちゃ</rt></ruby>スイーツを<ruby>試<rt>ため</rt></ruby>してみたいです。", chinese: "我想試試看抹茶的甜點。" },
+            { speaker: "店員", romaji: "Matcha pafe wa dō desu ka.", japanese: "抹茶パフェはどうですか。", ruby: "<ruby>抹茶<rt>まっちゃ</rt></ruby>パフェはどうですか。", chinese: "抹茶聖代怎麼樣？" },
+            { speaker: "觀光客", romaji: "Wā, oishisō desu.", japanese: "わ～おいしそうです。", ruby: "わ～おいしそうです。", chinese: "哇，看起來好好吃！" },
+            { speaker: "店員", romaji: "Matcha aisu ya anko ga haitte imasu yo.", japanese: "抹茶アイスやあんこが入っていますよ。", ruby: "<ruby>抹茶<rt>まっちゃ</rt></ruby>アイスやあんこが<ruby>入<rt>はい</rt></ruby>っていますよ。", chinese: "裡面有抹茶冰淇淋和紅豆餡哦。" }
           ]
         },
         grammar: {
-          pattern: "[形容詞詞幹 / 動詞連用形] + そうです (sō desu)",
-          explanation: "基於第一眼外觀直覺，對人事物之性質提出視覺推測（看起來很～）。",
+          pattern: "[形容詞/動詞] + そうです (sō desu)",
+          explanation: "此句型意為「（看起來）好像...」，用於根據眼前的外觀樣貌做出直觀的推測與判斷。接續法則：1. い形容詞：去【い】 + そうです（例：おいしい → おいしそうです；例外：いい → よさそうです；ない → なさそうです）；2. な形容詞：直接加【そうです】（例：元気 → 元気そうです；丈夫 → 丈夫そうです）；3. 動詞（ます形）：去【ます】 + そうです（例：降ります → 降りそうです）。",
           examples: [
-            { jp: "おいしそうです。", ruby: "おいしそうです。", romaji: "Oishisō desu.", zh: "看起來真好吃。" },
-            { jp: "楽しそうです。", ruby: "<ruby>楽<rt>たの</rt></ruby>しそうです。", romaji: "Tanoshisō desu.", zh: "看起來很有趣快樂。" }
+            { jp: "日本のお祭りは楽しそうです。", ruby: "<ruby>日本<rt>にほん</rt></ruby>のお<ruby>祭<rt>まつ</rt></ruby>りは<ruby>楽<rt>たの</rt></ruby>しそうです。", romaji: "Nihon no omatsuri wa tanoshisō desu.", zh: "日本的祭典看起來好像很有趣。" },
+            { jp: "雨が降りそうです。", ruby: "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>りそうです。", romaji: "Ame ga furisō desu.", zh: "看起來好像快下雨了。" }
           ]
         },
         replacements: [
-          { item: "嬉しい", pattern: "嬉しそうです", romaji: "Ureshisō desu.", zh: "看起來很高興。" },
-          { item: "雨が降ります", pattern: "雨が降りそうです", romaji: "Ame ga furisō desu.", zh: "看起來快要下雨了。" }
+          { item: "い形容詞：嬉しい", pattern: "嬉しそうです", romaji: "Ureshisō desu.", zh: "看起來很開心。" },
+          { item: "な形容詞：暇", pattern: "暇そうです", romaji: "Himasō desu.", zh: "看起來很閒。" },
+          { item: "動詞：雨が降ります", pattern: "雨が降りそうです", romaji: "Ame ga furisō desu.", zh: "看起來快要下雨了。" }
         ],
         vocab: [
-          { jp: "抹茶", kana: "まっちゃ", romaji: "matcha", zh: "抹茶" },
-          { jp: "パフェ", kana: "パフェ", romaji: "pafe", zh: "百匯聖代" },
-          { jp: "白玉", kana: "しらたま", romaji: "shiratama", zh: "白玉糰子" },
-          { jp: "ソフトクリーム", kana: "ソフトクリーム", romaji: "sofutokurīmu", zh: "霜淇淋" }
+          { jp: "スイーツ", kana: "スイーツ", romaji: "suītsu", zh: "甜點 / 洋菓子" },
+          { jp: "いちご大福", kana: "いちごだいふく", romaji: "ichigo daifuku", zh: "草莓大福" },
+          { jp: "どら焼き", kana: "どらやき", romaji: "dorayaki", zh: "銅鑼燒" },
+          { jp: "鯛焼き", kana: "たいやき", romaji: "taiyaki", zh: "鯛魚燒" },
+          { jp: "ケーキ", kana: "ケーキ", romaji: "kēki", zh: "蛋糕" },
+          { jp: "シュークリーム", kana: "シュークリーム", romaji: "shūkurīmu", zh: "泡芙" },
+          { jp: "みたらし団子", kana: "みたらしだんご", romaji: "mitarashi dango", zh: "醬油糰子 / 烤丸子" },
+          { jp: "チョコレート", kana: "チョコレート", romaji: "chokorēto", zh: "巧克力" }
         ],
         phrases: [
-          { scene: "推薦甜點", jp: "一番人気のデザートは何ですか。", ruby: "<ruby>一番人気<rt>いちばんにんき</rt></ruby>のデザートは<ruby>何<rt>なん</rt></ruby>ですか。", romaji: "Ichiban ninki no dezāto wa nan desu ka.", zh: "最受歡迎的第一名甜點是什麼？" }
+          { scene: "詢問人氣", jp: "一番人気の商品は何ですか。", ruby: "<ruby>一番人気<rt>いちばんにんき</rt></ruby>の<ruby>商品<rt>しょうひん</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。", romaji: "Ichiban ninki no shōhin wa nan desu ka.", zh: "最受歡迎的商品是什麼？" },
+          { scene: "店員確認", jp: "ご注文お決まりですか。", ruby: "ご<ruby>注文<rt>ちゅうもん</rt></ruby>お<ruby>決<rt>き</rt></ruby>まりですか。", romaji: "Gochūmon okimari desu ka.", zh: "您準備好點餐了嗎？" },
+          { scene: "確認內用", jp: "店内で召し上がりですか。", ruby: "<ruby>店内<rt>てんない</rt></ruby>で<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりですか。", romaji: "Tennai de meshiagari desu ka.", zh: "您要內用嗎？" },
+          { scene: "確認期限", jp: "賞味期限はいつまでですか。", ruby: "<ruby>賞味期限<rt>しょうみきげん</rt></ruby>はいつまでですか。", romaji: "Shōmi kigen wa itsu made desu ka.", zh: "最佳食用期限到什麼時候？" }
         ],
         trivia: {
-          title: "日本「下午三點吃點心（3時のおやつ）」與文明堂傳奇",
-          content: "源自江戶時代下午申刻（約 14:00~16:00）的補充點心習俗。昭和時期長崎蛋糕名牌「文明堂」以洗腦廣告曲「カステラ一番、電話は二番、三時のおやつは文明堂」讓此文化傳遍全日本。"
+          title: "日本「下午三點吃點心（3時のおやつ）」與文明堂長崎蛋糕傳奇",
+          content: "【「3時のおやつ」的歷史起源（八刻時辰）】在江戶時代之前，日本平民習慣一天只吃早晚兩餐。到了江戶中後期，由於勞動時間拉長，百姓會在午後相當於申時（下午 2 點至 4 點，古稱「八つ時・やつどき」）稍作歇息、吃些輕食點心，稱為「お八つ（おやつ）」，這正日語中「點心（おやつ）」的語源。隨著近代作息標準化，「下午 3 點吃點心」成為全日本家喻戶曉的國民習慣。\n\n【老字號文明堂（文明堂のカステラ）洗腦廣告詞】明治時期創立於長崎、後進軍東京的洋菓子名店「文明堂」，在昭和時代電視普及時推出了史上最成功的木偶動畫廣告，其旋律與名台詞深入全日本人心：「カステラ一番、電話は二番、三時のおやつは文明堂」（蜂蜜蛋糕第一名、電話號碼撥二號、三點的點心首選文明堂！），將長崎蛋糕與下午三點點心劃上了完美的等號。"
         }
       },
       {
