@@ -1129,18 +1129,19 @@
           ]
         },
         grammar: {
-          pattern: "[動詞ます形去ます] + ながら、〜 (nagara)",
-          explanation: "表示同一個主體在同一時間段內同時進行兩項動作（邊～邊～）。",
+          pattern: "[動詞ます形] + ながら、〜",
+          explanation: "此句型意為「一邊……，一邊……」，用於表示同一個人在同一段時間內同時進行兩個動作（動作同時進行）。<br>• 使用時機：描述同時發生的行為、休閒活動或邊走邊做的情境。<br>• 句型結構：[動詞ます形] 去ます ＋ ながら ＋ [主要動作動詞]",
           examples: [
-            { jp: "歩きながら、話します。", ruby: "<ruby>歩<rt>ある</rt></ruby>きながら、<ruby>話<rt>はな</rt></ruby>します。", romaji: "Arukinagara, hanashimasu.", zh: "一邊散步一邊聊天。" },
-            { jp: "音楽を聞きながら、歩きます。", ruby: "<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きながら、<ruby>歩<rt>ある</rt></ruby>きます。", romaji: "Ongaku o kikinagara, arukimasu.", zh: "一邊聽音樂一邊散步。" }
+            { jp: "歩きながら、話します。", ruby: "<ruby>歩<rt>ある</rt></ruby>きながら、<ruby>話<rt>はな</rt></ruby>します。", romaji: "Arukinagara, hanashimasu.", zh: "一邊走路一邊說話。" },
+            { jp: "音楽を聴きながら、歩きます。", ruby: "<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聴<rt>き</rt></ruby>きながら、<ruby>歩<rt>ある</rt></ruby>きます。", romaji: "Ongaku o kikinagara, arukimasu.", zh: "一邊聽音樂一邊走路。" },
+            { jp: "テレビを見ながら、ご飯を食べます。", ruby: "テレビを<ruby>見<rt>み</rt></ruby>ながら、ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。", romaji: "Terebi o minagara, gohan o tabemasu.", zh: "一邊看電視一邊吃飯。" }
           ]
         },
         replacements: [
-          { item: "食べます", pattern: "食べながら見ます", romaji: "Tabenagara mimasu.", zh: "一邊吃一邊看。" },
-          { item: "飲みます", pattern: "飲みながら歩きます", romaji: "Nominagara arukimasu.", zh: "一邊喝一邊走。" },
-          { item: "見ます", pattern: "見ながら話します", romaji: "Minagara hanashimasu.", zh: "一邊看一邊聊。" },
-          { item: "買います", pattern: "買いながら、歩きます", romaji: "Kainagara, arukimasu.", zh: "一邊買一邊走。" }
+          { item: "食べます", pattern: "食べながら、考えます", romaji: "Tabenagara, kangaemasu.", zh: "一邊吃一邊想。" },
+          { item: "掃除します", pattern: "掃除しながら、聞きます", romaji: "Sōji shinagara, kikimasu.", zh: "一邊掃地一邊聽。" },
+          { item: "買います", pattern: "買いながら、歩きます", romaji: "Kainagara, arukimasu.", zh: "一邊買一邊走。" },
+          { item: "話します", pattern: "話しながら、飲みます", romaji: "Hanashinagara, nomimasu.", zh: "一邊聊一邊喝。" }
         ],
         vocab: [
           { jp: "お守り", kana: "おまもり", romaji: "omamori", zh: "護身符" },
@@ -1320,17 +1321,17 @@
           ]
         },
         grammar: {
-          pattern: "[動詞て形] + もいいですか (mo ii desu ka)",
-          explanation: "徵求許可的標準禮貌句型（可以做～嗎？）。",
+          pattern: "[動詞て形] + もいいですか",
+          explanation: "此句型意為「……可以嗎？」或「請求許可……」，用於向他人徵求許可。<br>• 使用時機：請求許可做某動作（如試穿、坐下、使用設施、拍照等）。<br>• 句型結構：[動詞て形] ＋ もいいですか",
           examples: [
-            { jp: "試着してもいいですか。", ruby: "<ruby>試着<rt>しちゃく</rt></ruby>してもいいですか。", romaji: "Shichaku shite mo ii desu ka.", zh: "可以試穿嗎？" },
+            { jp: "入ってもいいですか。", ruby: "<ruby>入<rt>はい</rt></ruby>ってもいいですか。", romaji: "Haitte mo ii desu ka.", zh: "可以進去嗎？" },
             { jp: "写真を撮ってもいいですか。", ruby: "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってもいいですか。", romaji: "Shashin o totte mo ii desu ka.", zh: "可以拍照嗎？" }
           ]
         },
         replacements: [
+          { item: "座ります", pattern: "座ってもいいですか", romaji: "Suwatte mo ii desu ka.", zh: "可以坐嗎？" },
           { item: "使います", pattern: "使ってもいいですか", romaji: "Tsukatte mo ii desu ka.", zh: "可以使用嗎？" },
-          { item: "座ります", pattern: "座ってもいいですか", romaji: "Suwatte mo ii desu ka.", zh: "可以坐這裡嗎？" },
-          { item: "入ります", pattern: "入ってもいいですか", romaji: "Haitte mo ii desu ka.", zh: "可以進去嗎？" }
+          { item: "撮ります", pattern: "撮ってもいいですか", romaji: "Totte mo ii desu ka.", zh: "可以拍照嗎？" }
         ],
         vocab: [
           { jp: "化粧品・化粧水", kana: "けしょうひん・けしょうすい", romaji: "keshōhin / keshōsui", zh: "化妝品 / 化妝水" },
