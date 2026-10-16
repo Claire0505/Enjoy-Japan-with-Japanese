@@ -2947,13 +2947,15 @@
         id: "ch-13-1",
         code: "13.1",
         title: "赤福（日本人氣甜點篇 - 傳統和菓子）",
-        subtitle: "伊勢神宮三百年名產・波浪紅豆餡餅",
-        badge: "日本人氣甜點",
+        subtitle: "伊勢神宮數百年名產・紅豆餡麻糬與購物尋寶",
+        badge: "日本甜點",
         dialogue: {
-          scene: "伊勢神宮參道伴手禮店詢問赤福餅",
+          scene: "赤福（伴手禮詢問）",
           lines: [
-            { speaker: "顧客", romaji: "Akafuku wa doko de kaemasu ka.", japanese: "赤福はどこで買えますか。", ruby: "<ruby>赤福<rt>あかふく</rt></ruby>はどこで<ruby>買<rt>か</rt></ruby>えますか。", chinese: "請問赤福餅在哪裡買得到呢？" },
-            { speaker: "店員", romaji: "Eki ya kūkō de mo kaemasu yo.", japanese: "駅や空港でも買えますよ。", ruby: "<ruby>駅<rt>えき</rt></ruby>や<ruby>空港<rt>くうこう</rt></ruby>でも<ruby>買<rt>か</rt></ruby>えますよ。", chinese: "在主要車站跟機場也都買得到喔！" }
+            { speaker: "観光客", romaji: "Akafuku tte nan desu ka.", japanese: "赤福って何ですか。", ruby: "<ruby>赤福<rt>あかふく</rt></ruby>って<ruby>何<rt>なん</rt></ruby>ですか。", chinese: "赤福是什麼？" },
+            { speaker: "店員", romaji: "Akafuku wa Ise no meibutsu de, namae ni wa 'magokoro' to 'shiawase' no imi ga arimasu. Koshian no omochi de, totemo ninki desu yo.", japanese: "赤福は伊勢の名物で、名前には「眞心」と「幸せ」の意味があります。こし餡のお餅で、とても人気ですよ。", ruby: "<ruby>赤福<rt>あかふく</rt></ruby>は<ruby>伊勢<rt>いせ</rt></ruby>の<ruby>名物<rt>めいぶつ</rt></ruby>で、<ruby>名前<rt>なまえ</rt></ruby>には「<ruby>眞心<rt>まごころ</rt></ruby>」と「<ruby>幸<rt>しあわ</rt></ruby>せ」の<ruby>意味<rt>いみ</rt></ruby>があります。こし<ruby>餡<rt>あん</rt></ruby>のお<ruby>餅<rt>もち</rt></ruby>で、とても<ruby>人気<rt>にんき</rt></ruby>ですよ。", chinese: "赤福是伊勢的特產，名字中包含「真心」和「幸福」的意義。是用紅豆餡包裹的麻糬，非常受歡迎。" },
+            { speaker: "観光客", romaji: "Doko de kaemasu ka.", japanese: "どこで買えますか。", ruby: "どこで<ruby>買<rt>か</rt></ruby>えますか。", chinese: "在哪裡可以買到？" },
+            { speaker: "店員", romaji: "Koko de kaemasu. Omiyage ni mo pittari desu.", japanese: "ここで買えます。お土産にもぴったりです。", ruby: "ここで<ruby>買<rt>か</rt></ruby>えます。お<ruby>土産<rt>みやげ</rt></ruby>にもぴったりです。", chinese: "您可以在這裡買到。也適合作為伴手禮。" }
           ]
         },
         grammar: {
@@ -2962,47 +2964,64 @@
             <div class="space-y-2">
               <div class="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-rose-100 shadow-xs">
                 <span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-700 font-bold text-[11px] shrink-0">核心意涵</span>
-                <span>詢問特定名產、商品或票券能否在某特定場所買到（動詞可能形），意為<strong>「在～買得到嗎？」</strong>。</span>
+                <span>此句型意為<strong>「可以在……買到嗎？」</strong>，用於詢問在某地是否能購買到目標商品或名產。</span>
               </div>
               <div class="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-rose-100 shadow-xs">
                 <span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 font-bold text-[11px] shrink-0">使用時機</span>
-                <span>在車站問詢伴手禮販售通路、在超商或機場尋找在地限定伴手禮時。</span>
+                <span>詢問特定商品、伴手禮能否在便利商店、超市、百貨公司或機場購買時。</span>
               </div>
               <div class="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-rose-100 shadow-xs">
                 <span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 font-bold text-[11px] shrink-0">句型結構</span>
-                <span><code class="font-bold text-rose-600 font-jp">[購買場所名詞]</code> ＋ <code class="font-bold text-stone-700 font-jp">で買えますか</code></span>
+                <span><code class="font-bold text-rose-600 font-jp">[地點名詞]</code> ＋ <code class="font-bold text-stone-700 font-jp">で買えますか</code></span>
               </div>
             </div>
           `,
           examples: [
-            { jp: "コンビニで買えますか。", ruby: "コンビニで<ruby>買<rt>か</rt></ruby>えますか。", romaji: "Kombini de kaemasu ka.", zh: "在便利商店買得到嗎？" }
+            { jp: "コンビニで買えますか。", ruby: "コンビニで<ruby>買<rt>か</rt></ruby>えますか。", romaji: "Kombini de kaemasu ka.", zh: "可以在便利商店買到嗎？" },
+            { jp: "スーパーで惣菜が買えます。", ruby: "スーパーで<ruby>惣菜<rt>そうざい</rt></ruby>が<ruby>買<rt>か</rt></ruby>えます。", romaji: "Sūpā de sōzai ga kaemasu.", zh: "可以在超市買到熟食。" }
           ]
         },
         replacements: [
-          { item: "ネット", pattern: "ネットで買えますか", romaji: "Netto de kaemasu ka.", zh: "在網路上能買到嗎？" }
+          { item: "デパート", pattern: "デパートで買えますか", romaji: "Depāto de kaemasu ka.", zh: "在百貨公司可以買到嗎？" },
+          { item: "空港", pattern: "空港で買えますか", romaji: "Kūkō de kaemasu ka.", zh: "在機場可以買到嗎？" },
+          { item: "コンビニ", pattern: "コンビニで買えますか", romaji: "Kombini de kaemasu ka.", zh: "在便利商店可以買到嗎？" }
         ],
         vocab: [
-          { jp: "赤福", kana: "あかふく", romaji: "akafuku", zh: "赤福餅（伊勢名產）" },
-          { jp: "こしあん", kana: "こしあん", romaji: "koshian", zh: "細緻去皮紅豆泥" },
-          { jp: "五十鈴川", kana: "いすずがわ", romaji: "isuzugawa", zh: "五十鈴川（清流）" }
+          { jp: "お餅", kana: "おもち", romaji: "omochi", zh: "年糕、麻糬" },
+          { jp: "伊勢神宮", kana: "いせじんぐう", romaji: "isejingū", zh: "伊勢神宮" },
+          { jp: "こし餡", kana: "こしあん", romaji: "koshian", zh: "紅豆沙" },
+          { jp: "眞心", kana: "まごころ", romaji: "magokoro", zh: "眞心、誠意" },
+          { jp: "ぴったり", kana: "ぴったり", romaji: "pittari", zh: "恰好、正合適、剛剛好" },
+          { jp: "コンビニ", kana: "コンビニ", romaji: "kombini", zh: "便利商店" },
+          { jp: "赤心慶福", kana: "せきしんけいふく", romaji: "sekishin keifuku", zh: "以赤子之心為自己和他人的幸福高興" },
+          { jp: "定番", kana: "ていばん", romaji: "teiban", zh: "招牌、經典定番" }
         ],
         phrases: [
-          { scene: "常溫保存確認", jp: "常温で保存できますか。", ruby: "<ruby>常温<rt>じょうおん</rt></ruby>で<ruby>保存<rt>ほぞん</rt></ruby>できますか。", romaji: "Jōon de hozon dekimasu ka.", zh: "可以常溫保存嗎？" }
+          { scene: "確認內用", jp: "店内で召し上がりですか。", ruby: "<ruby>店内<rt>てんない</rt></ruby>で<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりですか。", romaji: "Tennai de meshiagari desu ka.", zh: "內用嗎？" },
+          { scene: "購買組合", jp: "定番味セットを一つください。", ruby: "<ruby>定番味<rt>ていばんあじ</rt></ruby>セットを<ruby>一<rt>ひと</rt></ruby>つください。", romaji: "Teiban-aji setto o hitotsu kudasai.", zh: "給我一個經典口味組合。" },
+          { scene: "保存期限", jp: "日持ちが短いです。", ruby: "<ruby>日持<rt>ひも</rt></ruby>ちが<ruby>短<rt>みじか</rt></ruby>いです。", romaji: "Himochi ga mijikai desu.", zh: "保存期限很短。" },
+          { scene: "叮嚀享用", jp: "早めに召し上がってください。", ruby: "<ruby>早<rt>はや</rt></ruby>めに<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりください。", romaji: "Hayame ni meshiagari kudasai.", zh: "請儘早享用。" }
         ],
         trivia: {
           title: "花見三色團子、赤福與伊勢神宮式年遷宮",
           points: [
             {
-              tag: "造型寓意",
+              tag: "賞花典故",
               tagColor: "bg-rose-100 text-rose-800",
-              title: "赤福餅外觀的三道清流水波",
-              content: "創立超過三百年的伊勢名產「赤福餅」，外層細緻去皮紅豆泥（こしあん）上的三條波浪指紋象徵伊勢神宮旁的五十鈴川清流，內層潔白麻糬則象徵河底的潔淨鵝卵石。"
+              title: "三色團子（花見団子）的四季與雙關語玄機",
+              content: "• <strong>豐臣秀吉的醍醐花見</strong>：1598 年豐臣秀吉在京都醍醐寺移植 700 株櫻花並舉行史上最盛大的賞花宴「醍醐の花見」，特別命人研發「三色團子」招待貴賓，江戶時代普及至尋常百姓。<br>• <strong>「粉、白、綠」的季節密碼</strong>：粉色代表春天的櫻花花芽、白色代表冬天的白雪與酒釀、綠色代表夏天的青蔥嫩葉。令人玩味的是三色團子唯獨缺少「秋天」，日語中「無秋」發音為「秋ない（あきない）」，巧妙諧音為「飽きない（吃不膩）」，寓意這款甜點百吃不厭。"
             },
             {
-              tag: "賞味注意",
+              tag: "名產哲學",
               tagColor: "bg-amber-100 text-amber-800",
-              title: "新鮮現做無防腐劑之短賞味期",
-              content: "赤福餅堅持天然無添加防腐劑，夏季最佳賞味期限僅有 2 天，冬季為 3 天，是到訪三重伊勢神宮必買的頂級名產。"
+              title: "伊勢名物「赤福餅」與赤心慶福",
+              content: "赤福餅創立於 1707 年（寶永 4 年），其造型極具意境：中央潔白的麻糬象徵伊勢神宮旁清澈的「五十鈴川」河床卵石，外層紅豆泥上的三道波紋則象徵潺潺水流。店名取自四字熟語「赤心慶福（せきしんけいふく）」，意指「以赤子般的純真誠心，為自己與他人的幸福同享喜悅」。由於純天然不加防腐劑，保質期僅約 2～3 天，是旅人參拜伊勢神宮必嚐的珍味。"
+            },
+            {
+              tag: "神道傳承",
+              tagColor: "bg-emerald-100 text-emerald-800",
+              title: "伊勢神宮與 20 年一度的「式年遷宮」",
+              content: "伊勢神宮供奉日本皇室始祖「天照大神」，為全日本神社頂點。神宮每隔 20 年便會於相鄰預備地上依照古法完全重造全新的神殿（正殿、鳥居、御裝束等），稱為「式年遷宮」。此制度已延續超過 1300 年，不僅體現了神道教「常若（永久保持清淨常新）」的哲學，更藉由每 20 年的重建讓宮大工（神社木匠）的榫卯技術代代薪火相傳，下一次式年遷宮將於 2033 年舉行。"
             }
           ]
         }
@@ -3010,48 +3029,66 @@
       {
         id: "ch-13-2",
         code: "13.2",
-        title: "ショートケーキ（人氣甜點篇 - 草莓鮮奶油蛋糕）",
-        subtitle: "日本蛋糕之王・詢問特徵與甜點文化",
+        title: "ショートケーキ（人氣甜點篇 - 草莓蛋糕）",
+        subtitle: "日本洋菓子經典代表・詢問特徵種類與聖誕蛋糕文化",
         badge: "日本人氣甜點",
         dialogue: {
-          scene: "西洋菓子烘焙坊玻璃蛋糕櫃前",
+          scene: "ショートケーキ（甜點詢問與點餐）",
           lines: [
-            { speaker: "顧客", romaji: "Kore wa donna kēki desu ka.", japanese: "これはどんなケーキですか。", ruby: "これはどんなケーキですか。", chinese: "請問這款蛋糕有什麼特色呢？" },
-            { speaker: "店員", romaji: "Ichigo to nama-kurīmu no shōtokēki desu.", japanese: "イチゴと生クリームのショートケーキです。", ruby: "イチゴと<ruby>生<rt>なま</rt></ruby>クリームのショートケーキです。", chinese: "這是用新鮮草莓與鮮奶油製作的草莓鮮奶油蛋糕。" }
+            { speaker: "観光客", romaji: "Ichiban ninki no kēki wa donna kēki desu ka.", japanese: "一番人気のケーキはどんなケーキですか。", ruby: "<ruby>一番人気<rt>いちばんにんき</rt></ruby>のケーキはどんなケーキですか。", chinese: "最受歡迎的蛋糕是什麼樣的蛋糕？" },
+            { speaker: "店員", romaji: "Shōtokēki ga ichiban ninki desu.", japanese: "ショートケーキが一番人気です。", ruby: "ショートケーキが<ruby>一番人気<rt>いちばんにんき</rt></ruby>です。", chinese: "草莓蛋糕最受歡迎。" },
+            { speaker: "観光客", romaji: "Oishisō desu ne.", japanese: "おいしそうですね。", ruby: "おいしそうですね。", chinese: "看起來很好吃！" },
+            { speaker: "店員", romaji: "Fuwafuwa no suponji to amai nama-kurīmu ga tokuchō desu. Ichigo mo haitte imasu.", japanese: "ふわふわのスポンジと甘い生クリームが特徴です。苺も入っています。", ruby: "ふわふわのスポンジと<ruby>甘<rt>あま</rt></ruby>い<ruby>生<rt>なま</rt></ruby>クリームが<ruby>特徴<rt>とくちょう</rt></ruby>です。<ruby>苺<rt>いちご</rt></ruby>も<ruby>入<rt>はい</rt></ruby>っています。", chinese: "蓬鬆的海綿蛋糕和甜甜的鮮奶油是特色。裡面還有草莓。" },
+            { speaker: "観光客", romaji: "Ii desu ne. Jā, shōtokēki o onegai shimasu.", japanese: "いいですね。じゃあ、ショートケーキをお願いします。", ruby: "いいですね。じゃあ、ショートケーキをお<ruby>願<rt>ねが</rt></ruby>いします。", chinese: "太好了。那麼，我要一個草莓蛋糕。" }
           ]
         },
         grammar: {
-          pattern: "どんな + [名詞] ですか (donna... desu ka)",
+          pattern: "どんな + [名詞] (donna...)",
           explanation: `
             <div class="space-y-2">
               <div class="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-rose-100 shadow-xs">
                 <span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-700 font-bold text-[11px] shrink-0">核心意涵</span>
-                <span>詢問目標事物的具體特徵、外觀、性質、口味或種類，意為<strong>「是怎樣的～呢？」</strong>。</span>
+                <span>此句型意為<strong>「怎麼樣的…… / 什麼樣的……」</strong>，用於詢問事物的性質、狀態或種類。</span>
               </div>
               <div class="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-rose-100 shadow-xs">
                 <span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 font-bold text-[11px] shrink-0">使用時機</span>
-                <span>在甜點蛋糕專櫃或餐廳面對陌生菜色，向店員請教其口感與製作材料時。</span>
+                <span>表示「哪種 / 什麼樣的」，常用於詢問對方的喜好、餐點口味、景點特色或現場氣氛。</span>
               </div>
               <div class="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-rose-100 shadow-xs">
                 <span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 font-bold text-[11px] shrink-0">句型結構</span>
-                <span><code class="font-bold text-stone-700 font-jp">どんな</code> ＋ <code class="font-bold text-rose-600 font-jp">[詢問名詞]</code> ＋ <code class="font-bold text-stone-700 font-jp">ですか</code></span>
+                <span><code class="font-bold text-stone-700 font-jp">どんな</code> ＋ <code class="font-bold text-rose-600 font-jp">[名詞]</code></span>
+              </div>
+              <div class="flex items-start gap-2 bg-white/90 p-2 rounded-xl border border-rose-100 shadow-xs">
+                <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-bold text-[11px] shrink-0">點餐技巧</span>
+                <span>想要了解店內商品的種類、口味或風格時，使用「どんな ＋ 名詞」能自然引導店員為您做詳細推薦與介紹。</span>
               </div>
             </div>
           `,
           examples: [
-            { jp: "どんな味ですか。", ruby: "どんな<ruby>味<rt>あじ</rt></ruby>ですか。", romaji: "Donna aji desu ka.", zh: "是怎樣的味道呢？" }
+            { jp: "どんな食べ物が好きですか。", ruby: "どんな<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>が<ruby>好<rt>す</rt></ruby>きですか。", romaji: "Donna tabemono ga suki desu ka.", zh: "你喜歡怎樣的食物？" },
+            { jp: "この料理はどんな味ですか。", ruby: "この<ruby>料理<rt>りょうり</rt></ruby>はどんな<ruby>味<rt>あじ</rt></ruby>ですか。", romaji: "Kono ryōri wa donna aji desu ka.", zh: "這道料理是怎樣的味道？" }
           ]
         },
         replacements: [
-          { item: "料理", pattern: "どんな料理ですか", romaji: "Donna ryōri desu ka.", zh: "是怎樣的料理呢？" }
+          { item: "名所", pattern: "どんな名所がありますか", romaji: "Donna meisho ga arimasu ka.", zh: "有什麼名勝景點？" },
+          { item: "雰囲気", pattern: "どんな雰囲気ですか", romaji: "Donna fun'iki desu ka.", zh: "是什麼樣的氛圍？" },
+          { item: "味", pattern: "どんな味がありますか", romaji: "Donna aji ga arimasu ka.", zh: "有什麼口味？" }
         ],
         vocab: [
-          { jp: "ショートケーキ", kana: "ショートケーキ", romaji: "shōtokēki", zh: "草莓鮮奶油海綿蛋糕" },
-          { jp: "生クリーム", kana: "なまクリーム", romaji: "namakurīmu", zh: "動物性鮮奶油" },
-          { jp: "洋菓子", kana: "ようがし", romaji: "yōgashi", zh: "西式洋菓子甜點" }
+          { jp: "チーズタルト", kana: "チーズタルト", romaji: "chīzutaruto", zh: "起司塔" },
+          { jp: "カスタード", kana: "カスタード", romaji: "kasutādo", zh: "卡士達醬" },
+          { jp: "バニラ", kana: "バニラ", romaji: "banira", zh: "香草" },
+          { jp: "ロールケーキ", kana: "ロールケーキ", romaji: "rōrukēki", zh: "蛋糕捲" },
+          { jp: "プリン", kana: "プリン", romaji: "purin", zh: "布丁" },
+          { jp: "マカロン", kana: "マカロン", romaji: "makaron", zh: "馬卡龍" },
+          { jp: "モンブラン", kana: "モンブラン", romaji: "momburan", zh: "蒙布朗 / 栗子" },
+          { jp: "ミルフィーユ", kana: "ミルフィーユ", romaji: "mirufīyu", zh: "千層酥" }
         ],
         phrases: [
-          { scene: "附贈保冷劑", jp: "保冷剤を付けていただけますか。", ruby: "<ruby>保冷剤<rt>ほれいざい</rt></ruby>を<ruby>付<rt>つ</rt></ruby>けていただけますか。", romaji: "Horeizai o tsukete itadakemasu ka.", zh: "可以幫我附上保冷劑嗎？" }
+          { scene: "詢問限定", jp: "季節限定のケーキはありますか。", ruby: "<ruby>季節限定<rt>きせつげんてい</rt></ruby>のケーキはありますか。", romaji: "Kisetsu gentei no kēki wa arimasu ka.", zh: "有季節限定的蛋糕嗎？" },
+          { scene: "點選套餐", jp: "ケーキセットを二つお願いします。", ruby: "ケーキセットを<ruby>二<rt>ふた</rt></ruby>つお<ruby>願<rt>ねが</rt></ruby>いします。", romaji: "Kēki setto o futatsu onegai shimasu.", zh: "兩個蛋糕套餐。" },
+          { scene: "詢問拍照", jp: "ケーキの写真を撮ってもいいですか。", ruby: "ケーキの<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ってもいいですか。", romaji: "Kēki no shashin o totte mo ii desu ka.", zh: "可以拍蛋糕嗎？" },
+          { scene: "提袋說明", jp: "紙袋や手提げ袋は有料です。", ruby: "<ruby>紙袋<rt>かみぶくろ</rt></ruby>や<ruby>手提<rt>てさ</rt></ruby>げ<ruby>袋<rt>ぶくろ</rt></ruby>は<ruby>有料<rt>ゆうりょう</rt></ruby>です。", romaji: "Kamibukuro ya tesagebukuro wa yūryō desu.", zh: "紙袋或手提袋要付費。" }
         ],
         trivia: {
           title: "不二家推廣與日本「聖誕節必吃草莓蛋糕」文化",
@@ -3059,14 +3096,14 @@
             {
               tag: "甜點研發",
               tagColor: "bg-rose-100 text-rose-800",
-              title: "日本洋菓子之王「日式草莓蛋糕」",
-              content: "大正時期由老字號洋菓子品牌「不二家（FUJIYA）」研發，將歐美硬脆奶油餅改良為日本人偏好之柔軟海綿蛋糕，搭配動物鮮奶油與鮮紅草莓，成為日本「蛋糕」的代名詞。"
+              title: "不二家創始人與日式草莓蛋糕的誕生",
+              content: "西方的「Shortcake」原本是指用硬質比司吉（Biscuit）夾水果與鮮奶油的點心。1922 年，日本老牌洋菓子巨頭「不二家（FUJIYA）」創辦人藤井林右衛門前往美國考察後，深知日本人偏愛綿密濕潤的口感，便創新改良將餅乾基底替換為蓬鬆柔軟的「日式海綿蛋糕（スポンジケーキ）」，外層抹上厚厚一層純白鮮奶油並點綴鮮紅草莓，開創了今日風靡全亞洲的日式草莓鮮奶油蛋糕。"
             },
             {
-              tag: "節慶傳統",
+              tag: "節慶美學",
               tagColor: "bg-amber-100 text-amber-800",
-              title: "平安夜全家吃草莓蛋糕的由來",
-              content: "紅白配色在日本象徵吉祥慶祝。不二家自 1922 年起推廣聖誕草莓蛋糕，如今每年 12 月 24 日平安夜全日本家家戶戶圍坐品嚐草莓蛋糕已成為不可或缺的國民文化！"
+              title: "紅白配色的吉慶象徵與國民儀式感",
+              content: "• <strong>紅白配色的吉慶象徵</strong>：在日本傳統文化中，「紅與白（紅白・こうはく）」是象徵緣起吉祥、可喜可賀（めでたい）的國家代表配色（如日本國旗、紅白歌合戰）。鮮紅草莓與純白鮮奶油的搭配，完美契合了日本人的節慶美學。<br>• <strong>從昭和奢華到家家必備</strong>：在昭和早期，鮮奶油與冷藏設備昂貴，草莓蛋糕是高檔奢侈品的象徵。隨著戰後日本經濟騰飛，不二家搭配人氣吉祥物牛奶妹（ペコちゃん）大力宣傳「聖誕夜一家團聚切草莓蛋糕」，使得「聖誕節吃草莓蛋糕」成為日本家庭不可或缺的國民儀式感。"
             }
           ]
         }
