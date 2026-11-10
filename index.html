@@ -2910,6 +2910,65 @@
           { item: "な形容詞：にぎやか", pattern: "にぎやかで、楽しいです", romaji: "Nigiyaka de, tanoshii desu.", zh: "既熱鬧又好玩。" },
           { item: "例外：頭がいい", pattern: "頭がよくて、おもしろいです", romaji: "Atama ga yokute, omoshiroi desu.", zh: "既聰明又有趣。" }
         ],
+        replacementsSupplement: `
+          <div class="mt-4 pt-3.5 border-t border-amber-200/80 space-y-2.5">
+            <div class="flex items-start sm:items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-lg bg-amber-600 text-white font-bold text-xs shrink-0">
+                <i class="fa-solid fa-circle-plus mr-1"></i>補充
+              </span>
+              <span class="text-xs sm:text-sm font-bold text-amber-950 leading-snug">
+                使用日語「<span class="text-rose-600">形容詞て形並列句型</span>」（い形容詞去掉「い」加「くて」；な形容詞加「で」）的日文句子：
+              </span>
+            </div>
+
+            <div class="space-y-2.5 text-xs sm:text-sm">
+              <!-- 1 -->
+              <div class="bg-white/95 p-3 sm:p-3.5 rounded-2xl border border-amber-200/90 shadow-2xs flex items-start justify-between gap-2.5">
+                <div class="space-y-1 min-w-0 flex-1">
+                  <div class="font-bold text-stone-900">1. 林小姐既溫柔又親切</div>
+                  <div class="font-jp font-bold text-rose-700 text-sm sm:text-base">日文：<ruby>林<rt>はやし</rt></ruby>さんは<ruby>優<rt>やさ</rt></ruby>しくて、<ruby>親切<rt>しんせつ</rt></ruby>です。</div>
+                  <div class="text-stone-600 font-jp text-xs sm:text-sm">假名：はやしさんは やさしくて、しんせつです。</div>
+                  <div class="text-stone-500 text-xs bg-amber-50/70 px-2.5 py-1 rounded-lg border border-amber-100 inline-block">
+                    <strong class="text-amber-800">說明：</strong>「優しい（い形容詞）」變「優しくて」。
+                  </div>
+                </div>
+                <button onclick="speakText('はやしさんはやさしくて、しんせつです')" class="touch-btn p-2 text-amber-700 hover:bg-amber-100 rounded-xl transition shrink-0" title="發音">
+                  <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                </button>
+              </div>
+
+              <!-- 2 -->
+              <div class="bg-white/95 p-3 sm:p-3.5 rounded-2xl border border-amber-200/90 shadow-2xs flex items-start justify-between gap-2.5">
+                <div class="space-y-1 min-w-0 flex-1">
+                  <div class="font-bold text-stone-900">2. 東京迪士尼樂園既熱鬧又好玩</div>
+                  <div class="font-jp font-bold text-rose-700 text-sm sm:text-base">日文：<ruby>東京<rt>とうきょう</rt></ruby>ディズニーランドは<ruby>賑<rt>にぎ</rt></ruby>やかで、<ruby>楽<rt>たの</rt></ruby>しいです。</div>
+                  <div class="text-stone-600 font-jp text-xs sm:text-sm">假名：とうきょうディズニーランドは にぎやかで、たのしいです。</div>
+                  <div class="text-stone-500 text-xs bg-amber-50/70 px-2.5 py-1 rounded-lg border border-amber-100 inline-block">
+                    <strong class="text-amber-800">說明：</strong>「賑やか（な形容詞）」變「賑やかで」。
+                  </div>
+                </div>
+                <button onclick="speakText('とうきょうディズニーランドはにぎやかで、たのしいです')" class="touch-btn p-2 text-amber-700 hover:bg-amber-100 rounded-xl transition shrink-0" title="發音">
+                  <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                </button>
+              </div>
+
+              <!-- 3 -->
+              <div class="bg-white/95 p-3 sm:p-3.5 rounded-2xl border border-amber-200/90 shadow-2xs flex items-start justify-between gap-2.5">
+                <div class="space-y-1 min-w-0 flex-1">
+                  <div class="font-bold text-stone-900">3. 王老師既聰明又有趣</div>
+                  <div class="font-jp font-bold text-rose-700 text-sm sm:text-base">日文：<ruby>王先生<rt>おうせんせい</rt></ruby>は<ruby>頭<rt>あたま</rt></ruby>がよくて、<ruby>面白<rt>おもしろ</rt></ruby>いです。</div>
+                  <div class="text-stone-600 font-jp text-xs sm:text-sm">假名：おうせんせいは あたまがよくて、おもしろいです。</div>
+                  <div class="text-stone-500 text-xs bg-amber-50/70 px-2.5 py-1 rounded-lg border border-amber-100 inline-block">
+                    <strong class="text-amber-800">說明：</strong>「頭がいい」的「いい」為不規則變化，て形要變成「よくて」。
+                  </div>
+                </div>
+                <button onclick="speakText('おうせんせいはあたまがよくて、おもしろいです')" class="touch-btn p-2 text-amber-700 hover:bg-amber-100 rounded-xl transition shrink-0" title="發音">
+                  <i class="fa-solid fa-volume-high text-sm sm:text-base"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `,
         vocab: [
           { jp: "揚げ物", kana: "あげもの", romaji: "agemono", zh: "炸物" },
           { jp: "つゆ", kana: "つゆ", romaji: "tsuyu", zh: "混合醬油調味料（天婦羅醬汁）" },
@@ -4494,6 +4553,7 @@
                     </div>
                   `).join('')}
                 </div>
+                ${chapter.replacementsSupplement || ''}
               </div>
             </div>
           </div>
