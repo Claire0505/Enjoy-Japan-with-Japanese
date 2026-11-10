@@ -2694,11 +2694,69 @@
           { jp: "薬味", kana: "やくみ", romaji: "yakumi", zh: "芥末、蔥花、海苔等辛香料" }
         ],
         phrases: [
-          { scene: "想嚐豬排", jp: "味噌カツを食べてみたいです。", ruby: "<ruby>味噌<rt>みそ</rt></ruby>カツを<ruby>食<rt>た</rt></ruby>べてみたいです。", romaji: "Misokatsu o tabete mitai desu.", zh: "想吃味噌炸豬排。" },
+          { scene: "想嚐豬排", jp: "味噌カツを食べてみたいです。", ruby: "<ruby>味噌<rt>みそ</rt></ruby>カツを<ruby>食<rt>た</rt></ruby>べてみたいです。", romaji: "Misokatsu o tabete mitai desu.", zh: "我想吃看看味噌炸豬排。" },
+          { scene: "想吃豬排", jp: "味噌カツを食べたいです。", ruby: "<ruby>味噌<rt>みそ</rt></ruby>カツを<ruby>食<rt>た</rt></ruby>べたいです。", romaji: "Misokatsu o tabetai desu.", zh: "我想吃味噌炸豬排。" },
           { scene: "請教吃法", jp: "きしめんの食べ方を教えていただけますか。", ruby: "きしめんの<ruby>食<rt>た</rt></ruby>べ<ruby>方<rt>かた</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えていただけますか。", romaji: "Kishimen no tabekata o oshiete itadakemasu ka.", zh: "可以教我棊子麵（平打烏龍麵）怎麼吃嗎？" },
           { scene: "打聽拉麵", jp: "ご当地ラーメン店を教えてください。", ruby: "ご<ruby>当地<rt>とうち</rt></ruby>ラーメン<ruby>店<rt>てん</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。", romaji: "Gotōchi rāmen-ten o oshiete kudasai.", zh: "請告訴我當地有名的拉麵店。" },
           { scene: "想試雞翅", jp: "名物の手羽先を試してみたいです。", ruby: "<ruby>名物<rt>めいぶつ</rt></ruby>の<ruby>手羽先<rt>てばさき</rt></ruby>を<ruby>試<rt>ため</rt></ruby>してみたいです。", romaji: "Meibutsu no tebasaki o tameshite mitai desu.", zh: "想試試名產炸雞翅。" }
         ],
+        phrasesSupplement: `
+          <div class="mt-4 pt-4 border-t border-sky-200/80 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-lg bg-sky-600 text-white font-bold text-xs sm:text-sm shrink-0">
+                <i class="fa-solid fa-circle-plus mr-1"></i>補充
+              </span>
+              <span class="text-sm sm:text-base font-bold text-sky-950">
+                這兩者在日文與中文裡的語感差別主要在於「慾望的強烈度」與「是否有『嘗試、體驗』的意味」：
+              </span>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-sky-200 bg-white shadow-2xs custom-scrollbar">
+              <table class="w-full text-left border-collapse text-xs sm:text-sm min-w-[560px]">
+                <thead>
+                  <tr class="bg-sky-100/70 text-sky-950 font-bold border-b border-sky-200">
+                    <th class="p-3 sm:p-3.5 w-28 shrink-0">比較項目</th>
+                    <th class="p-3 sm:p-3.5 w-1/2">想吃（食べたい）</th>
+                    <th class="p-3 sm:p-3.5 w-1/2">想吃吃看 / 想嚐嚐看（食べてみたい）</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-sky-100 text-stone-700">
+                  <tr class="hover:bg-sky-50/40 transition">
+                    <td class="p-3 sm:p-3.5 font-bold text-sky-900 bg-sky-50/30">文法組成</td>
+                    <td class="p-3 sm:p-3.5">動詞連用形 ＋ <strong class="text-rose-600">たい</strong>（單純表示願望）</td>
+                    <td class="p-3 sm:p-3.5">動詞て形 ＋ <strong class="text-rose-600">みる</strong>（嘗試）＋ <strong class="text-rose-600">たい</strong>（想）</td>
+                  </tr>
+                  <tr class="hover:bg-sky-50/40 transition">
+                    <td class="p-3 sm:p-3.5 font-bold text-sky-900 bg-sky-50/30">核心語感</td>
+                    <td class="p-3 sm:p-3.5"><strong class="text-stone-900">明確的食慾或渴望</strong>，強調「想滿足食慾」。</td>
+                    <td class="p-3 sm:p-3.5"><strong class="text-stone-900">好奇心與嘗試</strong>，強調「想體驗看看味道如何」。</td>
+                  </tr>
+                  <tr class="hover:bg-sky-50/40 transition">
+                    <td class="p-3 sm:p-3.5 font-bold text-sky-900 bg-sky-50/30">經驗背景</td>
+                    <td class="p-3 sm:p-3.5">吃過、沒吃過都可以用。常常用於「已知這道菜很好吃，現在特別想吃」。</td>
+                    <td class="p-3 sm:p-3.5">通常是<strong class="text-stone-900">沒吃過</strong>、或<strong class="text-stone-900">吃過某種新品/新口味</strong>想試驗體驗。</td>
+                  </tr>
+                  <tr class="hover:bg-sky-50/40 transition">
+                    <td class="p-3 sm:p-3.5 font-bold text-sky-900 bg-sky-50/30">語氣情境</td>
+                    <td class="p-3 sm:p-3.5">
+                      「肚子好餓，好想吃拉麵！」<br>
+                      <span class="text-xs text-stone-500 mt-1 inline-block">（強調想吃的衝動）</span>
+                    </td>
+                    <td class="p-3 sm:p-3.5">
+                      「聽說這家拉麵加了巧克力？我想吃吃看。」<br>
+                      <span class="text-xs text-stone-500 mt-1 inline-block">（強調好奇與挑戰心）</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="bg-white/95 p-3.5 sm:p-4 rounded-2xl border border-sky-200/80 space-y-1.5 text-xs sm:text-sm text-stone-700 leading-relaxed shadow-2xs">
+              <div>• <strong class="text-rose-600 font-jp">〜たい（想吃）</strong>：直接表達「我想要做這件事」，欲望指向食物本身。</div>
+              <div>• <strong class="text-sky-700 font-jp">〜てみたい（想吃吃看）</strong>：帶有「試探、體驗」的過程，即使不特別餓，只要對某樣東西好奇，就可以說「食べてみたい」。</div>
+            </div>
+          </div>
+        `,
         trivia: {
           title: "名古屋「鰻魚飯三吃（ひつまぶし）」與「台灣拉麵」誕生奇蹟",
           points: [
@@ -4485,6 +4543,7 @@
                 </div>
               `).join('')}
             </div>
+            ${chapter.phrasesSupplement || ''}
           </div>
 
           <!-- 7. Travel Trivia (Refactored into Structured Cards with Badges) -->
